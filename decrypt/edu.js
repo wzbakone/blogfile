@@ -429,7 +429,7 @@ function fL() {
       var u = new XMLHttpRequest();
       u.open("GET", "https://cdn.jsdelivr.net/gh/wzbakone/blogfile@main/decrypt/list.json", true);
       u.onerror = function () {
-        if (u.status == 0) {
+        if (u.status !== 0) {
           o();
         }
       };
