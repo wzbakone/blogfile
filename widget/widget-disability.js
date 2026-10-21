@@ -1,5 +1,3 @@
-
-
 var cek_attr_google = [document.currentScript.getAttribute('api-key-google')];
 var cek_attr_resvoice = [document.currentScript.getAttribute('api-key-resvoice')];
 //var api_key_google_cloud = "";
@@ -9,8 +7,6 @@ var api_key_google = "";
 if (typeof (api_key_google_cloud) !== "undefined") {
     api_key_google = api_key_google_cloud;
 }
-
-
 
 if (cek_attr_google.length > 0) {
     api_key_google = cek_attr_google[0];
@@ -27,21 +23,14 @@ var pageHeight_website = Math.max(body_website.scrollHeight, body_website.offset
 
 var bg_color_icon = "";
 
-var conditional = ["ppid.banjarmasinkota.go.id", "lapor.banjarmasinkota.go.id", "banjarmasinkota.go.id", "latihan.banjarmasinkota.go.id"];
+var conditional = ["google.com"];
 if (conditional.includes(base_url_website)) {
     bg_color_icon = "#d0021b";
 } else {
-    bg_color_icon = "#0048ff";
+    bg_color_icon = "rgb(0, 72, 255)";
 }
-
 
 var css_loader = `
-#widget_menu_disabilitas,
-#widget_menu_disabilitas *,
-.circle_aksesbilitas_popup,
-.circle_aksesbilitas_popup * {
-	font-style: unset;
-}
   #widget_menu_disabilitas svg{
 width:unset !important;
 height: unset !important;
@@ -52,27 +41,21 @@ height: unset !important;
 	align-items   : flex-end;
 	width         : max-content;
 }
-#widget_menu_disabilitas input {
- min-height:unset;
-}
+
 .radio_widget_dsb {
     display: flex !important;
     flex-direction  : column !important;
 	background-color  : transparent !important;
-	border            : 2px solid `+ bg_color_icon + `66 !important;
+	border            : .0625em solid `+ bg_color_icon + ` !important;
 	border-radius     : 50% !important;
-	box-shadow        : none;
+	box-shadow        : inset 0 0 0 0 white;
 	cursor            : pointer;
 	font              : inherit;
-	height            : 20px !important;
+	height            : 21px !important;
 	outline           : none;
-	width             : 20px !important;
+	width             : 21px !important;
 	-moz-appearance   : none;
 	-webkit-appearance: none;
-	transition        : all 0.25s ease;
-}
-.radio_widget_dsb:hover {
-	border-color: `+ bg_color_icon + ` !important;
 }
 
 input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
@@ -81,26 +64,24 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
     background-image:unset !important;
 	background-color  : `+ bg_color_icon + ` !important;
 	box-shadow        : inset 0 0 0 .2375em white !important;
-	border-color      : `+ bg_color_icon + ` !important;
-	-webkit-transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);
-	transition        : all .25s cubic-bezier(0.4, 0, 0.2, 1);
+	-webkit-transition: background .15s, box-shadow .1s;
+	transition        : background .15s, box-shadow .1s;
 }
-
 
 .group_move_widget {
 	display         : flex;
 	flex-direction  : column;
-	border          : 1.5px solid `+ bg_color_icon + `33;
+	border          : 2px solid `+ bg_color_icon + `;
 	background-color: white;
 	margin-left     : 15px;
 	margin-right    : 15px;
 	padding-top     : 15px;
 	padding-left    : 15px;
 	padding-right   : 15px;
-	border-radius   : 14px;
+	border-radius   : 15px;
 	margin-top      : 5px;
     width: 90%;
-	box-shadow      : 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0,0,0,0.04);
+	box-shadow      : 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
 .radio_row_widget {
@@ -128,20 +109,18 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 }
 
 .box_content_settings {
-	width          : 26px;
-	height         : 26px;
+	width          : 25px;
+	height         : 25px;
 	display        : flex;
 	text-align     : center;
 	flex-direction : column;
 	align-items    : center;
 	justify-content: center;
-	border-radius  : 26px;
-	color          : black;
-	cursor         : pointer;
-	transition     : transform 0.3s ease;
-}
-.group_action_setting_layout:hover .box_content_settings {
-	transform: rotate(45deg);
+	border-radius  : 25px;
+
+	color : black;
+	cursor: pointer;
+
 }
 
 
@@ -173,7 +152,7 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	flex-direction: column;
 }
 
-.line_baris_wz {
+.line_baris_we_zed {
 	display      : none;
 	box-sizing   : border-box;
 	background   : #000;
@@ -187,7 +166,7 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	zoom         : 1 !important;
 }
 
-.line_baris_wz_arrow {
+.line_baris_we_zed_arrow {
 	bottom   : 100%;
 	left     : 50%;
 	transform: translateX(-50%);
@@ -196,15 +175,15 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	position : absolute;
 }
 
-.line_baris_wz_arrow:before {
+.line_baris_we_zed_arrow:before {
 	border-bottom-color: #fff300 !important;
 	border-width       : 17.5px !important;
 	margin-left        : -17px;
 }
 
 
-.line_baris_wz_arrow:after,
-.line_baris_wz_arrow:before {
+.line_baris_we_zed_arrow:after,
+.line_baris_we_zed_arrow:before {
 	content       : "";
 	bottom        : 100%;
 	left          : 50%;
@@ -217,7 +196,7 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 
 
 
-.line_baris_wz_arrow:after {
+.line_baris_we_zed_arrow:after {
 	border-bottom-color: #000;
 	border-width       : 14px;
 	margin-left        : -14px;
@@ -274,7 +253,7 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	font-family: 'OpenDyslexic Bold';
 	font-style : normal;
 	font-weight: normal;
-	src        : url('https://cdn.jsdelivr.net/gh/wz4reg/blogger@main/Dyseleksia.woff') format('woff');
+	src        : url('https://raw.githubusercontent.com/fathulhudoyo/list-font-web/main/Dyseleksia.woff') format('woff');
 }
 
 
@@ -282,7 +261,7 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	font-family: 'Arial Serif';
 	font-style : normal;
 	font-weight: normal;
-	src        : url('https://cdn.jsdelivr.net/gh/wz4reg/blogger@main/Arial.ttf') format('truetype');
+	src        : url('https://raw.githubusercontent.com/fathulhudoyo/list-font-web/main/Arial.ttf') format('truetype');
 }
 
 
@@ -325,13 +304,13 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 .except_content_aksesbilitas_utama {
 	border-top-right-radius   : unset !important;
 	border-bottom-right-radius: unset !important;
-	border-top-left-radius    : 24px;
-	border-bottom-left-radius : 24px;
+	border-top-left-radius    : 20px;
+	border-bottom-left-radius : 20px;
 }
 
 .content_aksesbilitas .except_groupcontenttoolbar {
 	transform : translateX(0px) !important;
-	transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: transform 0.6s;
 }
 
 .content_aksesbilitas.new-show-toolbar .except_groupcontenttoolbar {
@@ -346,7 +325,7 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 
 .content_aksesbilitas .groupcontenttoolbar {
 	transform : translateX(-500px);
-	transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+	transition: transform 0.6s;
 }
 
 .groupcontenttoolbar {
@@ -363,25 +342,24 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	top                       : 0;
 	z-index                   : 999999999999;
 	position                  : fixed;
-	background: linear-gradient(180deg, `+ bg_color_icon + ` 0%, `+ bg_color_icon + `e6 100%);
+	background-color          : `+ bg_color_icon + `;
 	width                     : 500px;
 	height                    : 100vh;
-	border-top-right-radius   : 24px;
-	border-bottom-right-radius: 24px;
-	box-shadow                : 8px 0 40px rgba(0, 0, 0, 0.18), 2px 0 10px rgba(0,0,0,0.08);
+	border-top-right-radius   : 20px;
+	border-bottom-right-radius: 20px;
+	box-shadow                : 0 0 5px rgba(0, 0, 0, 0.4);
 	/* transition             : transform 0.3s ease-in-out;*/
 }
 
 .group_box_content_disabilitas {
-	border-top-right-radius: 24px;
-	border-top-left-radius : 24px;
+	border-top-right-radius: 20px;
+	border-top-left-radius : 20px;
 	width                  : 500px;
 	position               : absolute;
 	overflow               : hidden;
 	bottom                 : 0;
 	height                 : 92vh;
-	background-color       : #f4f6fa;
-	background-image       : linear-gradient(180deg, #f8f9fc 0%, #eef1f7 100%);
+	background-color       : #f0f1f5;
 }
 
 .group_scroll_content {
@@ -395,17 +373,18 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 }
 
 .group_scroll_content::-webkit-scrollbar {
-	width  : 4px;
+	width  : 5px;
 	display: inherit;
 }
 
 .group_scroll_content:hover::-webkit-scrollbar {
-	width: 6px;
+	width: 5px;
 }
 
 .group_scroll_content::-webkit-scrollbar-track {
 
-	background           : transparent;
+
+	box-shadow           : inset 0 0 6px `+ bg_color_icon + `;
 	border-radius        : 8px;
 	-webkit-border-radius: 8px;
 
@@ -413,17 +392,14 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 }
 
 .group_scroll_content::-webkit-scrollbar-thumb {
-	background-color     : `+ bg_color_icon + `88;
-	outline              : none;
+	background-color     : `+ bg_color_icon + `;
+	outline              : 1px solid slategrey;
 	-webkit-border-radius: 8px;
 	border-radius        : 8px;
-	background           : `+ bg_color_icon + `88;
-	-webkit-box-shadow   : none;
-	transition           : background 0.2s ease;
-}
+	background           : `+ bg_color_icon + `;
+	-webkit-box-shadow   : inset 0 0 6px `+ bg_color_icon + `;
 
-.group_scroll_content::-webkit-scrollbar-thumb:hover {
-	background: `+ bg_color_icon + `;
+
 }
 
 .group_title_disabilitas {
@@ -441,10 +417,8 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	font-size          : 18px;
 	font-family        : "Plus Jakarta Sans", sans-serif !important;
 	font-optical-sizing: auto;
-	font-weight        : 800;
+	font-weight        : 700;
 	font-style         : normal;
-	letter-spacing     : -0.3px;
-	text-shadow        : 0 1px 3px rgba(0,0,0,0.15);
 }
 
 .row_title_disabilitas {
@@ -474,8 +448,8 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 }
 
 .box_circle_disabilitas {
-	width           : 32px;
-	height          : 32px;
+	width           : 30px;
+	height          : 30px;
 	display         : flex;
 	text-align      : center;
 	padding-right   : 1%;
@@ -483,15 +457,9 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	flex-direction  : column;
 	align-items     : center;
 	justify-content : center;
-	border-radius   : 32px;
-	background-color: rgba(255, 255, 255, .18);
-	backdrop-filter : blur(4px);
+	border-radius   : 30px;
+	background-color: rgba(0, 0, 0, .36);
 	cursor          : pointer;
-	transition      : all 0.25s ease;
-}
-.box_circle_disabilitas:hover {
-	background-color: rgba(255, 255, 255, .32);
-	transform       : rotate(90deg);
 }
 
 .icon_x_svg_color {
@@ -514,17 +482,17 @@ height  : 28px;
 }
 
 .box_content_disabilitas {
-	width           : 26px;
-	height          : 26px;
+	width           : 25px;
+	height          : 25px;
 	display         : flex;
 	text-align      : center;
 	flex-direction  : column;
 	align-items     : center;
 	justify-content : center;
-	border-radius   : 26px;
-	background      : linear-gradient(135deg, `+ bg_color_icon + `, `+ bg_color_icon + `cc);
+	border-radius   : 25px;
+	background-color: `+ bg_color_icon + `;
 	cursor          : pointer;
-	box-shadow      : 0 2px 6px `+ bg_color_icon + `33;
+	box-shadow      : 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
 .box_content_profile_disabilitas {
@@ -547,12 +515,11 @@ height  : 28px;
 	flex-direction     : column;
 	margin-left        : 10px;
 	font-size          : 12px;
-	color              : #1a1a2e;
+	color              : black;
 	font-family        : "Plus Jakarta Sans Normal", sans-serif !important;
 	font-optical-sizing: auto;
-	font-weight        : 700;
+	font-weight        : 600;
 	font-style         : normal;
-	transition         : color 0.25s ease;
 }
 
 .active_text_list_content_profile_disabilitas {
@@ -560,32 +527,32 @@ height  : 28px;
 }
 
 .icon_list_content_profile_disabilitas {
-	width           : 32px;
-	height          : 32px;
+	width           : 30px;
+	height          : 30px;
 	display         : flex;
 	text-align      : center;
 	flex-direction  : column;
 	align-items     : center;
 	justify-content : center;
-	border-radius   : 32px;
-	background-color: rgba(0, 0, 0, .05);
-	box-shadow      : none;
+	border-radius   : 30px;
+	background-color: rgba(216, 216, 216, .4);
+	box-shadow      : 0 0 5px rgba(0, 0, 0, 0.4);
 	cursor          : pointer;
 	overflow        : hidden;
-	transition      : all 0.25s ease;
 }
 
 .active_icon_list_content_profile_disabilitas {
-	background-color: rgba(0, 0, 0, 0.6);
+
+	background-color: black;
 }
 
 .layout_content_title {
 	display       : flex;
 	flex-direction: column;
-	border-bottom : 1px solid rgba(0,0,0,0.06);
-	padding-top   : 14px;
+	border-bottom : 1px solid #b4bfd0;
+	padding-top   : 15px;
 	padding-left  : 20px;
-	padding-bottom: 14px;
+	padding-bottom: 15px;
 }
 
 .group_action_bahasa {
@@ -605,12 +572,13 @@ height  : 28px;
 	display            : flex;
 	flex-direction     : column;
 	margin-left        : 10px;
-	font-size          : 13.5px;
-	color              : #1a1a2e;
+	font-size          : 14px;
+	color              : black;
 	font-family        : "Plus Jakarta Sans Normal", sans-serif !important;
 	font-optical-sizing: auto;
-	font-weight        : 700;
+	font-weight        : 600;
 	font-style         : normal;
+
 }
 
 .box_button_switch {
@@ -639,33 +607,29 @@ height  : 28px;
 	grid-template-columns: auto auto auto;
 	align-items          : center;
 	justify-content      : center;
-	gap                  : 14px 10px;
-	padding-bottom       : 10px;
+	gap                  : 18px 10px;
 }
 
 
 
 .box_group_disabilitas {
-	border-radius   : 16px;
+	border-radius   : 15px;
 	width           : 150px;
 	height          : 125px;
-	border          : 1.5px solid rgba(0,0,0,0.04);
+	border          : 1px solid transparent;
 	cursor          : pointer;
 	overflow        : hidden;
-	box-shadow      : 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0, 0, 0, 0.04);
+	box-shadow      : 0 0 5px rgba(0, 0, 0, 0.4);
 	background-color: white;
-	transition      : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .box_group_disabilitas:hover {
-	border-radius: 16px;
+	border-radius: 15px;
 	width        : 150px;
 	height       : 125px;
-	border       : 1.5px solid `+ bg_color_icon + `44;
+	border       : 2px solid `+ bg_color_icon + `;
 	cursor       : pointer;
-	box-shadow   : 0 8px 25px `+ bg_color_icon + `22, 0 4px 12px rgba(0, 0, 0, 0.08);
-	transform    : translateY(-3px);
-	background   : linear-gradient(180deg, white 60%, `+ bg_color_icon + `08 100%);
+	box-shadow   : 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
 .box_icon_disabilitas {
@@ -674,23 +638,16 @@ height  : 28px;
 	align-items    : center;
 	justify-content: center;
 	height         : 80px;
-	transition     : transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.box_group_disabilitas:hover .box_icon_disabilitas {
-	transform: scale(1.08);
 }
 
 .box_text_bottom_disabilitas {
 	text-align         : center;
-	font-size          : 11.5px;
-	color              : #1a1a2e;
+	font-size          : 12px;
+	color              : black;
 	font-family        : "Plus Jakarta Sans", sans-serif !important;
 	font-optical-sizing: auto;
-	font-weight        : 700;
+	font-weight        : 600;
 	font-style         : normal;
-	letter-spacing     : -0.1px;
-	transition         : color 0.25s ease;
 }
 
 .box_column_action_strip {
@@ -714,69 +671,63 @@ height  : 28px;
 	display         : flex;
 	flex-direction  : column;
 	width           : 30%;
-	height          : 4px;
-	margin-right    : 4px;
-	border-radius   : 4px;
-	background      : linear-gradient(90deg, `+ bg_color_icon + `, `+ bg_color_icon + `cc);
-	transition      : all 0.3s ease;
+	height          : 5px;
+	margin-right    : 5px;
+	border-radius   : 5px;
+	background-color: `+ bg_color_icon + `;
 }
 
 .strip_loading_unprocess_v2 {
 	display         : flex;
 	flex-direction  : column;
 	width           : 30%;
-	height          : 4px;
-	opacity         : 0.25;
-	margin-right    : 4px;
-	border-radius   : 4px;
+	height          : 5px;
+	opacity         : 0.5;
+	margin-right    : 5px;
+	border-radius   : 5px;
 	background-color: `+ bg_color_icon + `;
-	transition      : all 0.3s ease;
 }
 
 .strip_loading_process_v3 {
 	display         : flex;
 	flex-direction  : column;
 	width           : 25%;
-	height          : 4px;
-	margin-right    : 4px;
-	border-radius   : 4px;
-	background      : linear-gradient(90deg, `+ bg_color_icon + `, `+ bg_color_icon + `cc);
-	transition      : all 0.3s ease;
+	height          : 5px;
+	margin-right    : 5px;
+	border-radius   : 5px;
+	background-color: `+ bg_color_icon + `;
 }
 
 .strip_loading_unprocess_v3 {
 	display         : flex;
 	flex-direction  : column;
 	width           : 25%;
-	height          : 4px;
-	opacity         : 0.25;
-	margin-right    : 4px;
-	border-radius   : 4px;
+	height          : 5px;
+	opacity         : 0.5;
+	margin-right    : 5px;
+	border-radius   : 5px;
 	background-color: `+ bg_color_icon + `;
-	transition      : all 0.3s ease;
 }
 
 .strip_loading_process_v4 {
 	display         : flex;
 	flex-direction  : column;
 	width           : 15%;
-	height          : 4px;
-	margin-right    : 4px;
-	border-radius   : 4px;
-	background      : linear-gradient(90deg, `+ bg_color_icon + `, `+ bg_color_icon + `cc);
-	transition      : all 0.3s ease;
+	height          : 5px;
+	margin-right    : 5px;
+	border-radius   : 5px;
+	background-color: `+ bg_color_icon + `;
 }
 
 .strip_loading_unprocess_v4 {
 	display         : flex;
 	flex-direction  : column;
 	width           : 15%;
-	height          : 4px;
-	opacity         : 0.25;
-	margin-right    : 4px;
-	border-radius   : 4px;
+	height          : 5px;
+	opacity         : 0.5;
+	margin-right    : 5px;
+	border-radius   : 5px;
 	background-color: `+ bg_color_icon + `;
-	transition      : all 0.3s ease;
 }
 
 .icon_svg_color {
@@ -883,9 +834,7 @@ height  : 28px;
 }
 
 .active_box_menu_disabilitas {
-	border    : 1.5px solid `+ bg_color_icon + `;
-	background: linear-gradient(180deg, white 40%, `+ bg_color_icon + `0f 100%);
-	box-shadow: 0 4px 16px `+ bg_color_icon + `30, 0 2px 6px rgba(0, 0, 0, 0.06);
+	border: 2px solid `+ bg_color_icon + `;
 }
 
 .active_icon_svg_sroke_color {
@@ -978,17 +927,17 @@ height  : 28px;
 .box_profile_aksesbilitas {
 	display         : flex;
 	flex-direction  : row;
-	border-radius   : 14px;
+	border-radius   : 15px;
 	width           : 215px;
 	height          : 55px;
-	border          : 1.5px solid rgba(0,0,0,0.04);
+	border          : 1px solid transparent;
 	cursor          : pointer;
 	overflow        : hidden;
-	box-shadow      : 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0,0,0,0.04);
+	box-shadow      : 0 0 5px rgba(0, 0, 0, 0.4);
 	background-color: white;
-	align-items     : center;
-	padding-left    : 1vw;
-	transition      : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+	align-items : center;
+	padding-left: 1vw;
 }
 
 .color_svg_content_profile_disabilitas {
@@ -1000,16 +949,11 @@ height  : 28px;
 }
 
 .active_box_profile_aksesbilitas {
-	background: linear-gradient(135deg, `+ bg_color_icon + ` 0%, `+ bg_color_icon + `dd 100%);
-	box-shadow: 0 4px 16px `+ bg_color_icon + `33, 0 2px 4px rgba(0,0,0,0.08);
-	border-color: transparent;
+	background-color: `+ bg_color_icon + `
 }
 
 .box_profile_aksesbilitas:hover {
-	background: linear-gradient(135deg, `+ bg_color_icon + ` 0%, `+ bg_color_icon + `dd 100%);
-	box-shadow: 0 6px 20px `+ bg_color_icon + `33, 0 2px 6px rgba(0,0,0,0.08);
-	transform : translateY(-2px);
-	border-color: transparent;
+	background-color: `+ bg_color_icon + `
 }
 
 .box_profile_aksesbilitas:hover .text_list_content_profile_disabilitas {
@@ -1044,7 +988,7 @@ height  : 28px;
 .row_widget_profil_dsb {
 	margin-top           : 3%;
 	display              : inline-grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: auto auto;
 	align-items          : center;
 	justify-content      : center;
 	gap                  : 18px 20px;
@@ -1054,11 +998,10 @@ height  : 28px;
 .layout_bahasa_widget {
 	display       : none;
 	flex-direction: column;
-	height        : auto;
-	width         : 100%;
-	overflow      : hidden;
-	background    : white;
-	border-bottom : 1px solid rgba(0,0,0,0.06);
+	height        : 250px;
+	width         : 500px;
+
+	overflow: scroll;
 }
 
 .layout_bahasa_widget_active {
@@ -1071,106 +1014,26 @@ height  : 28px;
 	display       : flex;
 	flex-direction: column;
 	width         : 100%;
-	border-bottom : 1px solid rgba(0,0,0,0.06);
+	border-bottom : 1px solid #b4bfd0;
 }
 
 .title_daftar_bahasa {
 	display       : flex;
 	flex-direction: column;
 	text-align    : center;
-	font-size     : 17px;
+	font-size     : 18px;
 	padding-top   : 15px;
 	padding-bottom: 15px;
 	font-family   : 'Plus Jakarta Sans' !important;
-	font-weight   : 800;
-	color         : #1a1a2e;
-	letter-spacing: -0.2px;
+	font-weight   : bolder;
+	color         : black;
+
+
 }
 
 .hidden_svg {
 	display: none;
 }
-
-.list_bahasa_item {
-	display         : flex;
-	flex-direction  : row;
-	align-items     : center;
-	padding         : 8px 14px;
-	cursor          : pointer;
-	transition      : all 0.2s ease;
-	border-bottom   : 1px solid rgba(0,0,0,0.04);
-	gap             : 8px;
-}
-.list_bahasa_item:hover {
-	background-color: `+ bg_color_icon + `0a;
-}
-.list_bahasa_item:last-child {
-	border-bottom: none;
-}
-.list_bahasa_flag {
-	width          : 22px;
-	height         : 22px;
-	border-radius  : 22px;
-	display        : flex;
-	align-items    : center;
-	justify-content: center;
-	font-size      : 10px;
-	font-weight    : 700;
-	background     : `+ bg_color_icon + `12;
-	flex-shrink    : 0;
-	letter-spacing : 0.5px;
-}
-.list_bahasa_text {
-	display            : flex;
-	flex-direction     : column;
-	font-family        : "Plus Jakarta Sans Normal", sans-serif !important;
-	font-weight        : 600;
-	font-size          : 11px;
-	color              : #1a1a2e;
-	line-height        : 1.3;
-}
-.list_bahasa_text_sub {
-	font-size  : 9px;
-	color      : #8c8c9e;
-	font-weight: 400;
-	margin-top : 0px;
-}
-.active_bahasa_item {
-	background-color: `+ bg_color_icon + `10;
-	border-left     : 2px solid `+ bg_color_icon + `;
-}
-.active_bahasa_item .list_bahasa_flag {
-	background: `+ bg_color_icon + `;
-	color     : white;
-}
-.active_bahasa_item .list_bahasa_text {
-	color      : `+ bg_color_icon + `;
-	font-weight: 700;
-}
-.bahasa_check_icon {
-	margin-left: auto;
-	fill       : `+ bg_color_icon + `;
-	display    : none;
-}
-.active_bahasa_item .bahasa_check_icon {
-	display: flex;
-}
-#google_translate_element_dsb {
-	position  : fixed !important;
-	left      : 0 !important;
-	top       : 0 !important;
-	width     : 0 !important;
-	height    : 0 !important;
-	overflow  : visible !important;
-	opacity   : 0 !important;
-	z-index   : -9999 !important;
-}
-.goog-te-banner-frame {
-	display: none !important;
-}
-body { top: 0 !important; }
-.skiptranslate iframe { display: none !important; }
-#goog-gt-tt { display: none !important; }
 
 .group_action_setting_layout[aria-expanded=true] .icon_column_layaout_disabilitas {
 	transform: rotate(90deg);
@@ -1180,7 +1043,7 @@ body { top: 0 !important; }
 	display       : flex;
 	flex-direction: column;
     width:100%;
-	border-bottom : 1px solid rgba(0,0,0,0.06);
+	border-bottom : 1px solid #b4bfd0;
 	padding-bottom: 1vh;
 	margin-bottom : 6vh;
 	direction     : ltr !important;
@@ -1255,33 +1118,24 @@ body { top: 0 !important; }
 	flex-direction: column;
 	width         : 90%;
 	font-family   : 'Plus Jakarta Sans' !important;
-	font-weight   : 600;
-	font-size     : 12px;
-	color         : #8c8c9e;
+	font-weight   : bolder;
+	font-size     : 14px;
+	color         : black;
 	text-align    : center;
-	letter-spacing: 0.3px;
 }
 
 
 .row_persegi_reset {
 	display         : flex;
 	flex-direction  : row;
-	background      : linear-gradient(135deg, `+ bg_color_icon + ` 0%, `+ bg_color_icon + `cc 100%);
-	height          : 52px;
-	width           : 440px;
+	background-color: `+ bg_color_icon + `;
+	height          : 50px;
+	width           : 450px;
 	justify-content : center;
 	align-items     : center;
-	border-radius   : 14px;
-	box-shadow      : 0 4px 16px `+ bg_color_icon + `33, 0 2px 6px rgba(0, 0, 0, 0.08);
+	border-radius   : 20px;
+	box-shadow      : 0 0 5px rgba(0, 0, 0, 0.4);
 	cursor          : pointer;
-	transition      : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.row_persegi_reset:hover {
-	transform : translateY(-2px);
-	box-shadow: 0 6px 24px `+ bg_color_icon + `44, 0 4px 10px rgba(0, 0, 0, 0.12);
-}
-.row_persegi_reset:active {
-	transform: translateY(0px);
 }
 
 .icon_persegi_riset {
@@ -1297,10 +1151,9 @@ body { top: 0 !important; }
 	flex-direction: column;
 	width         : 90%;
 	font-family   : 'Plus Jakarta Sans' !important;
-	font-weight   : 700;
-	font-size     : 14px;
+	font-weight   : bolder;
+	font-size     : 16px;
 	color         : white;
-	letter-spacing: -0.1px;
 }
 
 
@@ -1311,24 +1164,17 @@ body { top: 0 !important; }
 	z-index         : 999999999999;
 	position        : fixed;
 	left            : 0;
-	background: linear-gradient(135deg, `+ bg_color_icon + ` 0%, `+ bg_color_icon + `dd 50%, `+ bg_color_icon + `bb 100%);
-    width: 72px;
-    height: 72px;
+	background-color: `+ bg_color_icon + `;
+    width: 80px;
+    height: 80px;
     cursor: pointer;
     align-items: center;
     justify-content: center;
-    border-radius: 72px;
+    border-radius: 80px;
     margin-top:0px;
-    margin-bottom: 24px;
-    margin-left: 24px;
-    box-shadow: 0 4px 20px `+ bg_color_icon + `66, 0 2px 8px rgba(0,0,0,0.15);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    animation: widget_pulse_ring 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes widget_pulse_ring {
-    0%, 100% { box-shadow: 0 4px 20px `+ bg_color_icon + `66, 0 2px 8px rgba(0,0,0,0.15), 0 0 0 0px `+ bg_color_icon + `40; }
-    50% { box-shadow: 0 4px 20px `+ bg_color_icon + `66, 0 2px 8px rgba(0,0,0,0.15), 0 0 0 12px `+ bg_color_icon + `00; }
+    margin-bottom: 20px;
+    margin-left: 20px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
 
 .circle_right_top_sidebar {
@@ -1370,44 +1216,39 @@ body { top: 0 !important; }
 	background-color: white;
 	align-items     : center;
 	justify-content : center;
-	width           : 58px;
-	height          : 58px;
-	border-radius   : 58px;
-	transition      : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+	width           : 66px;
+	height          : 67px;
+	border-radius   : 67px;
 }
 
 .circle_aksesbilitas_3 {
 	display         : flex;
 	flex-direction  : column;
-	background: linear-gradient(135deg, `+ bg_color_icon + `, `+ bg_color_icon + `cc);
-	width           : 50px;
-	height          : 50px;
-	border-radius   : 50px;
+	background-color: `+ bg_color_icon + `;
+	width           : 59px;
+	height          : 60px;
+	border-radius   : 55px;
 	align-items     : center;
 	justify-content : center;
-	transition      : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
 .circle_aksesbilitas_popup:hover {
-	width        : 78px;
-	height       : 78px;
-	border-radius: 78px;
-	box-shadow   : 0 6px 28px `+ bg_color_icon + `88, 0 4px 12px rgba(0,0,0,0.2);
-	animation    : none;
-	transform    : scale(1.05);
+	width        : 85px;
+	height       : 85px;
+	border-radius: 85px;
 }
 
 .circle_aksesbilitas_popup:hover .circle_aksesbilitas_2 {
-	width        : 64px;
-	height       : 64px;
-	border-radius: 64px;
+	width        : 71px;
+	height       : 72px;
+	border-radius: 72px;
 }
 
 .circle_aksesbilitas_popup:hover .circle_aksesbilitas_3 {
-	width        : 56px;
-	height       : 56px;
-	border-radius: 56px;
+	width        : 64px;
+	height       : 65px;
+	border-radius: 60px;
 }
 
 .svg_icon_popoup_dsb {
@@ -1652,7 +1493,7 @@ body { top: 0 !important; }
 	padding   : 10px 18px;
 }
 
-.main_web_ppid_bjm {
+.main_web_ppid_jogja {
 	animation-duration: 1.5s !important;
 	opacity           : 1 !important;
 }
@@ -1683,10 +1524,10 @@ body { top: 0 !important; }
     padding-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
-    border-radius: 14px;
+    border-radius: 15px;
     margin-top: 5px;
     width: 90%;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06), 0 1px 3px rgba(0,0,0,0.04);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
 }
 .except_group_action_setting_layout{
    margin-left: 1%  !important;
@@ -1745,8 +1586,6 @@ body { top: 0 !important; }
 
 	.circle_aksesbilitas_popup {
 		margin-top: 20%;
-		width     : 64px;
-		height    : 64px;
 	}
 
 	.column_reset_disabilitas_menu {
@@ -1755,14 +1594,14 @@ body { top: 0 !important; }
 	}
 
 	.row_persegi_reset {
-		width        : 88vw;
+		width        : 90vw;
 		padding-left : 5%;
 		padding-right: 5%;
-		border-radius: 14px;
+
 	}
 
 	.column_text_persegi_riset {
-		font-size: 13px;
+		font-size: 12px;
 		width    : 100%;
 	}
 
@@ -1816,19 +1655,14 @@ body { top: 0 !important; }
 
 
 	.content_aksesbilitas_utama {
-		width                     : 100vw;
-		height                    : calc(`+ pageHeight_website + `px + 20vh);
-		border-top-right-radius   : 0 !important;
-		border-bottom-right-radius: 0 !important;
-		border-top-left-radius    : 0 !important;
-		border-bottom-left-radius : 0 !important;
+		width        : 100vw;
+		height       : calc(`+ pageHeight_website + `px + 20vh);
 		/* transition: transform 0.3s ease-in-out;*/
 	}
 
 
 	.layout_bahasa_widget {
 		width: 100vw;
-		height: auto;
 	}
 
 
@@ -1841,16 +1675,17 @@ body { top: 0 !important; }
 
 	.layout_grid_disabilitas {
 		display              : inline-grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: auto auto;
 		align-items          : center;
 		justify-content      : center;
-		gap                  : 12px 10px;
+		gap                  : 18px 10px;
 	}
 
 	.group_box_content_disabilitas {
-		width        : 100vw;
-		height       : calc(`+ pageHeight_website + `px + 10vh);
-		border-radius: 0 !important;
+
+		width : 100vw;
+		height: calc(`+ pageHeight_website + `px + 10vh);
+
 	}
 
 	.group_scroll_content {
@@ -1963,273 +1798,6 @@ script_google_anal_v2.type = 'text/javascript';
 document.body.appendChild(script_google_anal_v2);
 
 
-var widget_current_lang = localStorage.getItem("widget_lang") || 'id';
-var _widgetTranslateObserver = null;
-var _widgetTranslateObserverDebounce = null;
-var _widgetTranslateCache = {};
-var _widgetTranslatePendingNodes = {};
-var _widgetTranslateQueue = [];
-var _widgetTranslateInFlight = 0;
-var _widgetTrackedTextNodes = [];
-var _widgetTranslateSession = 0;
-var _widgetTranslateMaxConcurrent = 3;
-
-function _widgetNormalizeText(value) {
-    return (value || '').replace(/\s+/g, ' ').trim();
-}
-
-function _widgetGetTextEdges(value) {
-    var source = value || '';
-    var leading = (source.match(/^\s*/) || [''])[0];
-    var trailing = (source.match(/\s*$/) || [''])[0];
-    return {
-        leading: leading,
-        trailing: trailing
-    };
-}
-
-function _widgetShouldSkipTranslateElement(el) {
-    if (!el || !el.tagName) return true;
-    if (el.closest('#widget_menu_disabilitas, .circle_aksesbilitas_popup, #google_translate_element_dsb, .skiptranslate, .goog-te-banner-frame, [translate="no"], .notranslate')) {
-        return true;
-    }
-    if (el.isContentEditable) return true;
-    return /^(SCRIPT|STYLE|NOSCRIPT|IFRAME|SVG|PATH|TEXTAREA|INPUT|SELECT|OPTION|META|LINK|HEAD)$/i.test(el.tagName);
-}
-
-function _widgetShouldTranslateTextNode(node) {
-    if (!node || node.nodeType !== 3 || !node.parentElement) return false;
-    if (_widgetShouldSkipTranslateElement(node.parentElement)) return false;
-    var normalized = _widgetNormalizeText(node.nodeValue);
-    if (!normalized || normalized.length < 2) return false;
-    if (!/[A-Za-z]/.test(normalized)) return false;
-    return true;
-}
-
-function _widgetRememberTextNode(node) {
-    if (!node.__widgetOriginalTextCaptured) {
-        node.__widgetOriginalTextCaptured = true;
-        node.__widgetOriginalText = node.nodeValue;
-        _widgetTrackedTextNodes.push(node);
-    }
-    return node.__widgetOriginalText || node.nodeValue;
-}
-
-function _widgetIsNodeInsideRoot(node, root) {
-    if (!root || !node) return true;
-    if (root.nodeType === 3) return node === root;
-    if (!root.contains || !node.parentNode) return false;
-    return root === node.parentNode || root.contains(node.parentNode);
-}
-
-function _widgetRestoreOriginalText(root) {
-    for (var i = _widgetTrackedTextNodes.length - 1; i >= 0; i--) {
-        var node = _widgetTrackedTextNodes[i];
-        if (!node || !node.isConnected) {
-            _widgetTrackedTextNodes.splice(i, 1);
-            continue;
-        }
-        if (!_widgetIsNodeInsideRoot(node, root)) continue;
-        if (node.__widgetOriginalTextCaptured) {
-            node.nodeValue = node.__widgetOriginalText;
-        }
-    }
-}
-
-function _widgetDecodeHtmlEntities(value) {
-    var textarea = document.createElement('textarea');
-    textarea.innerHTML = value || '';
-    return textarea.value;
-}
-
-function _widgetGetTranslateContact() {
-    var host = '';
-    try {
-        host = (window.location && window.location.hostname ? window.location.hostname : '').toLowerCase();
-    } catch(e) {}
-
-    host = host.replace(/[^a-z0-9.-]/g, '');
-    if (!host || host.indexOf('.') === -1) {
-        host = 'example.com';
-    }
-
-    return 'widget-translate@' + host;
-}
-
-async function _widgetRequestTranslation(text) {
-    if (_widgetTranslateCache[text] !== undefined) return _widgetTranslateCache[text];
-
-    var translatedText = text;
-    try {
-        var response = await fetch('https://api.mymemory.translated.net/get?q=' + encodeURIComponent(text) + '&langpair=id|en&de=' + encodeURIComponent(_widgetGetTranslateContact()), {
-            method: 'GET'
-        });
-        if (response.ok) {
-            var data = await response.json();
-            if (data && data.responseData && typeof data.responseData.translatedText === 'string' && data.responseData.translatedText) {
-                translatedText = _widgetDecodeHtmlEntities(data.responseData.translatedText);
-            }
-        }
-    } catch(e) {}
-
-    _widgetTranslateCache[text] = translatedText;
-    return translatedText;
-}
-
-function _widgetApplyTranslatedValue(node, translatedText) {
-    if (!node || !node.isConnected || !node.__widgetOriginalTextCaptured) return;
-    var edges = _widgetGetTextEdges(node.__widgetOriginalText);
-    node.nodeValue = edges.leading + translatedText + edges.trailing;
-}
-
-function _widgetFlushTranslateQueue() {
-    while (_widgetTranslateInFlight < _widgetTranslateMaxConcurrent && _widgetTranslateQueue.length > 0) {
-        var queueText = _widgetTranslateQueue.shift();
-        var sessionId = _widgetTranslateSession;
-
-        if (_widgetTranslateCache[queueText] !== undefined) {
-            var cachedNodes = _widgetTranslatePendingNodes[queueText] || [];
-            delete _widgetTranslatePendingNodes[queueText];
-            if (widget_current_lang === 'en' && sessionId === _widgetTranslateSession) {
-                for (var ci = 0; ci < cachedNodes.length; ci++) {
-                    if (_widgetShouldTranslateTextNode(cachedNodes[ci])) {
-                        _widgetApplyTranslatedValue(cachedNodes[ci], _widgetTranslateCache[queueText]);
-                    }
-                }
-            }
-            continue;
-        }
-
-        _widgetTranslateInFlight++;
-        (function(textToTranslate, activeSessionId) {
-            _widgetRequestTranslation(textToTranslate).then(function(translatedText) {
-                var pendingNodes = _widgetTranslatePendingNodes[textToTranslate] || [];
-                delete _widgetTranslatePendingNodes[textToTranslate];
-
-                if (widget_current_lang !== 'en' || activeSessionId !== _widgetTranslateSession) {
-                    return;
-                }
-
-                for (var pi = 0; pi < pendingNodes.length; pi++) {
-                    if (_widgetShouldTranslateTextNode(pendingNodes[pi])) {
-                        _widgetApplyTranslatedValue(pendingNodes[pi], translatedText);
-                    }
-                }
-            }).finally(function() {
-                _widgetTranslateInFlight--;
-                _widgetFlushTranslateQueue();
-            });
-        })(queueText, sessionId);
-    }
-}
-
-function _widgetQueueTranslateNode(node) {
-    if (!_widgetShouldTranslateTextNode(node)) return;
-
-    var originalText = _widgetRememberTextNode(node);
-    var normalizedText = _widgetNormalizeText(originalText);
-    if (!normalizedText) return;
-
-    if (_widgetTranslateCache[normalizedText] !== undefined) {
-        _widgetApplyTranslatedValue(node, _widgetTranslateCache[normalizedText]);
-        return;
-    }
-
-    if (!_widgetTranslatePendingNodes[normalizedText]) {
-        _widgetTranslatePendingNodes[normalizedText] = [];
-        _widgetTranslateQueue.push(normalizedText);
-    }
-    _widgetTranslatePendingNodes[normalizedText].push(node);
-    _widgetFlushTranslateQueue();
-}
-
-function _widgetTranslateRoot(root) {
-    if (!root) return;
-
-    if (root.nodeType === 3) {
-        _widgetQueueTranslateNode(root);
-        return;
-    }
-
-    var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null, false);
-    var currentNode;
-    while ((currentNode = walker.nextNode())) {
-        _widgetQueueTranslateNode(currentNode);
-    }
-}
-
-function _ensureWidgetTranslateObserver() {
-    if (_widgetTranslateObserver || !window.MutationObserver || !document.body) return;
-
-    _widgetTranslateObserver = new MutationObserver(function(mutations) {
-        if (widget_current_lang !== 'en') return;
-
-        var hasAddedNodes = false;
-        for (var i = 0; i < mutations.length; i++) {
-            if (mutations[i].addedNodes && mutations[i].addedNodes.length > 0) {
-                hasAddedNodes = true;
-                break;
-            }
-        }
-        if (!hasAddedNodes) return;
-
-        if (_widgetTranslateObserverDebounce) {
-            clearTimeout(_widgetTranslateObserverDebounce);
-        }
-        _widgetTranslateObserverDebounce = setTimeout(function() {
-            _widgetTranslateRoot(document.body);
-        }, 250);
-    });
-
-    try {
-        _widgetTranslateObserver.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
-    } catch(e) {}
-}
-
-function triggerGoogleTranslate(langCode) {
-    localStorage.setItem("widget_lang", langCode);
-    widget_current_lang = langCode;
-    _widgetTranslateSession++;
-    _ensureWidgetTranslateObserver();
-
-    if (langCode === 'id') {
-        _widgetTranslatePendingNodes = {};
-        _widgetTranslateQueue = [];
-        _widgetRestoreOriginalText(document.body);
-        return;
-    }
-
-    _widgetTranslateRoot(document.body);
-}
-
-function _scheduleWidgetTranslateBootstrap(langCode) {
-    if (!langCode || langCode === 'id') return;
-
-    var delays = [150, 800, 1800, 3200];
-    for (var i = 0; i < delays.length; i++) {
-        (function(delay) {
-            setTimeout(function() {
-                if (localStorage.getItem("widget_lang") === langCode) {
-                    triggerGoogleTranslate(langCode);
-                }
-            }, delay);
-        })(delays[i]);
-    }
-
-    if (document.readyState !== "complete") {
-        window.addEventListener("load", function() {
-            setTimeout(function() {
-                if (localStorage.getItem("widget_lang") === langCode) {
-                    triggerGoogleTranslate(langCode);
-                }
-            }, 500);
-        }, { once: true });
-    }
-}
-
 
 var style = document.createElement('style');
 
@@ -2249,7 +1817,7 @@ document.body.appendChild(create_div_element);
 
 if (base_url_website == "ppid.banjarmasinkota.go.id") {
     var main_class_wrap = document.getElementById("wrapper");
-    main_class_wrap.classList.add("main_web_ppid_bjm");
+    main_class_wrap.classList.add("main_web_ppid_jogja");
 }
 
 
@@ -2829,7 +2397,7 @@ function cek_local_function() {
 
 function load_html_dsb() {
 
-    var popup_dsb = `<div class="circle_aksesbilitas_popup notranslate ` + name_class_widget + `" id="show_menu_dsb_web" translate="no">
+    var popup_dsb = `<div class="circle_aksesbilitas_popup ` + name_class_widget + `" id="show_menu_dsb_web">
 <div class="circle_aksesbilitas_2">
     <div class="circle_aksesbilitas_3">
         <svg id="Layer_1" width="35px" height="35px" class="svg_icon_popoup_dsb" version="1.1" viewBox="0 0 301.673 226.145" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -2853,10 +2421,6 @@ function load_html_dsb() {
         
 
         $('#new_load_disabilitas').html(popup_dsb);
-
-
-    
-
         document.onkeydown = function (e) {
             if (e.ctrlKey &&
                 (e.keyCode === 85)) {
@@ -2930,7 +2494,7 @@ function load_html_dsb() {
         gtag('config', 'G-SJLG49CX7N');
 
 
-    }, 1200);
+    }, 2000);
  
 
 
@@ -2944,7 +2508,7 @@ if ((new RegExp('\\b' + except_url.join('\\b|\\b') + '\\b')).test(base_url_websi
 }
 
 var filter_hight_jquery_v3 = "";
-var except_url_jquery_v3 = ["banjarmasinkota.go.id", "ppid.banjarmasinkota.go.id", "lapor.banjarmasinkota.go.id", "lapor.go.id"];
+var except_url_jquery_v3 = ["google.com"];
 var name_class_widget = "";
 var name_class_widget1 = "";
 var name_class_widget2 = "";
@@ -2962,7 +2526,7 @@ for(var i = 0 ; i < except_url_jquery_v3.length; i += 1) {
     hash[except_url_jquery_v3[i]] = i;
 }
 
-var val = ['banjarmasinkota.go.id'];
+var val = ['slemankab.go.id'];
 
 if(hash.hasOwnProperty(val)) {
     //hash[val]
@@ -3068,7 +2632,7 @@ function slider_popup_disabilitas() {
    jQuery( document ).ready(function( $ ) {
  //   console.log('masuk 2');
     //console.log(data_web)
-    var slider_popup = `<div class="content_aksesbilitas notranslate ` + name_class_widget1 + `" id="widget_menu_disabilitas" translate="no">
+    var slider_popup = `<div class="content_aksesbilitas ` + name_class_widget1 + `" id="widget_menu_disabilitas">
 <div class="groupcontenttoolbar `+ name_class_widget3 + `" id="checklangmenu">
     <div class="content_aksesbilitas_utama `+ name_class_widget2 + `">
         <div class="group_title_disabilitas">
@@ -3090,17 +2654,12 @@ function slider_popup_disabilitas() {
             <div class="group_ltr_content `+ name_class_widget4 + `">
                 <div class="layout_content_title">
                     <div class="group_row_widget_dsb">
-                        <div class="group_action_bahasa" id="dropdown_bahasa_widget" aria-expanded="false">
+                        <div class="group_action_bahasa" id="dropdown_bahasa_widget">
                             <div class="box_content_disabilitas">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                                <div class="name_id">ID</div>
                             </div>
-                            <div class="row_data_widget">
-                                <div class="text_column_layaout_disabilitas" id="text_name_bahasa_widget">
-                                    Bahasa Indonesia
-                                </div>
-                                <div class="icon_column_layaout_disabilitas">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="10px" height="10px" viewBox="0 0 6 11" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="m.5 10.5 5-5-5-5"></path></svg>
-                                </div>
+                            <div class="box_name_menu_disabilitas">
+                                Bahasa Indonesia (Indonesian)
                             </div>
                         </div>
                         <div class="box_button_switch">
@@ -3111,26 +2670,6 @@ function slider_popup_disabilitas() {
                
                 </div>
 
-                <div class="layout_bahasa_widget" id="show_bahasa_widget_dsb">
-                    <div class="group_body_bahasa">
-                        <div class="list_bahasa_item active_bahasa_item" id="bahasa_item_id" data-lang="id">
-                            <div class="list_bahasa_flag">ID</div>
-                            <div class="list_bahasa_text">
-                                Bahasa Indonesia
-                                <span class="list_bahasa_text_sub">Indonesian</span>
-                            </div>
-                            <svg class="bahasa_check_icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                        </div>
-                        <div class="list_bahasa_item" id="bahasa_item_en" data-lang="en">
-                            <div class="list_bahasa_flag">EN</div>
-                            <div class="list_bahasa_text">
-                                English
-                                <span class="list_bahasa_text_sub">Inggris</span>
-                            </div>
-                            <svg class="bahasa_check_icon" width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                        </div>
-                    </div>
-                </div>
 
                    <div class="layout_content_title">
                     <div class="group_row_widget_dsb">
@@ -3161,6 +2700,18 @@ function slider_popup_disabilitas() {
 
                
                 </div>
+
+                <div class="layout_bahasa_widget" id="show_bahasa_widget_dsb">
+                    <div class="group_title_bahasa">
+                        <div class="title_daftar_bahasa">
+                            Daftar Bahasa Widget Aksesibilitas
+                        </div>
+                    </div>
+                    <div class="group_body_bahasa">
+                        <!--div class="catatan_kosong">Saat Ini Sedang Tidak Tersedia Bahasa Lain</div-->
+                    </div>
+                </div>
+
 
                 <div class="layout_profile_widget `+ name_class_widget6 + `" id="show_profile_widget_dsb">
               <div class="row_widget_profil_dsb">
@@ -3815,7 +3366,7 @@ fill="#000000" stroke="none">
                    Di Buat Oleh : 
                 </div>
               
-                    <a href="https://www.banjarmasinkota.go.id" class="column_cek_creator" target="_blank">
+                    <a href="https://banjarmasinkota.go.id" class="column_cek_creator" target="_blank">
                     WZ
                 </a>
                 </div-->
@@ -3920,7 +3471,7 @@ fill="#000000" stroke="none">
 
      <div class="column_cek_version_dsb">
                     <div class="column_text_cek_version_dsb">
-                    -  Widget Aksesibilitas Version 2.2.2  -
+                    -  Widget Aksesibilitas Version 2.1.2  -
                 </div>
             
                     </div>
@@ -4131,16 +3682,7 @@ fill="#000000" stroke="none">
         $(item).cssImportant("line-height", "20px");
     });
 
-    var $el = {};
-    var _elIds = ['action_moda_suara','action_perbesar_text','action_perkecil_text','action_grey_scale',
-        'action_kontras','action_hidden_image','action_perataan_text','action_tulisan_dapat_di_baca',
-        'action_tulisan_line_height','action_animate_pause','action_kursor','action_space_text',
-        'action_garis_bawahi_tautan','action_tooltip','reset_pengaturan_all_dsb',
-        'action_gangguan_motorik','action_netra_total','action_buta_warna','action_disleksia',
-        'action_gangguan_pengelihatan','action_kognitif_pembelajaran','action_kejang_dan_epilepsi','action_adhd'];
-    for (var _ei = 0; _ei < _elIds.length; _ei++) {
-        $el[_elIds[_ei]] = $('#' + _elIds[_ei]);
-    }
+
 
     $("#action_moda_suara").click(function (event) {
         event.preventDefault();
@@ -4170,7 +3712,6 @@ fill="#000000" stroke="none">
             localStorage.setItem("permismobile", "on");
             speachmobile("Selamat Datang Di Website " + base_url_website);
         } else {
-    
             localStorage.setItem("permisvoice", "on");
             speach("Selamat Datang Di Website " + base_url_website);
         }
@@ -4260,7 +3801,9 @@ fill="#000000" stroke="none">
 
             $("#text_tulisan_grey_scale").text('Kejenuhan');
             $("#list_strip_loading_action_grey_scale").hide();
-            strip_batch_reset(3, "#list_strip_loading_action_grey_scale", 3);
+            strip_loading_v3("#list_strip_loading_action_grey_scale", "#strip_loading_1", "noaktif");
+            strip_loading_v3("#list_strip_loading_action_grey_scale", "#strip_loading_2", "noaktif");
+            strip_loading_v3("#list_strip_loading_action_grey_scale", "#strip_loading_3", "noaktif");
             $('html').css({
                 'filter': ""
             });
@@ -4313,7 +3856,10 @@ fill="#000000" stroke="none">
                 }
             });
 
-            strip_batch_reset(4, "#list_strip_loading_action_kontras", 4);
+            strip_loading_v4("#list_strip_loading_action_kontras", "#strip_loading_1", "noaktif");
+            strip_loading_v4("#list_strip_loading_action_kontras", "#strip_loading_2", "noaktif");
+            strip_loading_v4("#list_strip_loading_action_kontras", "#strip_loading_3", "noaktif");
+            strip_loading_v4("#list_strip_loading_action_kontras", "#strip_loading_4", "noaktif");
             $("#svg_kontras_multi").show();
             $("#svg_kontras_warna,#svg_kontras_klise,#svg_kontras_light,#svg_balikan_warna").hide();
             $("#text_name_kontras").text('Kontras+');
@@ -4322,13 +3868,13 @@ fill="#000000" stroke="none">
             action_warna_kode_3("noaktif");
             action_warna_kode_4("noaktif");
 
-            var _styledEls = document.querySelectorAll('[style]:not(#widget_menu_disabilitas):not(#widget_menu_disabilitas *)');
-            for (var _si = 0; _si < _styledEls.length; _si++) {
-                var _sty = _styledEls[_si].style[0];
-                if (_sty == undefined || _sty == null || _sty == "") {
-                    _styledEls[_si].removeAttribute("style");
+            $("*:not('#widget_menu_disabilitas *')").each(function (i, item) {
+                var my_style = $(item)[0]['style']['0'];
+                if (my_style == undefined || my_style == null || my_style == "") {
+                    $(item).removeAttr("style");
                 }
-            }
+
+            });
 
             localStorage.removeItem('action_kontras');
             if (cek_action_sound_search.length > 0) {
@@ -4397,8 +3943,9 @@ fill="#000000" stroke="none">
             });
             $("#action_hidden_image").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
 
-            var _imgs = document.querySelectorAll('img:not(#widget_menu_disabilitas img)');
-            for (var _ii = 0; _ii < _imgs.length; _ii++) _imgs[_ii].style.removeProperty('visibility');
+            $('* > img:not("#widget_menu_disabilitas *")').each(function (i, item) {
+                $(item).cssImportant("visibility", "");
+            });
             localStorage.removeItem('action_hidden_image');
         } else {
             localStorage.setItem('action_hidden_image', '1');
@@ -4428,7 +3975,10 @@ fill="#000000" stroke="none">
                 }
             });
             $("#action_perataan_text").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
-            strip_batch_reset(4, "#list_strip_loading_perataan_text", 4);
+            strip_loading_v4("#list_strip_loading_perataan_text", "#strip_loading_1", "noaktif")
+            strip_loading_v4("#list_strip_loading_perataan_text", "#strip_loading_2", "noaktif")
+            strip_loading_v4("#list_strip_loading_perataan_text", "#strip_loading_3", "noaktif")
+            strip_loading_v4("#list_strip_loading_perataan_text", "#strip_loading_4", "noaktif")
             $("#text_rata_tulisan").text('Rata Tulisan');
             setTimeout(() => {
                 callfunction('Rata Tulisan');
@@ -4494,7 +4044,8 @@ fill="#000000" stroke="none">
 
             $("#list_strip_loading_action_tulisan_dapat_dibaca").hide();
             $("#action_tulisan_dapat_di_baca").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
-            strip_batch_reset(2, "#list_strip_loading_action_tulisan_dapat_dibaca", 2);
+            strip_loading_v2("#list_strip_loading_action_tulisan_dapat_dibaca", "#strip_loading_1", "noaktif");
+            strip_loading_v2("#list_strip_loading_action_tulisan_dapat_dibaca", "#strip_loading_2", "noaktif");
             $("#svg_font_di_perbesar").hide();
             $("#svg_dy_seleksia").show();
 
@@ -4546,13 +4097,12 @@ fill="#000000" stroke="none">
             });
             $("#list_strip_loading_action_tulisan_line_height").hide();
             $("#action_tulisan_line_height").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
-            strip_batch_reset(3, "#list_strip_loading_action_tulisan_line_height", 3);
-            var _lhReset = document.querySelectorAll('[style]');
-            for (var _lri = 0; _lri < _lhReset.length; _lri++) {
-                if (!_lhReset[_lri].closest('#widget_menu_disabilitas') && !_lhReset[_lri].closest('.circle_aksesbilitas_popup')) {
-                    _lhReset[_lri].style.lineHeight = '';
-                }
-            }
+            strip_loading_v3("#list_strip_loading_action_tulisan_line_height", "#strip_loading_1", "noaktif");
+            strip_loading_v3("#list_strip_loading_action_tulisan_line_height", "#strip_loading_2", "noaktif");
+            strip_loading_v3("#list_strip_loading_action_tulisan_line_height", "#strip_loading_3", "noaktif");
+            $('*:not("#widget_menu_disabilitas *,.circle_aksesbilitas_popup *")').each(function (i, item) {
+                $(item).cssImportant("line-height", "");
+            });
 
 
             $("#text_id_tinggi_garis").text("Tinggi Garis");
@@ -4614,19 +4164,18 @@ fill="#000000" stroke="none">
 
             clearInterval(interval_animate_widget);
             jQuery.fx.off = false;
-            var _animEls = document.querySelectorAll('[style]');
-            for (var _ai = 0; _ai < _animEls.length; _ai++) {
-                var _as = _animEls[_ai].style;
-                _as.removeProperty('animation-duration');
-                _as.removeProperty('transform');
-                _as.removeProperty('transition');
-                _as.removeProperty('animation');
-                _as.removeProperty('animation-play-state');
-                _as.removeProperty('-webkit-animation-play-state');
-                _as.removeProperty('-moz-animation-play-state');
-                _as.removeProperty('-o-animation-play-state');
-                $(_animEls[_ai]).clearQueue();
-            }
+            //tanda
+            $(filter_hight_jquery_v3).each(function (i, item) {
+                $(item).cssImportant("animation-duration", "");
+                $(item).cssImportant("transform", "");
+                $(item).cssImportant("transition", "");
+                $(item).cssImportant("animation", "");
+                $(item).cssImportant("animation-play-state", "");
+                $(item).cssImportant("-webkit-animation-play-state", "");
+                $(item).cssImportant("-moz-animation-play-state", "");
+                $(item).cssImportant("-o-animation-play-state", "");
+                $(item).clearQueue();
+            });
             event.cancelBubble = false;
             $("#text_id_animasi").text("Animasi Dijeda");
 
@@ -4661,13 +4210,15 @@ fill="#000000" stroke="none">
                 }
             })
             $("#action_kursor").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
-            $(".cursor_website_all").removeClass("cursor_website_all");
+            $("*").removeClass("cursor_website_all");
             localStorage.removeItem("action_kursor_change");
 
 
             $("#list_strip_loading_action_kursor").hide();
             $("#text_id_kursor").text("Kursor");
-            strip_batch_reset(3, "#list_strip_loading_action_kursor", 3);
+            strip_loading_v3("#list_strip_loading_action_kursor", "#strip_loading_1", "noaktif");
+            strip_loading_v3("#list_strip_loading_action_kursor", "#strip_loading_2", "noaktif");
+            strip_loading_v3("#list_strip_loading_action_kursor", "#strip_loading_3", "noaktif");
             $("#svg_kursor_web").show();
             $("#svg_kursor_masker,#svg_kursor_masker_v2,#slider_mouse_masked,#slider_mouse_masked_line").hide();
         } else {
@@ -4710,14 +4261,13 @@ fill="#000000" stroke="none">
             });
             $("#list_strip_loading_action_space_text").hide();
             $("#action_space_text").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
-            strip_batch_reset(3, "#list_strip_loading_action_space_text", 3);
+            strip_loading_v3("#list_strip_loading_action_space_text", "#strip_loading_1", "noaktif");
+            strip_loading_v3("#list_strip_loading_action_space_text", "#strip_loading_2", "noaktif");
+            strip_loading_v3("#list_strip_loading_action_space_text", "#strip_loading_3", "noaktif");
 
-            var _lsEls = document.querySelectorAll('[style]');
-            for (var _lsi = 0; _lsi < _lsEls.length; _lsi++) {
-                if (!_lsEls[_lsi].closest('#widget_menu_disabilitas') && !_lsEls[_lsi].closest('.circle_aksesbilitas_popup')) {
-                    _lsEls[_lsi].style.letterSpacing = '';
-                }
-            }
+            $('div > *:not("#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,#widget_menu_disabilitas")').css({
+                "letter-spacing": "",
+            });
             $("#id_space_text").text("Spasi Teks");
 
             setTimeout(() => {
@@ -4805,7 +4355,9 @@ fill="#000000" stroke="none">
 
             $("#list_strip_loading_action_garis_bawahi_tautan").hide();
             $("#action_garis_bawahi_tautan").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
-            strip_batch_reset(2, "#list_strip_loading_action_garis_bawahi_tautan", 3);
+            strip_loading_v2("#list_strip_loading_action_garis_bawahi_tautan", "#strip_loading_1", "noaktif");
+            strip_loading_v2("#list_strip_loading_action_garis_bawahi_tautan", "#strip_loading_2", "noaktif");
+            strip_loading_v2("#list_strip_loading_action_garis_bawahi_tautan", "#strip_loading_3", "noaktif");
 
             $("#svg_decoration_link").show();
             $("#svg_block_decoration_link").hide();
@@ -4839,51 +4391,9 @@ fill="#000000" stroke="none">
 
 
 
-    var _savedLang = localStorage.getItem("widget_lang");
-    _ensureWidgetTranslateObserver();
-    if (_savedLang && _savedLang === 'en') {
-        $(".list_bahasa_item").removeClass("active_bahasa_item");
-        $("#bahasa_item_en").addClass("active_bahasa_item");
-        $("#text_name_bahasa_widget").text("English");
-        widget_current_lang = 'en';
-        _scheduleWidgetTranslateBootstrap('en');
-    }
-
     $("#dropdown_bahasa_widget").click(function (event) {
         event.preventDefault();
-        var get_attr = $("#dropdown_bahasa_widget").attr('aria-expanded');
-        if (get_attr == 'true') {
-            $("#dropdown_bahasa_widget").attr('aria-expanded', 'false');
-            $("#show_bahasa_widget_dsb").hide();
-        } else {
-            $("#dropdown_bahasa_widget").attr('aria-expanded', 'true');
-            $("#show_bahasa_widget_dsb").css('display', 'flex');
-        }
-    });
 
-    $(".list_bahasa_item").click(function (event) {
-        event.preventDefault();
-        var lang = $(this).attr('data-lang');
-        $(".list_bahasa_item").removeClass("active_bahasa_item");
-        $(this).addClass("active_bahasa_item");
-
-        localStorage.setItem("widget_lang", lang);
-
-        if (lang === 'id') {
-            $("#text_name_bahasa_widget").text("Bahasa Indonesia");
-        } else if (lang === 'en') {
-            $("#text_name_bahasa_widget").text("English");
-        }
-
-        $("#dropdown_bahasa_widget").attr('aria-expanded', 'false');
-        $("#show_bahasa_widget_dsb").hide();
-
-        triggerGoogleTranslate(lang);
-        setTimeout(function () {
-            if (localStorage.getItem("widget_lang") === lang) {
-                triggerGoogleTranslate(lang);
-            }
-        }, 1200);
     });
 
     $("#dropdown_profile_widget").click(function (event) {
@@ -4915,22 +4425,53 @@ fill="#000000" stroke="none">
     };
 
 
-    var _profileTrackMap = {
-        'action_gangguan_motorik': 'gangguan-motorik',
-        'action_netra_total': 'netra-total',
-        'action_buta_warna': 'buta-warna',
-        'action_disleksia': 'diseleksia',
-        'action_gangguan_pengelihatan': 'gangguan-pengelihatan',
-        'action_kognitif_pembelajaran': 'kognitif-pembelajaran',
-        'action_kejang_dan_epilepsi': 'kejang-dan-epilepsi',
-        'action_adhd': 'adhd'
-    };
-    $("#show_profile_widget_dsb").on("click", ".box_profile_aksesbilitas", function (event) {
-        var _id = this.id;
-        if (_profileTrackMap[_id]) {
-            hit_api_tracking(base_url_website, _profileTrackMap[_id]);
-            action_find_id_profile_aksesbilitas("#" + _id);
-        }
+    $("#action_gangguan_motorik").click(function (event) {
+        hit_api_tracking(base_url_website, 'gangguan-motorik');
+        action_find_id_profile_aksesbilitas("#action_gangguan_motorik");
+    });
+
+
+    $("#action_netra_total").click(function (event) {
+        hit_api_tracking(base_url_website, 'netra-total');
+        action_find_id_profile_aksesbilitas("#action_netra_total");
+
+    });
+
+    $("#action_buta_warna").click(function (event) {
+        hit_api_tracking(base_url_website, 'buta-warna');
+        action_find_id_profile_aksesbilitas("#action_buta_warna");
+
+    });
+
+    $("#action_disleksia").click(function (event) {
+        hit_api_tracking(base_url_website, 'diseleksia');
+        action_find_id_profile_aksesbilitas("#action_disleksia");
+
+    });
+
+
+    $("#action_gangguan_pengelihatan").click(function (event) {
+        hit_api_tracking(base_url_website, 'gangguan-pengelihatan');
+        action_find_id_profile_aksesbilitas("#action_gangguan_pengelihatan");
+
+    });
+
+    $("#action_kognitif_pembelajaran").click(function (event) {
+        hit_api_tracking(base_url_website, 'kognitif-pembelajaran');
+        action_find_id_profile_aksesbilitas("#action_kognitif_pembelajaran");
+
+    });
+
+    $("#action_kejang_dan_epilepsi").click(function (event) {
+        hit_api_tracking(base_url_website, 'kejang-dan-epilepsi');
+        action_find_id_profile_aksesbilitas("#action_kejang_dan_epilepsi");
+
+    });
+
+    $("#action_adhd").click(function (event) {
+        hit_api_tracking(base_url_website, 'adhd');
+        action_find_id_profile_aksesbilitas("#action_adhd");
+
     });
 
 
@@ -5002,14 +4543,15 @@ fill="#000000" stroke="none">
         localStorage.removeItem("position_widget");
         hit_api_tracking(base_url_website, 'reset-pengaturan-disabilitas');
 
-        var _resetEls = document.querySelectorAll('[style]');
-        for (var _ri = 0; _ri < _resetEls.length; _ri++) {
-            _resetEls[_ri].style.opacity = '';
-            _resetEls[_ri].style.borderColor = '';
-        }
+        $("*").each(function (i, item) {
+            $(item).css({
+                "opacity": "",
+                "border-color": ""
+            });
+        });
 
         $(
-            '[style]:not(.fa-search):not(.titletools):not(svg):not(.btn-color-mode-switch-inner):not(.Vue-Toastification__container)'
+            '*:not(".fa-search,.titletools,svg,.btn-color-mode-switch-inner,.Vue-Toastification__container")'
         ).cssImportant("border-color", "");
 
         $("#action_moda_suara").removeClass("active_box_menu_disabilitas");
@@ -5037,12 +4579,17 @@ fill="#000000" stroke="none">
             }
         });
         $("#action_perbesar_text").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
-        strip_batch_reset(4, "#list_strip_loading_perbesar_text", 4);
+        strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_1", "noaktif")
+        strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_2", "noaktif")
+        strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_3", "noaktif")
+        strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_4", "noaktif")
 
-        var _fsEls1 = document.querySelectorAll('[style]');
-        for (var _fi1 = 0; _fi1 < _fsEls1.length; _fi1++) {
-            if (!_fsEls1[_fi1].closest('#widget_menu_disabilitas')) _fsEls1[_fi1].style.fontSize = '';
-        }
+        $('*:not("#widget_menu_disabilitas *")').css({
+            "font-size": "",
+        });
+
+
+
 
 
         /*grey scale*/
@@ -5067,7 +4614,9 @@ fill="#000000" stroke="none">
 
         $("#text_tulisan_grey_scale").text('Kejenuhan');
         $("#list_strip_loading_action_grey_scale").hide();
-        strip_batch_reset(3, "#list_strip_loading_action_grey_scale", 3);
+        strip_loading_v3("#list_strip_loading_action_grey_scale", "#strip_loading_1", "noaktif");
+        strip_loading_v3("#list_strip_loading_action_grey_scale", "#strip_loading_2", "noaktif");
+        strip_loading_v3("#list_strip_loading_action_grey_scale", "#strip_loading_3", "noaktif");
         $('html').css({
             'filter': ""
         });
@@ -5094,7 +4643,10 @@ fill="#000000" stroke="none">
         });
 
 
-        strip_batch_reset(4, "#list_strip_loading_action_kontras", 4);
+        strip_loading_v4("#list_strip_loading_action_kontras", "#strip_loading_1", "noaktif");
+        strip_loading_v4("#list_strip_loading_action_kontras", "#strip_loading_2", "noaktif");
+        strip_loading_v4("#list_strip_loading_action_kontras", "#strip_loading_3", "noaktif");
+        strip_loading_v4("#list_strip_loading_action_kontras", "#strip_loading_4", "noaktif");
         $("#svg_kontras_multi").show();
         $("#svg_kontras_warna,#svg_kontras_klise,#svg_kontras_light,#svg_balikan_warna").hide();
         $("#text_name_kontras").text(' Kontras+');
@@ -5118,7 +4670,10 @@ fill="#000000" stroke="none">
             }
         });
         $("#action_perataan_text").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
-        strip_batch_reset(4, "#list_strip_loading_perataan_text", 4);
+        strip_loading_v4("#list_strip_loading_perataan_text", "#strip_loading_1", "noaktif")
+        strip_loading_v4("#list_strip_loading_perataan_text", "#strip_loading_2", "noaktif")
+        strip_loading_v4("#list_strip_loading_perataan_text", "#strip_loading_3", "noaktif")
+        strip_loading_v4("#list_strip_loading_perataan_text", "#strip_loading_4", "noaktif")
         $("#text_rata_tulisan").text('Rata Tulisan');
         $("#svg_left_text_icon").show();
         $("#svg_center_text_icon,#svg_right_text_icon,#svg_right_left_text_icon").hide();
@@ -5145,8 +4700,9 @@ fill="#000000" stroke="none">
         });
         $("#action_hidden_image").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
 
-        var _rimgs = document.querySelectorAll('img:not(#widget_menu_disabilitas img)');
-        for (var _ri = 0; _ri < _rimgs.length; _ri++) _rimgs[_ri].style.removeProperty('visibility');
+        $('* > img:not("#widget_menu_disabilitas *")').each(function (i, item) {
+            $(item).cssImportant("visibility", "");
+        });
 
 
         /* reset text besar*/
@@ -5170,7 +4726,8 @@ fill="#000000" stroke="none">
 
         $("#list_strip_loading_action_tulisan_dapat_dibaca").hide();
         $("#action_tulisan_dapat_di_baca").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
-        strip_batch_reset(2, "#list_strip_loading_action_tulisan_dapat_dibaca", 2);
+        strip_loading_v2("#list_strip_loading_action_tulisan_dapat_dibaca", "#strip_loading_1", "noaktif");
+        strip_loading_v2("#list_strip_loading_action_tulisan_dapat_dibaca", "#strip_loading_2", "noaktif");
 
 
         $("#text_tulisan_dapat_di_baca").text("Ramah Disleksia");
@@ -5195,13 +4752,12 @@ fill="#000000" stroke="none">
         });
 
         $("#action_tulisan_line_height").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
-        strip_batch_reset(3, "#list_strip_loading_action_tulisan_line_height", 3);
-        var _lhEls = document.querySelectorAll('[style]');
-        for (var _li = 0; _li < _lhEls.length; _li++) {
-            if (!_lhEls[_li].closest('#widget_menu_disabilitas') && !_lhEls[_li].closest('.circle_aksesbilitas_popup')) {
-                _lhEls[_li].style.lineHeight = '';
-            }
-        }
+        strip_loading_v3("#list_strip_loading_action_tulisan_line_height", "#strip_loading_1", "noaktif");
+        strip_loading_v3("#list_strip_loading_action_tulisan_line_height", "#strip_loading_2", "noaktif");
+        strip_loading_v3("#list_strip_loading_action_tulisan_line_height", "#strip_loading_3", "noaktif");
+        $('*:not("#widget_menu_disabilitas *,.circle_aksesbilitas_popup *")').each(function (i, item) {
+            $(item).cssImportant("line-height", "");
+        });
         $("#text_id_tinggi_garis").text("Tinggi Garis");
 
 
@@ -5228,19 +4784,18 @@ fill="#000000" stroke="none">
         $("#svg_animasi_pause").show();
         clearInterval(interval_animate_widget);
         jQuery.fx.off = false;
-        var _rAnimEls = document.querySelectorAll('[style]');
-        for (var _rai = 0; _rai < _rAnimEls.length; _rai++) {
-            var _ras = _rAnimEls[_rai].style;
-            _ras.removeProperty('animation-duration');
-            _ras.removeProperty('transform');
-            _ras.removeProperty('transition');
-            _ras.removeProperty('animation');
-            _ras.removeProperty('animation-play-state');
-            _ras.removeProperty('-webkit-animation-play-state');
-            _ras.removeProperty('-moz-animation-play-state');
-            _ras.removeProperty('-o-animation-play-state');
-            $(_rAnimEls[_rai]).clearQueue();
-        }
+        //tanda ,*:before, *:after
+        $(filter_hight_jquery_v3).each(function (i, item) {
+            $(item).cssImportant("animation-duration", "");
+            $(item).cssImportant("transform", "");
+            $(item).cssImportant("transition", "");
+            $(item).cssImportant("animation", "");
+            $(item).cssImportant("animation-play-state", "");
+            $(item).cssImportant("-webkit-animation-play-state", "");
+            $(item).cssImportant("-moz-animation-play-state", "");
+            $(item).cssImportant("-o-animation-play-state", "");
+            $(item).clearQueue();
+        });
 
         $("#text_id_animasi").text("Animasi Dijeda");
 
@@ -5257,12 +4812,14 @@ fill="#000000" stroke="none">
             }
         })
         $("#action_kursor").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
-        $(".cursor_website_all").removeClass("cursor_website_all");
+        $("*").removeClass("cursor_website_all");
 
 
         $("#list_strip_loading_action_kursor").hide();
 
-        strip_batch_reset(3, "#list_strip_loading_action_kursor", 3);
+        strip_loading_v3("#list_strip_loading_action_kursor", "#strip_loading_1", "noaktif");
+        strip_loading_v3("#list_strip_loading_action_kursor", "#strip_loading_2", "noaktif");
+        strip_loading_v3("#list_strip_loading_action_kursor", "#strip_loading_3", "noaktif");
         $("#svg_kursor_web").show();
         $("#svg_kursor_masker").hide();
         $("#svg_kursor_masker_v2").hide();
@@ -5284,7 +4841,9 @@ fill="#000000" stroke="none">
         })
         $("#action_kursor").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
         $("#list_strip_loading_action_kursor").hide();
-        strip_batch_reset(3, "#list_strip_loading_action_kursor", 3);
+        strip_loading_v3("#list_strip_loading_action_kursor", "#strip_loading_1", "noaktif");
+        strip_loading_v3("#list_strip_loading_action_kursor", "#strip_loading_2", "noaktif");
+        strip_loading_v3("#list_strip_loading_action_kursor", "#strip_loading_3", "noaktif");
         setTimeout(() => {
             data_move_mouse();
             $("#text_id_kursor").text("Kursor");
@@ -5303,10 +4862,13 @@ fill="#000000" stroke="none">
         });
         $("#list_strip_loading_action_space_text").hide();
         $("#action_space_text").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
-        strip_batch_reset(3, "#list_strip_loading_action_space_text", 3);
+        strip_loading_v3("#list_strip_loading_action_space_text", "#strip_loading_1", "noaktif");
+        strip_loading_v3("#list_strip_loading_action_space_text", "#strip_loading_2", "noaktif");
+        strip_loading_v3("#list_strip_loading_action_space_text", "#strip_loading_3", "noaktif");
 
-        var _lsEls = _getWebElements(null);
-        for (var _lsi = 0; _lsi < _lsEls.length; _lsi++) _lsEls[_lsi].style.letterSpacing = '';
+        $('div > *:not("#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,#widget_menu_disabilitas")').css({
+            "letter-spacing": "",
+        });
         $("#id_space_text").text("Spasi Teks");
 
 
@@ -5323,12 +4885,15 @@ fill="#000000" stroke="none">
         });
 
         $("#action_perkecil_text").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
-        strip_batch_reset(4, "#list_strip_loading_perkecil_text", 4);
+        strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_1", "noaktif")
+        strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_2", "noaktif")
+        strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_3", "noaktif")
+        strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_4", "noaktif")
 
-        var _fsEls2 = document.querySelectorAll('[style]');
-        for (var _fi2 = 0; _fi2 < _fsEls2.length; _fi2++) {
-            if (!_fsEls2[_fi2].closest('#widget_menu_disabilitas')) _fsEls2[_fi2].style.fontSize = '';
-        }
+        $('*:not("#widget_menu_disabilitas *")').css({
+            "font-size": "",
+        });
+
 
 
         /*garis bawahi tautan*/
@@ -5343,7 +4908,9 @@ fill="#000000" stroke="none">
 
         $("#list_strip_loading_action_garis_bawahi_tautan").hide();
         $("#action_garis_bawahi_tautan").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
-        strip_batch_reset(2, "#list_strip_loading_action_garis_bawahi_tautan", 3);
+        strip_loading_v2("#list_strip_loading_action_garis_bawahi_tautan", "#strip_loading_1", "noaktif");
+        strip_loading_v2("#list_strip_loading_action_garis_bawahi_tautan", "#strip_loading_2", "noaktif");
+        strip_loading_v2("#list_strip_loading_action_garis_bawahi_tautan", "#strip_loading_3", "noaktif");
 
         $("#svg_decoration_link").show();
         $("#svg_block_decoration_link").hide();
@@ -5367,18 +4934,22 @@ fill="#000000" stroke="none">
 
 
 
-        /* reset bahasa ke default */
-        if (widget_current_lang !== 'id') {
-            triggerGoogleTranslate('id');
-        }
-        widget_current_lang = 'id';
-        $(".list_bahasa_item").removeClass("active_bahasa_item");
-        $("#bahasa_item_id").addClass("active_bahasa_item");
-        $("#text_name_bahasa_widget").text("Bahasa Indonesia");
-        $("#dropdown_bahasa_widget").attr('aria-expanded', 'false');
-        $("#show_bahasa_widget_dsb").hide();
-
         localStorage.clear();
+
+        /*
+                localStorage.removeItem("tooltip_active");
+                localStorage.removeItem("text_besar");
+                localStorage.removeItem("text_kecil");
+                localStorage.removeItem("grey_scale_active");
+                localStorage.removeItem("action_kontras");
+                localStorage.removeItem("action_hidden_image");
+                localStorage.removeItem("perataan_text");
+                localStorage.removeItem("action_tulisan_dpt_dibaca");
+                localStorage.removeItem("action_line_height");
+                localStorage.removeItem("action_animate_pause");
+                localStorage.removeItem("action_kursor_change");
+                localStorage.removeItem("action_space_text");
+                localStorage.removeItem("action_link_all");*/
 
         if (getOS() == "Android") {
             $(".column_text_persegi_riset").cssImportant("font-size", "12px");
@@ -5387,9 +4958,6 @@ fill="#000000" stroke="none">
 
         $("#text_name_profile_widget").text('Profil Aksesbilitas');
     }
-
-
-
 
 
 
@@ -5512,38 +5080,55 @@ fill="#000000" stroke="none">
     }
 
     function no_active_button_link(id) {
-        var _el = document.querySelector(id);
-        if (_el && _el.classList.contains('active_box_profile_aksesbilitas')) {
-            _el.classList.remove("active_box_profile_aksesbilitas");
-            var _c1 = _el.querySelectorAll('.active_color_svg_content_profile_disabilitas');
-            for (var _i = 0; _i < _c1.length; _i++) _c1[_i].className = "color_svg_content_profile_disabilitas";
-            var _c2 = _el.querySelectorAll('.active_text_list_content_profile_disabilitas');
-            for (var _i = 0; _i < _c2.length; _i++) _c2[_i].className = "text_list_content_profile_disabilitas";
-            var _c3 = _el.querySelectorAll('.active_fill_icon_dsb');
-            for (var _i = 0; _i < _c3.length; _i++) _c3[_i].className = "fill_icon_dsb";
-            var _c4 = _el.querySelectorAll('.active_icon_list_content_profile_disabilitas');
-            for (var _i = 0; _i < _c4.length; _i++) _c4[_i].className = "icon_list_content_profile_disabilitas";
+        if ($(id).hasClass('active_box_profile_aksesbilitas')) {
+            $(id).removeClass("active_box_profile_aksesbilitas");
+            $(id + ' *').each(function (i, item) {
+                var name_class = item.classList.value;
+
+                if (name_class.includes("active_color_svg_content_profile_disabilitas")) {
+                    item.classList = "color_svg_content_profile_disabilitas";
+                }
+
+                if (name_class.includes("active_text_list_content_profile_disabilitas")) {
+                    item.classList = "text_list_content_profile_disabilitas";
+                }
+
+                if (name_class.includes("active_fill_icon_dsb")) {
+                    item.classList = "fill_icon_dsb";
+                }
+
+
+                if (name_class.includes("active_icon_list_content_profile_disabilitas")) {
+                    item.classList = "icon_list_content_profile_disabilitas";
+                }
+            });
         }
     }
 
 
 
 
-    var _allProfileIds = [
-        "action_gangguan_motorik","action_netra_total","action_buta_warna","action_disleksia",
-        "action_gangguan_pengelihatan","action_kognitif_pembelajaran","action_kejang_dan_epilepsi","action_adhd"
-    ];
-
     function reset_profile_all(action_reset) {
-        for (var _pi = 0; _pi < _allProfileIds.length; _pi++) {
-            var _$el = document.getElementById(_allProfileIds[_pi]);
-            if (_$el && _$el.classList.contains('active_box_profile_aksesbilitas')) {
-                no_active_button_link("#" + _allProfileIds[_pi]);
-            }
+
+        var all_id_profile = [
+            "action_gangguan_motorik",
+            "action_netra_total",
+            "action_buta_warna",
+            "action_disleksia",
+            "action_gangguan_pengelihatan",
+            "action_kognitif_pembelajaran",
+            "action_kejang_dan_epilepsi",
+            "action_adhd"
+        ]
+
+        for (let i = 0; i < all_id_profile.length; i++) {
+            var id_more = "#" + all_id_profile[i];
+            no_active_button_link(id_more);
         }
         if (action_reset == "all") {
             reset_all_perngaturan_widget();
         }
+
         localStorage.removeItem("action_widget_profil");
     }
 
@@ -5669,10 +5254,8 @@ fill="#000000" stroke="none">
 
 });
     
-if (base_url_website == "dprd.banjarmasinkota.go.id") {
-    $("#move_tooltip_data").css('display', 'none');
 }
-}
+
 
 
 
@@ -5736,18 +5319,14 @@ function callfunction(value) {
 
 async function speachmobile(value) {
     var voicecek = localStorage.getItem("permismobile");
-    var valueText = value;
     if (voicecek != null && voicecek == "on") {
-        console.log('masuk cc');
         if (api_key_google == undefined || api_key_google == "" || api_key_google == null) {
-            console.log('masuk woy');
             if (responsiveVoice.voiceSupport()) {
                 responsiveVoice.speak(value, "Indonesian Female");
             }
         } else if (api_key_google != undefined && api_key_google != null && api_key_google != "") {
-            console.log('masuk');
             const spanishResponse = await fetch(
-                `https://texttospeech.googleapis.com/v1/text:synthesize?key=${api_key_google}`,
+                `https://texttospeech.googleapis.com/v1/text:synthesize?key=${API_KEY}`,
                 {
                     method: "POST",
                     headers: {
@@ -5771,7 +5350,6 @@ async function speachmobile(value) {
 
             const spanishAudioData = await spanishResponse.json();
             var myaudionew = `data:audio/mp3;base64,${spanishAudioData.audioContent}`;
-         
             await playAudio(myaudionew);
         }
     }
@@ -5875,47 +5453,39 @@ function getOS() {
 
 
 
-function strip_batch_reset(version, id_group, stripCount) {
-    var $grp = $(id_group);
-    $grp.hide();
-    var proc = 'strip_loading_process_v' + version;
-    var unproc = 'strip_loading_unprocess_v' + version;
-    for (var _sb = 1; _sb <= stripCount; _sb++) {
-        $grp.children('#strip_loading_' + _sb).removeClass(proc).addClass(unproc);
-    }
-}
-
 function strip_loading_v2(id_group, id_strip, action) {
-    var $s = $(id_group + " > " + id_strip);
     if (action == "aktif") {
         $(id_group).show();
-        $s.removeClass('strip_loading_unprocess_v2').addClass('strip_loading_process_v2');
+        $(id_group + " > " + id_strip).removeClass('strip_loading_unprocess_v2');
+        $(id_group + " > " + id_strip).addClass('strip_loading_process_v2');
     } else {
         $(id_group).hide();
-        $s.removeClass('strip_loading_process_v2').addClass('strip_loading_unprocess_v2');
+        $(id_group + " > " + id_strip).removeClass('strip_loading_process_v2');
+        $(id_group + " > " + id_strip).addClass('strip_loading_unprocess_v2');
     }
 }
 
 function strip_loading_v3(id_group, id_strip, action) {
-    var $s = $(id_group + " > " + id_strip);
     if (action == "aktif") {
         $(id_group).show();
-        $s.removeClass('strip_loading_unprocess_v3').addClass('strip_loading_process_v3');
+        $(id_group + " > " + id_strip).removeClass('strip_loading_unprocess_v3');
+        $(id_group + " > " + id_strip).addClass('strip_loading_process_v3');
     } else {
         $(id_group).hide();
-        $s.removeClass('strip_loading_process_v3').addClass('strip_loading_unprocess_v3');
+        $(id_group + " > " + id_strip).removeClass('strip_loading_process_v3');
+        $(id_group + " > " + id_strip).addClass('strip_loading_unprocess_v3');
     }
 }
 
 function strip_loading_v4(id_group, id_strip, action) {
-    var $s = $(id_group + " > " + id_strip);
     if (action == "aktif") {
         $(id_group).show();
-        $s.removeClass('strip_loading_unprocess_v4').addClass('strip_loading_process_v4');
+        $(id_group + " > " + id_strip).removeClass('strip_loading_unprocess_v4');
+        $(id_group + " > " + id_strip).addClass('strip_loading_process_v4');
     } else {
         $(id_group).hide();
-        $(id_group).hide();
-        $s.removeClass('strip_loading_process_v4').addClass('strip_loading_unprocess_v4');
+        $(id_group + " > " + id_strip).removeClass('strip_loading_process_v4');
+        $(id_group + " > " + id_strip).addClass('strip_loading_unprocess_v4');
     }
 }
 
@@ -6176,9 +5746,17 @@ function action_perataan_text_1_2(value, action) {
 
 
         } else {
-            $(".underline_tanda_code").css({"text-decoration-color":"","text-decoration":""}).removeClass("underline_tanda_code underline_link_1_kontras underline_link_1");
-            $(".underline_link_1_kontras").removeClass("underline_link_1_kontras");
-            $(".underline_link_1").removeClass("underline_link_1");
+            $("*").each(function (i, item) {
+                if ($(item).hasClass('underline_tanda_code')) {
+                    $(item).css({
+                        "text-decoration-color": "",
+                        "text-decoration": ""
+                    });
+                    $(item).removeClass("underline_tanda_code underline_link_1_kontras underline_link_1 ");
+                }
+                $(item).removeClass("underline_link_1_kontras underline_link_1 ");
+
+            });
 
         }
     } else if (value == "rata2") {
@@ -6212,12 +5790,28 @@ function action_perataan_text_1_2(value, action) {
 
 
         } else {
-            if (action_contrash_widget.length == 2 || action_contrash_widget.length == 3) {
-                $(".underline_tanda_code").css({"text-decoration-color":"","text-decoration":""}).removeClass("underline_tanda_code underline_link_2");
-            } else {
-                $(".underline_tanda_code").css({"text-decoration-color":"","background-color":"","background":"","text-decoration":"","color":""}).removeClass("underline_tanda_code underline_link_2");
-            }
-            $(".underline_link_2").removeClass("underline_link_2");
+            $("*").each(function (i, item) {
+                if ($(item).hasClass('underline_tanda_code')) {
+                    if (action_contrash_widget.length == 2 || action_contrash_widget.length == 3) {
+                        $(item).css({
+                            "text-decoration-color": "",
+                            "text-decoration": ""
+                        });
+                    } else {
+                        $(item).css({
+                            "text-decoration-color": "",
+                            "background-color": "",
+                            "background": "",
+                            "text-decoration": "",
+                            "color": "",
+                            "text-decoration-color": ""
+                        });
+                    }
+                    $(item).removeClass("underline_tanda_code underline_link_2");
+                }
+                $(item).removeClass("underline_link_2 ");
+
+            });
 
         }
 
@@ -6239,20 +5833,20 @@ function load_active_tulisan_line_height() {
 }
 
 
-function _applyLineHeight(val) {
-    var els = _getWebElements(null);
-    for (var i = 0; i < els.length; i++) {
-        els[i].style.setProperty('line-height', val, 'important');
-    }
-}
-
 function action_line_height_1() {
     $("#list_strip_loading_action_tulisan_line_height").show();
     strip_loading_v3("#list_strip_loading_action_tulisan_line_height", "#strip_loading_1", "aktif");
-    _applyLineHeight("1.75em");
+    $('*:not("#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,#widget_menu_disabilitas,body,html,#slider_dsb_element")').each(function (i, item) {
+        $(item).cssImportant("line-height", "1.75em");
+    });
     $("#text_id_tinggi_garis").text("Tinggi Garis (1.75X)");
+
+    $("#list_strip_loading_action_tulisan_line_height").show();
+
     if (cek_action_sound_search.length > 0) {
-        setTimeout(function() { callfunction('Tinggi Garis (1.75X)'); }, 100);
+        setTimeout(() => {
+            callfunction('Tinggi Garis (1.75X)');
+        }, 100);
     }
 }
 
@@ -6260,22 +5854,35 @@ function action_line_height_2() {
     $("#list_strip_loading_action_tulisan_line_height").show();
     strip_loading_v3("#list_strip_loading_action_tulisan_line_height", "#strip_loading_1", "aktif");
     strip_loading_v3("#list_strip_loading_action_tulisan_line_height", "#strip_loading_2", "aktif");
-    _applyLineHeight("2em");
+    $('*:not("#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,#widget_menu_disabilitas,body,html,#slider_dsb_element")').each(function (i, item) {
+        $(item).cssImportant("line-height", "2em");
+    });
+
     $("#text_id_tinggi_garis").text("Tinggi Garis (2X)");
+
     if (cek_action_sound_search.length > 0) {
-        setTimeout(function() { callfunction('Tinggi Garis (2X)'); }, 100);
+        setTimeout(() => {
+            callfunction('Tinggi Garis (2X)');
+        }, 100);
     }
 }
+
+
 
 function action_line_height_3() {
     $("#list_strip_loading_action_tulisan_line_height").show();
     strip_loading_v3("#list_strip_loading_action_tulisan_line_height", "#strip_loading_1", "aktif");
     strip_loading_v3("#list_strip_loading_action_tulisan_line_height", "#strip_loading_2", "aktif");
     strip_loading_v3("#list_strip_loading_action_tulisan_line_height", "#strip_loading_3", "aktif");
-    _applyLineHeight("2.5em");
+    $('*:not("#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,#widget_menu_disabilitas,body,html,#slider_dsb_element")').each(function (i, item) {
+        $(item).cssImportant("line-height", "2.5em");
+    });
+
     $("#text_id_tinggi_garis").text("Tinggi Garis (2.5X)");
     if (cek_action_sound_search.length > 0) {
-        setTimeout(function() { callfunction('Tinggi Garis (2.5X)'); }, 100);
+        setTimeout(() => {
+            callfunction('Tinggi Garis (2.5X)');
+        }, 100);
     }
 }
 
@@ -6299,100 +5906,160 @@ function load_active_kontras() {
 }
 
 
-var _kontrasExclude = '.btn-color-mode-switch-inner,.mycheckbox,.Vue-Toastification__container,.slider-navigation,.box_data_permohonan,.columncopyright,.slick-next,.slick-prev,.form_all_daftar_menu_permohonan,.row_column_creator';
-
-function _kontrasApplyBorderWhite() {
-    var els = _getWebElements('.fa-search,.titletools,svg,' + _kontrasExclude);
-    for (var i = 0; i < els.length; i++) {
-        els[i].style.setProperty('border-color', 'white', 'important');
-    }
-}
-
 function action_warna_kode_2(value) {
+
     if (value == "aktif") {
         $("body").removeClass("animsition");
         $(".navbar-inverse2").css("background-color", "rgb(0, 0, 0)");
+        $(
+            `*:not(".btn-color-mode-switch-inner,.mycheckbox,.Vue-Toastification__container,.slider-navigation,.box_data_permohonan,.columncopyright,.slick-next,.slick-prev,.form_all_daftar_menu_permohonan,
+        .container_menu_all > .grouprow,.container_menu_all > .stylecolumnsosmed,#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,.row_column_creator *,
+        * > a
+        ")`
+        ).each(function (i, item) {
 
-        var els = _getWebElements(_kontrasExclude);
-        for (var i = 0; i < els.length; i++) {
-            var el = els[i];
-            var t = el.tagName;
-            if (t === 'A') {
-                if (el.hasAttribute('style')) {
-                    el.classList.add("kontras_2_bg_black_yellow");
-                } else {
-                    el.classList.add("kontras_2_tanda_code");
-                    el.style.setProperty('background-color', 'black', 'important');
-                    el.style.setProperty('color', 'yellow', 'important');
-                    el.style.setProperty('background', 'black', 'important');
-                }
+            var attr_cek = $(item).attr('style');
+            if (typeof attr_cek !== 'undefined' && attr_cek !== false) {
+                $(item).addClass("kontras_2_bg_black_green");
             } else {
-                if (el.hasAttribute('style')) {
-                    el.classList.add("kontras_2_bg_black_green");
-                } else {
-                    el.classList.add("kontras_2_tanda_code");
-                    el.style.setProperty('background-color', 'black', 'important');
-                    el.style.setProperty('color', '#40C090', 'important');
-                    el.style.setProperty('background', 'black', 'important');
-                }
+                $(item).addClass("kontras_2_tanda_code");//ini tanda
+                $(item).cssImportant("background-color", "black");
+                $(item).cssImportant("color", "#40C090");
+                $(item).cssImportant("background", "black");
             }
-        }
 
-        var svgEls = document.querySelectorAll('svg *:not(#widget_menu_disabilitas svg *):not(.circle_aksesbilitas_popup svg *)');
-        for (var si = 0; si < svgEls.length; si++) {
-            svgEls[si].style.setProperty('color', '#40C090', 'important');
-        }
+
+        });
+
+
+        $(
+            `* > svg *:not(".btn-color-mode-switch-inner,.mycheckbox,.Vue-Toastification__container,.slider-navigation,.box_data_permohonan,.columncopyright,.slick-next,.slick-prev,.form_all_daftar_menu_permohonan,
+        .container_menu_all > .grouprow,.container_menu_all > .stylecolumnsosmed,#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,.row_column_creator *
+        ")`
+        ).each(function (i, item) {
+            $(item).cssImportant("color", "#40C090");
+        });
+
 
         $('* > .border').each(function (i, item) {
-            item.style.setProperty('background-color', '', '');
-            item.style.setProperty('background', '', '');
+            $(item).cssImportant("background-color", "");
+            $(item).cssImportant("background", "");
         });
 
         $(".close_layout_banner_background").css("opacity", "1");
-        _kontrasApplyBorderWhite();
-
+        $(
+            '*:not(".fa-search,.titletools,svg,.btn-color-mode-switch-inner,.Vue-Toastification__container,#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,.row_column_creator *")'
+        ).cssImportant("border-color", "white");
         var links = document.querySelectorAll("a,div,li a strong");
-        for (var li = 0; li < links.length; li++) {
-            if (_isWidgetEl(links[li])) continue;
-            if (!isBlank(links[li].href)) {
-                if (!links[li].hasAttribute('style')) {
-                    if (!links[li].classList.contains('kontras_2_tanda_code')) {
-                        links[li].classList.add("kontras_2_tanda_code");
+        for (var i = 0; i < links.length; i++) {
+            if (!isBlank(links[i].href)) {
+                var attr_cek = $(links[i]).attr('style');
+                if (typeof attr_cek !== 'undefined' && attr_cek !== false) {
+                    // $(links[i]).addClass("kontras_2_bg_href");
+
+                } else {
+                    if (!$(links[i]).hasClass('kontras_2_tanda_code')) {
+                        $(links[i]).addClass("kontras_2_tanda_code");
                     }
-                    links[li].style.setProperty('color', '#00f3f7', 'important');
+                    links[i].style.color = "#00f3f7 !important";
                 }
+
+
             }
         }
+
+
+
+        $("h1,h2,h3,h4,h5").each(function (i, item) {
+            var cek_style = $(item).attr('style');
+            if (typeof cek_style !== 'undefined' && cek_style !== false) {
+                $(item).addClass("kontras_2_bg_black_green");
+            } else {
+                $(item).addClass("kontras_2_tanda_code");
+                $(item).cssImportant("background-color", "black");
+                $(item).cssImportant("color", "#40C090");
+                $(item).cssImportant("background", "black");
+            }
+        });
+
+
+        $("* > button, * > p").each(function (i, item) {
+            var cek_style = $(item).attr('style');
+            if (typeof cek_style !== 'undefined' && cek_style !== false) {
+                $(item).addClass("kontras_2_bg_black_green");
+            } else {
+                $(item).addClass("kontras_2_tanda_code");
+                $(item).cssImportant("background-color", "black");
+                $(item).cssImportant("color", "#40C090");
+                $(item).cssImportant("background", "black");
+            }
+        });
+
+
+
+        $("* > a").each(function (i, item) {
+            var cek_style = $(item).attr('style');
+            if (typeof cek_style !== 'undefined' && cek_style !== false) {
+
+                $(item).addClass("kontras_2_bg_black_yellow");
+            } else {
+                $(item).addClass("kontras_2_tanda_code");
+                $(item).cssImportant("background-color", "black");
+                $(item).cssImportant("color", "yellow");
+                $(item).cssImportant("background", "black");
+            }
+        });
 
         if (action_garis_bawahi_tautan_widget.length > 0) {
             if (action_garis_bawahi_tautan_widget.length == 1) {
                 action_perataan_text_1_2("rata1", "aktif");
                 action_perataan_text_1_2("rata2", "noaktif");
             }
+
             if (action_garis_bawahi_tautan_widget.length == 2) {
                 action_perataan_text_1_2("rata1", "noaktif");
+
                 action_perataan_text_1_2("rata2", "aktif");
             }
         }
 
+
+
     } else {
-        $(".kontras_2_tanda_code").css({"background-color":"","background":"","color":"","opacity":""}).removeClass("kontras_2_tanda_code");
-        $(".kontras_2_bg_black_yellow").removeClass("kontras_2_bg_black_yellow");
-        $(".kontras_2_bg_black_green").removeClass("kontras_2_bg_black_green");
-        $(".kontras_2_bg_href").removeClass("kontras_2_bg_href");
+        $('*:not("#widget_menu_disabilitas *")').each(function (i, item) {
+            if ($(item).hasClass('kontras_2_tanda_code')) {
+                $(item).css({
+                    "background-color": "",
+                    "background": "",
+                    "color": "",
+                    "opacity": ""
+                });
+                $(item).removeClass("kontras_2_tanda_code");
+            }
+            $(item).removeClass("kontras_2_bg_black_yellow kontras_2_bg_black_green kontras_2_bg_href");
+        });
 
-        var _opEls = document.querySelectorAll('[style]');
-        for (var _oi = 0; _oi < _opEls.length; _oi++) {
-            if (!_opEls[_oi].closest('#widget_menu_disabilitas')) _opEls[_oi].style.opacity = '';
-        }
 
-        $('[style]:not(.fa-search):not(.titletools):not(svg):not(.btn-color-mode-switch-inner):not(.Vue-Toastification__container)').cssImportant("border-color", "");
-        $("svg *[style]").css("color", "");
+        $("*:not('#widget_menu_disabilitas *')").each(function (i, item) {
+            $(item).css({
 
-        var _stEls = document.querySelectorAll('[style]:not(#widget_menu_disabilitas):not(#widget_menu_disabilitas *)');
-        for (var _sti = 0; _sti < _stEls.length; _sti++) {
-            if (!_stEls[_sti].style[0]) _stEls[_sti].removeAttribute("style");
-        }
+                "opacity": ""
+            });
+        });
+
+        $('*:not(".fa-search,.titletools,svg,.btn-color-mode-switch-inner,.Vue-Toastification__container")').cssImportant("border-color", "");
+        $("* > svg *").each(function (i, item) {
+            $(item).css({
+                "color": "",
+            });
+        });
+
+        $("*:not('#widget_menu_disabilitas *')").each(function (i, item) {
+            var my_style = $(item)[0]['style']['0'];
+            if (my_style == undefined || my_style == null || my_style == "") {
+                $(item).removeAttr("style");
+            }
+        });
     }
 }
 
@@ -6403,114 +6070,203 @@ function action_warna_kode_3(value) {
         $("body").removeClass("animsition");
         $(".navbar-inverse2").css("background-color", "rgb(0, 0, 0)");
 
-        var els = _getWebElements(_kontrasExclude);
-        for (var i = 0; i < els.length; i++) {
-            var el = els[i];
-            if (el.hasAttribute('style')) {
-                el.classList.add("kontras_3_bg_black_yellow");
+        $(
+            `*:not(".btn-color-mode-switch-inner,.mycheckbox,.Vue-Toastification__container,.slider-navigation,.box_data_permohonan,.columncopyright,.slick-next,.slick-prev,.form_all_daftar_menu_permohonan,
+        .container_menu_all > .grouprow,.container_menu_all > .stylecolumnsosmed,#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,.row_column_creator *
+        ")`
+        ).each(function (i, item) {
+            var attr_cek = $(item).attr('style');
+            if (typeof attr_cek !== 'undefined' && attr_cek !== false) {
+                $(item).addClass("kontras_3_bg_black_yellow");
             } else {
-                el.classList.add("kontras_3_tanda_code");
-                el.style.setProperty('background-color', 'black', 'important');
-                el.style.setProperty('color', 'yellow', 'important');
-                el.style.setProperty('background', 'black', 'important');
+                $(item).addClass("kontras_3_tanda_code");//ini tanda
+                $(item).cssImportant("background-color", "black");
+                $(item).cssImportant("color", "yellow");
+                $(item).cssImportant("background", "black");
             }
-        }
+        });
 
-        var svgEls = document.querySelectorAll('svg *:not(#widget_menu_disabilitas svg *):not(.circle_aksesbilitas_popup svg *)');
-        for (var si = 0; si < svgEls.length; si++) {
-            svgEls[si].style.setProperty('color', 'yellow', 'important');
-        }
+        $(
+            `* > svg *:not(".btn-color-mode-switch-inner,.mycheckbox,.Vue-Toastification__container,.slider-navigation,.box_data_permohonan,.columncopyright,.slick-next,.slick-prev,.form_all_daftar_menu_permohonan,
+        .container_menu_all > .grouprow,.container_menu_all > .stylecolumnsosmed,#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,.row_column_creator *
+        ")`
+        ).each(function (i, item) {
+            $(item).cssImportant("color", "yellow");
+
+        });
 
         $(".close_layout_banner_background").css("opacity", "1");
-        _kontrasApplyBorderWhite();
+
+        $(
+            '*:not(".fa-search,.titletools,svg,.btn-color-mode-switch-inner,.columncopyright,#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,.row_column_creator *")'
+        ).cssImportant("border-color", "white");
+
+
 
         if (action_garis_bawahi_tautan_widget.length > 0) {
             if (action_garis_bawahi_tautan_widget.length == 1) {
                 action_perataan_text_1_2("rata1", "aktif");
                 action_perataan_text_1_2("rata2", "noaktif");
             }
+
             if (action_garis_bawahi_tautan_widget.length == 2) {
                 action_perataan_text_1_2("rata1", "noaktif");
                 action_perataan_text_1_2("rata2", "aktif");
             }
         }
 
+
+
+
     } else {
-        $(".kontras_3_tanda_code").css({"background-color":"","background":"","color":"","opacity":""}).removeClass("kontras_3_tanda_code");
-        $(".kontras_3_bg_black_yellow").removeClass("kontras_3_bg_black_yellow");
+        $('*:not("#widget_menu_disabilitas *")').each(function (i, item) {
+            if ($(item).hasClass('kontras_3_tanda_code')) {
+                $(item).css({
+                    "background-color": "",
+                    "background": "",
+                    "color": "",
+                    "opacity": "",
+                });
 
-        var _stEls3 = document.querySelectorAll('[style]:not(#widget_menu_disabilitas):not(#widget_menu_disabilitas *)');
-        for (var _st3i = 0; _st3i < _stEls3.length; _st3i++) {
-            if (!_stEls3[_st3i].style[0]) _stEls3[_st3i].removeAttribute("style");
-        }
+                $(item).removeClass("kontras_3_tanda_code");
+            }
+            $(item).removeClass("kontras_3_bg_black_yellow");
+        });
 
-        $('[style]:not(.fa-search):not(.titletools):not(svg):not(.btn-color-mode-switch-inner):not(.Vue-Toastification__container)').cssImportant("border-color", "");
-        $("svg *[style]").css("color", "");
-        var _opEls3 = document.querySelectorAll('[style]');
-        for (var _o3i = 0; _o3i < _opEls3.length; _o3i++) {
-            if (!_opEls3[_o3i].closest('#widget_menu_disabilitas')) _opEls3[_o3i].style.opacity = '';
-        }
+        $("*:not('#widget_menu_disabilitas *')").each(function (i, item) {
+            var my_style = $(item)[0]['style']['0'];
+            if (my_style == undefined || my_style == null || my_style == "") {
+                $(item).removeAttr("style");
+            }
+        });
+
+        $('*:not(".fa-search,.titletools,svg,.btn-color-mode-switch-inner,.Vue-Toastification__container")').cssImportant("border-color", "");
+        $("* > svg *").each(function (i, item) {
+            $(item).css({
+                "color": "",
+            });
+        });
+        $("*:not('#widget_menu_disabilitas *')").each(function (i, item) {
+            $(item).css({
+
+                "opacity": ""
+            });
+        });
     }
 }
 
 function action_warna_kode_4(value) {
     if (value == "aktif") {
         $("body").removeClass("animsition");
-
-        var els = _getWebElements(_kontrasExclude);
-        for (var i = 0; i < els.length; i++) {
-            var el = els[i];
-            if (el.hasAttribute('style')) {
-                el.classList.add("kontras_4_bg_black_white");
+        $(
+            `*:not(".btn-color-mode-switch-inner,.mycheckbox,.Vue-Toastification__container,.slider-navigation,.box_data_permohonan,.columncopyright,.slick-next,.slick-prev,.form_all_daftar_menu_permohonan,
+        .container_menu_all > .grouprow,.container_menu_all > .stylecolumnsosmed,#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,.row_column_creator *
+        ")`
+        ).each(function (i, item) {
+            var attr_cek = $(item).attr('style');
+            if (typeof attr_cek !== 'undefined' && attr_cek !== false) {
+                $(item).addClass("kontras_4_bg_black_white");
             } else {
-                el.classList.add("kontras_4_tanda_code");
-                el.style.setProperty('color', 'black', 'important');
-                el.style.setProperty('background-color', 'white', 'important');
-                el.style.setProperty('background', 'white', 'important');
+                $(item).addClass("kontras_4_tanda_code");//ini tanda
+                $(item).cssImportant("color", "black");
+                $(item).cssImportant("background-color", "white");
+                $(item).cssImportant("background", "white");
             }
-        }
+        });
 
-        var svgChildren = document.querySelectorAll('svg *:not(#widget_menu_disabilitas svg *):not(.circle_aksesbilitas_popup svg *)');
-        for (var si = 0; si < svgChildren.length; si++) {
-            svgChildren[si].style.setProperty('color', 'black', 'important');
-        }
+        $(
+            `* > svg *:not(".btn-color-mode-switch-inner,.mycheckbox,.Vue-Toastification__container,.slider-navigation,.box_data_permohonan,.columncopyright,.slick-next,.slick-prev,.form_all_daftar_menu_permohonan,
+        .container_menu_all > .grouprow,.container_menu_all > .stylecolumnsosmed,#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,.row_column_creator *
+        ")`
+        ).each(function (i, item) {
+            $(item).cssImportant("color", "black");
+        });
 
-        var svgRoots = document.querySelectorAll('svg:not(#widget_menu_disabilitas svg):not(.circle_aksesbilitas_popup svg)');
-        for (var sr = 0; sr < svgRoots.length; sr++) {
-            svgRoots[sr].style.setProperty('color', 'black', 'important');
-            svgRoots[sr].style.backgroundColor = '';
-            svgRoots[sr].style.background = '';
-        }
+
+        $(
+            `* > svg:not(".btn-color-mode-switch-inner,.mycheckbox,.Vue-Toastification__container,.slider-navigation,.box_data_permohonan,.columncopyright,.slick-next,.slick-prev,.form_all_daftar_menu_permohonan,
+      .container_menu_all > .grouprow,.container_menu_all > .stylecolumnsosmed,#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,.row_column_creator *
+      ")`
+        ).each(function (i, item) {
+            $(item).cssImportant("color", "black");
+            $(item).css({
+
+                "background-color": "",
+                "background": "",
+            });
+        });
 
         if (action_garis_bawahi_tautan_widget.length > 0) {
             if (action_garis_bawahi_tautan_widget.length == 1) {
                 action_perataan_text_1_2("rata1", "aktif");
                 action_perataan_text_1_2("rata2", "noaktif");
             }
+
             if (action_garis_bawahi_tautan_widget.length == 2) {
                 action_perataan_text_1_2("rata1", "noaktif");
                 action_perataan_text_1_2("rata2", "aktif");
             }
         }
 
+
     } else {
-        $(".kontras_4_tanda_code").css({"background-color":"","background":"","color":"","opacity":""}).removeClass("kontras_4_tanda_code");
-        $(".kontras_4_bg_black_white").removeClass("kontras_4_bg_black_white");
+        $("*:not('#widget_menu_disabilitas *')").each(function (i, item) {
+            if ($(item).hasClass('kontras_4_tanda_code')) {
+                $(item).css({
+                    "background-color": "",
+                    "background": "",
+                    "color": "",
+                    "opacity": "",
+                });
 
-        $('[style]:not(.fa-search):not(.titletools):not(svg):not(.btn-color-mode-switch-inner):not(.Vue-Toastification__container)').cssImportant("border-color", "");
-        $("svg *[style]").css("color", "");
-        $("svg[style]:not(#widget_menu_disabilitas svg):not(.circle_aksesbilitas_popup svg)").css({"color":"","background-color":"","background":""});
+                $(item).removeClass("kontras_4_tanda_code");
+            }
+            $(item).removeClass("kontras_4_bg_black_white");
 
-        var _opEls4 = document.querySelectorAll('[style]');
-        for (var _o4i = 0; _o4i < _opEls4.length; _o4i++) {
-            if (!_opEls4[_o4i].closest('#widget_menu_disabilitas')) _opEls4[_o4i].style.opacity = '';
-        }
+        });
 
-        var _stEls4 = document.querySelectorAll('[style]:not(#widget_menu_disabilitas):not(#widget_menu_disabilitas *)');
-        for (var _st4i = 0; _st4i < _stEls4.length; _st4i++) {
-            if (!_stEls4[_st4i].style[0]) _stEls4[_st4i].removeAttribute("style");
-        }
+
+
+        $('*:not(".fa-search,.titletools,svg,.btn-color-mode-switch-inner,.Vue-Toastification__container")').cssImportant("border-color", "");
+        $(
+            `* > svg *:not(".btn-color-mode-switch-inner,.mycheckbox,.Vue-Toastification__container,.slider-navigation,.box_data_permohonan,.columncopyright,.slick-next,.slick-prev,.form_all_daftar_menu_permohonan,
+        .container_menu_all > .grouprow,.container_menu_all > .stylecolumnsosmed,#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,.row_column_creator *
+        ")`
+        ).each(function (i, item) {
+            $(item).css({
+                "color": "",
+            });
+        });
+
+
+        $(
+            `* > svg:not(".btn-color-mode-switch-inner,.mycheckbox,.Vue-Toastification__container,.slider-navigation,.box_data_permohonan,.columncopyright,.slick-next,.slick-prev,.form_all_daftar_menu_permohonan,
+      .container_menu_all > .grouprow,.container_menu_all > .stylecolumnsosmed,#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,.row_column_creator *
+      ")`
+        ).each(function (i, item) {
+            $(item).css({
+                "color": "",
+                "background-color": "",
+                "background": "",
+            });
+        });
+
+        $("*:not('#widget_menu_disabilitas *')").each(function (i, item) {
+            $(item).css({
+
+                "opacity": ""
+            });
+        });
+
+        $("*:not('#widget_menu_disabilitas *')").each(function (i, item) {
+            var my_style = $(item)[0]['style']['0'];
+            if (my_style == undefined || my_style == null || my_style == "") {
+                $(item).removeAttr("style");
+            }
+        });
+
     }
+
 }
 
 
@@ -6545,20 +6301,28 @@ function load_active_tulisan_dpt_dibaca() {
     $("#action_tulisan_dapat_di_baca").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas');
 }
 function active_action_ramah_dyseleksia() {
+
     $("#svg_font_di_perbesar").hide();
     $("#svg_dy_seleksia").show();
+
+
     $("#list_strip_loading_action_tulisan_dapat_dibaca").show();
     strip_loading_v2("#list_strip_loading_action_tulisan_dapat_dibaca", "#strip_loading_1", "aktif");
 
-    var els = _getWebElements('i,.fa,.fa-search,.fa-angle-down,.fa-chevron-down');
-    for (var _i = 0; _i < els.length; _i++) {
-        els[_i].style.setProperty('font-family', 'OpenDyslexic Bold', 'important');
-    }
+    $('*:not("i *,i, .stylecolumnsosmed,.stylecolumnsosmed *,.fa-search,.toolbar-disabilitas  *,.fa,.fa-angle-down,#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,.class_utama_dropdown .fa-chevron-down")').each(function (i, item) {
+        $(item).cssImportant("font-family", "OpenDyslexic Bold");
+    })
+
+
+
 }
 
 function active_action_tulisan_dapat_dibaca() {
-    var _ffEls = document.querySelectorAll('[style]');
-    for (var _ffi = 0; _ffi < _ffEls.length; _ffi++) _ffEls[_ffi].style.fontFamily = '';
+
+
+    $('*').css({
+        "font-family": "",
+    });
 
     $("#svg_dy_seleksia").hide();
     $("#svg_font_di_perbesar").show();
@@ -6568,20 +6332,34 @@ function active_action_tulisan_dapat_dibaca() {
     strip_loading_v2("#list_strip_loading_action_tulisan_dapat_dibaca", "#strip_loading_2", "aktif");
 
     $("#action_tulisan_dapat_di_baca").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas');
+    /* $(
+         '*:not(".fa-search,.toolbar-disabilitas  *,.fa,.fa-angle-down, h1 ,h2 , h3,#widget_menu_disabilitas *,.circle_aksesbilitas_popup *")'
+     ).css({
+         "font-size": "18px",
+     });
+ 
+     $("h1,h2,h3,h4").css({
+         "font-size": "50px",
+     });*/
 
-    var els = _getWebElements('i,.fa,.fa-search,.fa-angle-down,.fa-chevron-down');
-    for (var _i = 0; _i < els.length; _i++) {
-        els[_i].style.setProperty('font-family', 'Arial, serif', 'important');
-    }
+
+
+    $('*:not("i *,i, .stylecolumnsosmed,.stylecolumnsosmed *,.fa-search,.toolbar-disabilitas  *,.fa,.fa-angle-down,#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,.class_utama_dropdown .fa-chevron-down")').each(function (i, item) {
+        $(item).cssImportant("font-family", "Arial Serif");
+    })
+
 }
 function no_active_action_tulisan_dapat_dibaca() {
-    var _allStyled = document.querySelectorAll('[style]');
-    for (var _nai = 0; _nai < _allStyled.length; _nai++) {
-        _allStyled[_nai].style.fontFamily = '';
-        _allStyled[_nai].style.fontSize = '';
-        _allStyled[_nai].style.removeProperty('font-family');
-        _allStyled[_nai].style.removeProperty('font-size');
-    }
+
+    $('*').css({
+        "font-family": "",
+        "font-size": "",
+
+    });
+    $('*').each(function (i, item) {
+        $(item).cssImportant("font-family", "");
+        $(item).cssImportant("font-size", "");
+    })
 }
 
 function load_active_space_text() {
@@ -6594,20 +6372,18 @@ function load_active_space_text() {
     });
     $("#action_space_text").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas');
 }
-function _applyLetterSpacing(val) {
-    var els = _getWebElements(null);
-    for (var i = 0; i < els.length; i++) {
-        els[i].style.setProperty('letter-spacing', val, 'important');
-    }
-}
-
 function action_space_text_1() {
     $("#list_strip_loading_action_space_text").show();
     strip_loading_v3("#list_strip_loading_action_space_text", "#strip_loading_1", "aktif");
     $("#id_space_text").text("Spasi Ringan");
-    _applyLetterSpacing("1px");
+    $('div > *:not("#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,#widget_menu_disabilitas")').css({
+        "letter-spacing": "1px",
+    });
+
     if (cek_action_sound_search.length > 0) {
-        setTimeout(function() { callfunction("Spasi Ringan"); }, 100);
+        setTimeout(() => {
+            callfunction("Spasi Ringan");
+        }, 100);
     }
 }
 function action_space_text_2() {
@@ -6615,9 +6391,14 @@ function action_space_text_2() {
     strip_loading_v3("#list_strip_loading_action_space_text", "#strip_loading_1", "aktif");
     strip_loading_v3("#list_strip_loading_action_space_text", "#strip_loading_2", "aktif");
     $("#id_space_text").text("Spasi Sedang");
-    _applyLetterSpacing("4px");
+
+    $('div > *:not("#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,#widget_menu_disabilitas")').css({
+        "letter-spacing": "4px",
+    });
     if (cek_action_sound_search.length > 0) {
-        setTimeout(function() { callfunction("Spasi Sedang"); }, 100);
+        setTimeout(() => {
+            callfunction("Spasi Sedang");
+        }, 100);
     }
 }
 function action_space_text_3() {
@@ -6626,9 +6407,15 @@ function action_space_text_3() {
     strip_loading_v3("#list_strip_loading_action_space_text", "#strip_loading_2", "aktif");
     strip_loading_v3("#list_strip_loading_action_space_text", "#strip_loading_3", "aktif");
     $("#id_space_text").text("Spasi Besar");
-    _applyLetterSpacing("7px");
+
+    $('div > *:not("#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,#widget_menu_disabilitas")').css({
+        "letter-spacing": "7px",
+    });
+
     if (cek_action_sound_search.length > 0) {
-        setTimeout(function() { callfunction("Spasi Besar"); }, 100);
+        setTimeout(() => {
+            callfunction("Spasi Besar");
+        }, 100);
     }
 }
 function load_active_perataan_text() {
@@ -6728,119 +6515,137 @@ function action_perataan_text_4() {
 }
 
 
-var _wElCache = null, _cElCache = null, _sElCache = null;
-function _getWidgetRoots() {
-    if (!_wElCache) _wElCache = document.getElementById('widget_menu_disabilitas');
-    if (!_cElCache) _cElCache = document.querySelector('.circle_aksesbilitas_popup');
-    if (!_sElCache) _sElCache = document.getElementById('slider_dsb_element');
-    return { w: _wElCache, c: _cElCache, s: _sElCache };
-}
-
-function _isWidgetEl(el) {
-    var r = _getWidgetRoots();
-    return (r.w && (el === r.w || r.w.contains(el))) ||
-           (r.c && (el === r.c || r.c.contains(el))) ||
-           (r.s && (el === r.s || r.s.contains(el)));
-}
-
-function _getWebElements(extraMatchStr) {
-    var _all = document.body.querySelectorAll('*');
-    var _result = [];
-    for (var _i = 0; _i < _all.length; _i++) {
-        var _e = _all[_i];
-        var t = _e.tagName;
-        if (t === 'HTML' || t === 'BODY' || t === 'HEAD' || t === 'SCRIPT' || t === 'STYLE' || t === 'LINK' || t === 'META') continue;
-        if (_isWidgetEl(_e)) continue;
-        if (extraMatchStr) {
-            try { if (_e.matches(extraMatchStr)) continue; } catch(ex) {}
-        }
-        _result.push(_e);
-    }
-    return _result;
-}
-
-function _getAlignableElements() {
-    return _getWebElements(null);
-}
-
 function perataan_all_text(value, action) {
     if (value == "kiri") {
         if (action == "aktif") {
-            var _els = _getAlignableElements();
-            for (var _i = 0; _i < _els.length; _i++) {
-                var _e = _els[_i];
-                if (_e.hasAttribute('style')) {
-                    _e.classList.add('rata_text_kiri_widget');
-                    if (window.getComputedStyle(_e).flexDirection == "row") _e.classList.add('rata_column_kiri_widget');
+            $('*:not("#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,#slider_dsb_element,#slider_dsb_element *")').each(function (i, item) {
+                var cek_style = $(item).attr('style');
+                if (typeof cek_style !== 'undefined' && cek_style !== false) {
+                    $(item).addClass('rata_text_kiri_widget');
+                    if ($(item).css("flex-direction") == "row") {
+                        $(item).addClass('rata_column_kiri_widget');
+                    }
                 } else {
-                    _e.classList.add("perataan_tanda_code");
-                    _e.style.setProperty("text-align", "left", "important");
-                    if (window.getComputedStyle(_e).flexDirection == "row") _e.style.setProperty("justify-content", "flex-start", "important");
+                    $(item).addClass("perataan_tanda_code");
+                    $(item).cssImportant("text-align", "left");
+                    if ($(item).css("flex-direction") == "row") {
+                        $(item).cssImportant("justify-content", "flex-start");
+                    }
                 }
-            }
+            });
         } else {
-            $(".perataan_tanda_code").css({"text-align":"","justify-content":""}).removeClass("perataan_tanda_code");
-            $(".rata_text_kiri_widget").removeClass("rata_text_kiri_widget");
-            $(".rata_column_kiri_widget").removeClass("rata_column_kiri_widget");
+            $("*").each(function (i, item) {
+                if ($(item).hasClass('perataan_tanda_code')) {
+                    $(item).css({
+                        "text-align": "",
+                        "justify-content": ""
+                    });
+
+                    $(item).removeClass("perataan_tanda_code");
+                } else {
+                    $(item).removeClass("rata_text_kiri_widget rata_column_kiri_widget");
+                }
+            });
         }
 
     } else if (value == "tengah") {
         if (action == "aktif") {
-            var _els = _getAlignableElements();
-            for (var _i = 0; _i < _els.length; _i++) {
-                var _e = _els[_i];
-                if (_e.hasAttribute('style')) {
-                    _e.classList.add('rata_text_tengah_widget');
-                    if (window.getComputedStyle(_e).flexDirection == "row") _e.classList.add('rata_column_tengah_widget');
+            $('*:not("#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,#slider_dsb_element,#slider_dsb_element *")').each(function (i, item) {
+
+                var cek_style = $(item).attr('style');
+                if (typeof cek_style !== 'undefined' && cek_style !== false) {
+                    $(item).addClass('rata_text_tengah_widget');
+                    if ($(item).css("flex-direction") == "row") {
+                        $(item).addClass('rata_column_tengah_widget');
+                    }
                 } else {
-                    _e.classList.add("perataan_tanda_code");
-                    _e.style.setProperty("text-align", "center", "important");
-                    if (window.getComputedStyle(_e).flexDirection == "row") _e.style.setProperty("justify-content", "center", "important");
+                    $(item).addClass("perataan_tanda_code");
+                    $(item).cssImportant("text-align", "center");
+                    if ($(item).css("flex-direction") == "row") {
+                        $(item).cssImportant("justify-content", "center");
+                    }
                 }
-            }
+            });
         } else {
-            $(".perataan_tanda_code").css({"text-align":"","justify-content":""}).removeClass("perataan_tanda_code");
-            $(".rata_text_tengah_widget").removeClass("rata_text_tengah_widget");
-            $(".rata_column_tengah_widget").removeClass("rata_column_tengah_widget");
+            $("*").each(function (i, item) {
+                if ($(item).hasClass('perataan_tanda_code')) {
+                    $(item).css({
+                        "text-align": "",
+                        "justify-content": ""
+                    });
+
+                    $(item).removeClass("perataan_tanda_code");
+                } else {
+                    $(item).removeClass("rata_text_tengah_widget rata_column_tengah_widget");
+                }
+            });
         }
 
     } else if (value == "kanan") {
         if (action == "aktif") {
-            var _els = _getAlignableElements();
-            for (var _i = 0; _i < _els.length; _i++) {
-                var _e = _els[_i];
-                if (_e.hasAttribute('style')) {
-                    _e.classList.add('rata_text_kanan_widget');
-                    if (window.getComputedStyle(_e).flexDirection == "row") _e.classList.add('rata_column_kanan_widget');
+
+            $('*:not("#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,#slider_dsb_element,#slider_dsb_element *")').each(function (i, item) {
+
+                var cek_style = $(item).attr('style');
+                if (typeof cek_style !== 'undefined' && cek_style !== false) {
+                    $(item).addClass('rata_text_kanan_widget');
+                    if ($(item).css("flex-direction") == "row") {
+                        $(item).addClass('rata_column_kanan_widget');
+                    }
                 } else {
-                    _e.classList.add("perataan_tanda_code");
-                    _e.style.setProperty("text-align", "right", "important");
-                    if (window.getComputedStyle(_e).flexDirection == "row") _e.style.setProperty("justify-content", "flex-end", "important");
+                    $(item).addClass("perataan_tanda_code");
+                    $(item).cssImportant("text-align", "right");
+                    if ($(item).css("flex-direction") == "row") {
+                        $(item).cssImportant("justify-content", "flex-end");
+                    }
                 }
-            }
+            });
         } else {
-            $(".perataan_tanda_code").css({"text-align":"","justify-content":""}).removeClass("perataan_tanda_code");
-            $(".rata_text_kanan_widget").removeClass("rata_text_kanan_widget");
-            $(".rata_column_kanan_widget").removeClass("rata_column_kanan_widget");
+            $("*").each(function (i, item) {
+                if ($(item).hasClass('perataan_tanda_code')) {
+                    $(item).css({
+                        "text-align": "",
+                        "justify-content": ""
+                    });
+
+                    $(item).removeClass("perataan_tanda_code");
+                } else {
+                    $(item).removeClass("rata_text_kanan_widget rata_column_kanan_widget");
+                }
+            });
         }
 
     } else if (value == "kanan-kiri") {
         if (action == "aktif") {
-            var _els = _getAlignableElements();
-            for (var _i = 0; _i < _els.length; _i++) {
-                var _e = _els[_i];
-                if (_e.hasAttribute('style')) {
-                    if (window.getComputedStyle(_e).flexDirection == "row") _e.classList.add('rata_column_kanan_kiri_text_widget');
+            $('*:not("#widget_menu_disabilitas *,.circle_aksesbilitas_popup *,#slider_dsb_element,#slider_dsb_element *")').each(function (i, item) {
+
+                var cek_style = $(item).attr('style');
+                if (typeof cek_style !== 'undefined' && cek_style !== false) {
+
+                    if ($(item).css("flex-direction") == "row") {
+                        $(item).addClass('rata_column_kanan_kiri_text_widget');
+                    }
                 } else {
-                    _e.classList.add("perataan_tanda_code");
-                    _e.style.setProperty("text-align", "justify", "important");
-                    _e.style.setProperty("text-justify", "inter-word", "important");
-                    _e.style.justifyContent = '';
+                    $(item).addClass("perataan_tanda_code");
+                    $(item).cssImportant("text-align", "justify");
+                    $(item).cssImportant("text-justify", "inter-word");
+                    $(item).cssImportant("justify-content", "");
                 }
-            }
+            });
         } else {
-            $(".perataan_tanda_code").css({"text-align":"","justify-content":"","text-justify":""}).removeClass("perataan_tanda_code");
-            $(".rata_column_kanan_kiri_text_widget").removeClass("rata_column_kanan_kiri_text_widget");
+            $("*").each(function (i, item) {
+                if ($(item).hasClass('perataan_tanda_code')) {
+                    $(item).css({
+                        "text-align": "",
+                        "justify-content": "",
+                        "text-justify": ""
+                    });
+
+                    $(item).removeClass("perataan_tanda_code");
+                } else {
+                    $(item).removeClass("rata_column_kanan_kiri_text_widget");
+                }
+            });
         }
 
     }
@@ -6949,10 +6754,9 @@ function clear_set_text_kecil() {
     strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_3", "noaktif")
     strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_4", "noaktif")
 
-    var _fsClear = document.querySelectorAll('[style]');
-    for (var _fc = 0; _fc < _fsClear.length; _fc++) {
-        if (!_fsClear[_fc].closest('#widget_menu_disabilitas')) _fsClear[_fc].style.fontSize = '';
-    }
+    $('*:not("#widget_menu_disabilitas *")').css({
+        "font-size": "",
+    });
     localStorage.removeItem("text_kecil");
 }
 
@@ -6967,10 +6771,9 @@ function load_active_hidden_image() {
     });
     $("#action_hidden_image").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas');
 
-    var imgs = document.querySelectorAll('img:not(#widget_menu_disabilitas img):not(.circle_aksesbilitas_popup img)');
-    for (var _hi = 0; _hi < imgs.length; _hi++) {
-        imgs[_hi].style.setProperty('visibility', 'hidden', 'important');
-    }
+    $('* > img:not("#widget_menu_disabilitas *")').each(function (i, item) {
+        $(item).cssImportant("visibility", "hidden");
+    });
 }
 
 
@@ -6994,7 +6797,7 @@ function action_kursor_widget_1() {
     $("#action_kursor").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas');
     setTimeout(() => {
         data_move_mouse();
-        $("*:not('.radio_row_widget *')").addClass("cursor_website_all");
+        $("*").addClass("cursor_website_all");
     }, 100);
 }
 
@@ -7021,7 +6824,7 @@ function action_kursor_widget_2() {
             item.classList = "icon_svg_color active_icon_svg_color";
         }
     });
-    $(".cursor_website_all").removeClass("cursor_website_all");
+    $("*").removeClass("cursor_website_all");
     $("#action_kursor").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas');
 
     setTimeout(() => {
@@ -7050,7 +6853,7 @@ function action_kursor_widget_3() {
             item.classList = "icon_svg_color active_icon_svg_color";
         }
     });
-    $(".cursor_website_all").removeClass("cursor_website_all");
+    $("*").removeClass("cursor_website_all");
     $("#action_kursor").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas');
 
     setTimeout(() => {
@@ -7237,48 +7040,106 @@ function load_active_text_kecil() {
     });
 }
 
-function _applyFontShrink(decrement) {
-    var _wEl = document.getElementById('widget_menu_disabilitas');
-    var _allEls = document.body.querySelectorAll('*');
-    for (var _ti = 0; _ti < _allEls.length; _ti++) {
-        var _tel = _allEls[_ti];
-        if (_wEl && _wEl.contains(_tel)) continue;
-        _tel.style.fontSize = '';
-        var _cfs = window.getComputedStyle(_tel).fontSize;
-        var _parsed = parseInt(_cfs) || 10;
-        var _newSize = _parsed - decrement;
-        _tel.style.setProperty('font-size', (_newSize >= 4 ? _newSize : 5) + 'px', 'important');
-    }
-}
-
 function text_kecil_1() {
     $("#list_strip_loading_perkecil_text").show();
     strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_1", "aktif");
-    _applyFontShrink(2);
+    //  if (cek_action_sound_search.length > 0) {
+    $('*:not("#widget_menu_disabilitas *")').each(function (i, item) {
+        $(item).css("font-size", "");
+        var fontSize = $(item).css("font-size");
+        var detect_data_parse = parseInt(fontSize) - 2;
+        var main_font = fontSize;
+        if (!isBlank(main_font) && main_font != undefined && main_font != "") {
+            if (detect_data_parse >= 4) {
+                main_font = detect_data_parse + "px";
+            } else {
+                main_font = "5px";
+            }
+        } else {
+            main_font = "15px";
+        }
+
+        $(item).cssImportant("font-size", main_font);
+    });
 }
+
+
 
 function text_kecil_2() {
     $("#list_strip_loading_perkecil_text").show();
     strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_1", "aktif");
-    strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_2", "aktif");
-    _applyFontShrink(4);
+    strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_2", "aktif")
+    $('*:not("#widget_menu_disabilitas *")').each(function (i, item) {
+        $(item).css("font-size", "");
+        var fontSize = $(item).css("font-size");
+        var detect_data_parse = parseInt(fontSize) - 4;
+        var main_font = fontSize;
+        if (!isBlank(main_font) && main_font != undefined && main_font != "") {
+            if (detect_data_parse >= 4) {
+                main_font = detect_data_parse + "px";
+            } else {
+                main_font = "5px";
+            }
+        } else {
+            main_font = "13px";
+        }
+
+        $(item).cssImportant("font-size", main_font);
+
+    });
 }
+
 
 function text_kecil_3() {
     $("#list_strip_loading_perkecil_text").show();
     strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_1", "aktif");
-    strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_2", "aktif");
-    strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_3", "aktif");
-    _applyFontShrink(6);
+    strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_2", "aktif")
+    strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_3", "aktif")
+    $('*:not("#widget_menu_disabilitas *")').each(function (i, item) {
+        $(item).css("font-size", "");
+        var fontSize = $(item).css("font-size");
+        var detect_data_parse = parseInt(fontSize) - 6;
+        var main_font = fontSize;
+        if (!isBlank(main_font) && main_font != undefined && main_font != "") {
+            if (detect_data_parse >= 4) {
+                main_font = detect_data_parse + "px";
+            } else {
+                main_font = "5px";
+            }
+        } else {
+            main_font = "11px";
+        }
+
+        $(item).cssImportant("font-size", main_font);
+
+    });
 }
 
 function text_kecil_4() {
     $("#list_strip_loading_perkecil_text").show();
     strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_1", "aktif");
-    strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_2", "aktif");
-    strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_3", "aktif");
-    strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_4", "aktif");
-    _applyFontShrink(8);
+    strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_2", "aktif")
+    strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_3", "aktif")
+    strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_4", "aktif")
+    $('*:not("#widget_menu_disabilitas *")').each(function (i, item) {
+        $(item).css("font-size", "");
+        var fontSize = $(item).css("font-size");
+        var detect_data_parse = parseInt(fontSize) - 8;
+        var main_font = fontSize;
+        if (!isBlank(main_font) && main_font != undefined && main_font != "") {
+            if (detect_data_parse >= 4) {
+                main_font = detect_data_parse + "px";
+            } else {
+                main_font = "5px";
+            }
+        } else {
+            main_font = "9px";
+        }
+
+        $(item).cssImportant("font-size", main_font);
+
+
+    });
 }
 
 
@@ -7299,10 +7160,9 @@ function clear_set_text_besar() {
     strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_3", "noaktif")
     strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_4", "noaktif")
 
-    var _fsClear2 = document.querySelectorAll('[style]');
-    for (var _fc2 = 0; _fc2 < _fsClear2.length; _fc2++) {
-        if (!_fsClear2[_fc2].closest('#widget_menu_disabilitas')) _fsClear2[_fc2].style.fontSize = '';
-    }
+    $('*:not("#widget_menu_disabilitas *")').css({
+        "font-size": "",
+    });
 }
 function load_active_text_besar() {
     $("#action_perbesar_text").addClass("active_box_menu_disabilitas");
@@ -7314,58 +7174,124 @@ function load_active_text_besar() {
     });
 }
 
-function _applyFontResize(increment) {
-    var _wEl = document.getElementById('widget_menu_disabilitas');
-    var _allEls = document.body.querySelectorAll('*');
-    for (var _ti = 0; _ti < _allEls.length; _ti++) {
-        var _tel = _allEls[_ti];
-        if (_wEl && _wEl.contains(_tel)) continue;
-        _tel.style.fontSize = '';
-        var _cfs = window.getComputedStyle(_tel).fontSize;
-        var _newSize = (parseInt(_cfs) || 10) + increment;
-        _tel.style.setProperty('font-size', _newSize + 'px', 'important');
-    }
-}
-
 function text_besar_1() {
     $("#list_strip_loading_perbesar_text").show();
     strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_1", "aktif");
-    _applyFontResize(2);
+
+
+
+    $('*:not("#widget_menu_disabilitas *")').each(function (i, item) {
+        $(item).css("font-size", "");
+
+        var fontSize = $(item).css("font-size");
+
+        var detect_data_parse = parseInt(fontSize) + 2;
+        var main_font = fontSize;
+        if (!isBlank(main_font) && main_font != undefined && main_font != "") {
+
+            main_font = detect_data_parse + "px";
+
+        } else {
+            main_font = "12px";
+        }
+
+        $(item).cssImportant("font-size", main_font);
+
+
+
+
+
+
+    });
 }
 
 function text_besar_2() {
     $("#list_strip_loading_perbesar_text").show();
     strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_1", "aktif");
-    strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_2", "aktif");
-    _applyFontResize(4);
+    strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_2", "aktif")
+    $('*:not("#widget_menu_disabilitas *")').each(function (i, item) {
+        $(item).css("font-size", "");
+
+
+
+        var fontSize = $(item).css("font-size");
+        var detect_data_parse = parseInt(fontSize) + 4;
+        var main_font = fontSize;
+        if (!isBlank(main_font) && main_font != undefined && main_font != "") {
+
+            main_font = detect_data_parse + "px";
+
+        } else {
+            main_font = "14px";
+        }
+
+        $(item).cssImportant("font-size", main_font);
+
+
+    });
 }
 
+
 function text_besar_3() {
+
     $("#list_strip_loading_perbesar_text").show();
     strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_1", "aktif");
-    strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_2", "aktif");
-    strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_3", "aktif");
-    _applyFontResize(6);
+    strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_2", "aktif")
+    strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_3", "aktif")
+    $('*:not("#widget_menu_disabilitas *")').each(function (i, item) {
+        $(item).css("font-size", "");
+        var fontSize = $(item).css("font-size");
+        var detect_data_parse = parseInt(fontSize) + 6;
+        var main_font = fontSize;
+        if (!isBlank(main_font) && main_font != undefined && main_font != "") {
+
+            main_font = detect_data_parse + "px";
+
+        } else {
+            main_font = "16px";
+        }
+
+        $(item).cssImportant("font-size", main_font);
+
+
+    });
 }
+
 
 function text_besar_4() {
     $("#list_strip_loading_perbesar_text").show();
     strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_1", "aktif");
-    strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_2", "aktif");
-    strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_3", "aktif");
-    strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_4", "aktif");
-    _applyFontResize(8);
+    strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_2", "aktif")
+    strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_3", "aktif")
+    strip_loading_v4("#list_strip_loading_perbesar_text", "#strip_loading_4", "aktif")
+    $('*:not("#widget_menu_disabilitas *")').each(function (i, item) {
+        $(item).css("font-size", "");
+        var fontSize = $(item).css("font-size");
+        var detect_data_parse = parseInt(fontSize) + 8;
+        var main_font = fontSize;
+        if (!isBlank(main_font) && main_font != undefined && main_font != "") {
+
+            main_font = detect_data_parse + "px";
+
+        } else {
+            main_font = "18px";
+        }
+
+        $(item).cssImportant("font-size", main_font);
+
+    });
 }
 
 function cek_animate_new_widget() {
     jQuery.fx.off = true;
-    var els = _getWebElements(null);
-    for (var i = 0; i < els.length; i++) {
-        els[i].style.setProperty('animation-duration', '0s', 'important');
-        els[i].style.setProperty('transition', 'none', 'important');
-        els[i].style.setProperty('animation', 'none', 'important');
-        $(els[i]).clearQueue();
-    }
+    //tanda ,*:before, *:after
+    $(filter_hight_jquery_v3).each(function (i, item) {
+        $(item).cssImportant("animation-duration", "0s");
+        $(item).cssImportant("transition", "none");
+        $(item).cssImportant("animation", "none");
+        $(item).clearQueue();
+    });
+
 }
 
 
@@ -7447,8 +7373,8 @@ function website_track(e) {
             $('#rwMaskBottom').css({ "height": height_tx + 'px' });
         } else if (cek_action_kursor_widget == 3 || cek_action_widget_profil == 6) {
             setTimeout(async () => {
-                gsap.set(".line_baris_wz", { xPercent: -50 });
-                let xSetter = gsap.quickSetter(".line_baris_wz", "x", "px");
+                gsap.set(".line_baris_we_zed", { xPercent: -50 });
+                let xSetter = gsap.quickSetter(".line_baris_we_zed", "x", "px");
                 await xSetter(e.x)
                 $('#line_move_cursor_position').show();
                 $('#line_move_cursor_position').css({
@@ -7486,8 +7412,8 @@ function data_move_mouse() {
         } else if (action_kursor_widget.length == 3) {
             $('#slider_mouse_masked').hide();
             $('#slider_mouse_masked_line').show();
-            var mouse_move_line = `<div class="line_baris_wz" id="line_move_cursor_position">
-    <div class="line_baris_wz_arrow"></div>
+            var mouse_move_line = `<div class="line_baris_we_zed" id="line_move_cursor_position">
+    <div class="line_baris_we_zed_arrow"></div>
 </div>`;
 
             $('#slider_mouse_masked_line').html(mouse_move_line);
