@@ -3640,8 +3640,8 @@ fill="#000000" stroke="none">
                    Di Buat Oleh : 
                 </div>
               
-                    <a href="https://fathulhudoyo.info" class="column_cek_creator" target="_blank">
-                    Fathul Hudoyo
+                    <a href="https://www.banjarmasinkota.go.id/" class="column_cek_creator" target="_blank">
+                    WZ
                 </a>
                 </div-->
                 </div>
