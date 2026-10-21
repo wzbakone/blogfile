@@ -1,17 +1,24 @@
+
+
 var cek_attr_google = [document.currentScript.getAttribute('api-key-google')];
 var cek_attr_resvoice = [document.currentScript.getAttribute('api-key-resvoice')];
 //var api_key_google_cloud = "";
+
 
 var api_key_google = "";
 if (typeof (api_key_google_cloud) !== "undefined") {
     api_key_google = api_key_google_cloud;
 }
 
+
+
 if (cek_attr_google.length > 0) {
     api_key_google = cek_attr_google[0];
 }
 
 var base_url_website = window.location.origin.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split('/')[0];
+var path_javascript = new URL(location.href).pathname;
+
 var body_website = document.body,
     html_website = document.documentElement;
 
@@ -20,12 +27,13 @@ var pageHeight_website = Math.max(body_website.scrollHeight, body_website.offset
 
 var bg_color_icon = "";
 
-var conditional = ["www.banjarmasinkota.go.id", "diskominfotik.banjarmasinkota.go.id", "tte.banjarmasinkota.go.id"];
+var conditional = ["ppid.banjarmasinkota.go.id", "lapor.banjarmasinkota.go.id", "banjarmasinkota.go.id", "latihan.banjarmasinkota.go.id"];
 if (conditional.includes(base_url_website)) {
     bg_color_icon = "#d0021b";
 } else {
     bg_color_icon = "#0048ff";
 }
+
 
 var css_loader = `
 #widget_menu_disabilitas,
@@ -77,6 +85,7 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	-webkit-transition: all .25s cubic-bezier(0.4, 0, 0.2, 1);
 	transition        : all .25s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 
 .group_move_widget {
 	display         : flex;
@@ -135,6 +144,7 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	transform: rotate(45deg);
 }
 
+
 .row_data_widget {
 	display            : flex;
 	flex-direction     : row;
@@ -146,6 +156,8 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	font-weight        : 600;
 	font-style         : normal;
 }
+
+
 
 .icon_column_layaout_disabilitas {
 	display        : flex;
@@ -161,7 +173,7 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	flex-direction: column;
 }
 
-.line_baris_fat_hul {
+.line_baris_wz {
 	display      : none;
 	box-sizing   : border-box;
 	background   : #000;
@@ -175,7 +187,7 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	zoom         : 1 !important;
 }
 
-.line_baris_fat_hul_arrow {
+.line_baris_wz_arrow {
 	bottom   : 100%;
 	left     : 50%;
 	transform: translateX(-50%);
@@ -184,14 +196,15 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	position : absolute;
 }
 
-.line_baris_fat_hul_arrow:before {
+.line_baris_wz_arrow:before {
 	border-bottom-color: #fff300 !important;
 	border-width       : 17.5px !important;
 	margin-left        : -17px;
 }
 
-.line_baris_fat_hul_arrow:after,
-.line_baris_fat_hul_arrow:before {
+
+.line_baris_wz_arrow:after,
+.line_baris_wz_arrow:before {
 	content       : "";
 	bottom        : 100%;
 	left          : 50%;
@@ -202,7 +215,9 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	pointer-events: none;
 }
 
-.line_baris_fat_hul_arrow:after {
+
+
+.line_baris_wz_arrow:after {
 	border-bottom-color: #000;
 	border-width       : 14px;
 	margin-left        : -14px;
@@ -225,6 +240,8 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	bottom    : 0px !important;
 }
 
+
+
 .opacity_screen2 {
 	position  : fixed !important;
 	z-index   : 999999999999999999999999 !important;
@@ -242,6 +259,7 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	top       : 0px !important;
 }
 
+
 @font-face {
 	font-family  : 'Plus Jakarta Sans';
 	font-style   : normal;
@@ -251,19 +269,22 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	unicode-range: U+0460-052F, U+1C80-1C88, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
 }
 
+
 @font-face {
 	font-family: 'OpenDyslexic Bold';
 	font-style : normal;
 	font-weight: normal;
-	src        : url('https://cdn.jsdelivr.net/gh/wzbakone/blogfile@main/widget/Dyseleksia.woff') format('woff');
+	src        : url('https://cdn.jsdelivr.net/gh/wz4reg/blogger@main/Dyseleksia.woff') format('woff');
 }
+
 
 @font-face {
 	font-family: 'Arial Serif';
 	font-style : normal;
 	font-weight: normal;
-	src        : url('https://cdn.jsdelivr.net/gh/wzbakone/blogfile@main/widget/Arial.ttf') format('truetype');
+	src        : url('https://cdn.jsdelivr.net/gh/wz4reg/blogger@main/Arial.ttf') format('truetype');
 }
+
 
 @font-face {
 	font-family  : 'Plus Jakarta Sans Normal';
@@ -370,6 +391,7 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	/* Hide vertical scrollbar */
 	overflow-x: hidden;
 
+
 }
 
 .group_scroll_content::-webkit-scrollbar {
@@ -386,6 +408,7 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	background           : transparent;
 	border-radius        : 8px;
 	-webkit-border-radius: 8px;
+
 
 }
 
@@ -477,6 +500,7 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	font-size  : 10px;
 	width      : 10px;
 }
+
 
 .svg_icon_layout_dsb {
 	"width : 28px;
@@ -609,6 +633,7 @@ height  : 28px;
 
 }
 
+
 .layout_grid_disabilitas {
 	display              : inline-grid;
 	grid-template-columns: auto auto auto;
@@ -617,6 +642,8 @@ height  : 28px;
 	gap                  : 14px 10px;
 	padding-bottom       : 10px;
 }
+
+
 
 .box_group_disabilitas {
 	border-radius   : 16px;
@@ -681,6 +708,7 @@ height  : 28px;
 	width          : 100%;
 	margin-top     : 2%;
 }
+
 
 .strip_loading_process_v2 {
 	display         : flex;
@@ -802,6 +830,8 @@ height  : 28px;
 
 }
 
+
+
 .icon_fill_svg_color_black {
 	fill: black;
 }
@@ -817,6 +847,7 @@ height  : 28px;
 .box_group_disabilitas:hover .icon_fill_svg_color_black {
 	fill: `+ bg_color_icon + `;
 }
+
 
 .box_group_disabilitas:hover .icon_svg_grey_scale_color_1 {
 	fill: black;
@@ -870,6 +901,7 @@ height  : 28px;
 	fill: `+ bg_color_icon + `;
 }
 
+
 .active_icon_svg_grey_scale_color_1 {
 	fill: black;
 }
@@ -885,6 +917,7 @@ height  : 28px;
 .active_icon_svg_grey_scale_color_4 {
 	fill: `+ bg_color_icon + `;
 }
+
 
 .circle_multi {
 	fill             : none;
@@ -1006,6 +1039,7 @@ height  : 28px;
 .active_fill_icon_dsb {
 	fill: white;
 }
+
 
 .row_widget_profil_dsb {
 	margin-top           : 3%;
@@ -1228,6 +1262,7 @@ body { top: 0 !important; }
 	letter-spacing: 0.3px;
 }
 
+
 .row_persegi_reset {
 	display         : flex;
 	flex-direction  : row;
@@ -1267,6 +1302,7 @@ body { top: 0 !important; }
 	color         : white;
 	letter-spacing: -0.1px;
 }
+
 
 .circle_aksesbilitas_popup {
 	display         : flex;
@@ -1352,6 +1388,7 @@ body { top: 0 !important; }
 	transition      : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+
 .circle_aksesbilitas_popup:hover {
 	width        : 78px;
 	height       : 78px;
@@ -1386,6 +1423,9 @@ body { top: 0 !important; }
 	display       : flex;
 	flex-direction: column;
 }
+
+
+
 
 /*on*/
 
@@ -1445,6 +1485,8 @@ body { top: 0 !important; }
 	color                : yellow !important;
 }
 
+
+
 .kontras_4_bg_black_white {
 	background-color: white !important;
 	background      : white !important;
@@ -1492,6 +1534,7 @@ body { top: 0 !important; }
 	text-align: right !important;
 }
 
+
 .rata_column_kanan_kiri_text_widget {
 	text-align     : justify !important;
 	text-justify   : inter-word !important;
@@ -1516,11 +1559,14 @@ body { top: 0 !important; }
 	color                : yellow !important;
 }
 
+
+
 [data-tooltip] {
 	--arrow-size: 5px;
 	position    : relative;
 	z-index     : 999;
 }
+
 
 [data-tooltip]:before,
 [data-tooltip]:after {
@@ -1534,6 +1580,8 @@ body { top: 0 !important; }
 	will-change   : transform;
 	text-align    : center !important;
 }
+
+
 
 [data-tooltip]:before {
 	content         : attr(data-tooltip);
@@ -1579,6 +1627,7 @@ body { top: 0 !important; }
 	transition-delay: 0.3s !important;
 	transform       : translate(-50%, calc(0px - var(--arrow-size))) scale(0.8) !important;
 }
+
 
 .tooltip_data_move_mouse_new {
 	display       : flex;
@@ -1665,6 +1714,7 @@ body { top: 0 !important; }
 	.except_group_scroll_content {
 		width: max-content !important;
 	}
+
 
 	.text_list_content_profile_disabilitas {
 
@@ -1763,6 +1813,8 @@ body { top: 0 !important; }
 
 	}
 
+
+
 	.content_aksesbilitas_utama {
 		width                     : 100vw;
 		height                    : calc(`+ pageHeight_website + `px + 20vh);
@@ -1773,10 +1825,12 @@ body { top: 0 !important; }
 		/* transition: transform 0.3s ease-in-out;*/
 	}
 
+
 	.layout_bahasa_widget {
 		width: 100vw;
 		height: auto;
 	}
+
 
 	.end_title_disabilitas {
 		align-items : flex-end;
@@ -1829,6 +1883,7 @@ body { top: 0 !important; }
 
 		width: 60vw;
 
+
 	}
 
 	.group_title_disabilitas {
@@ -1840,6 +1895,7 @@ body { top: 0 !important; }
 
 localStorage.removeItem("permismobile");
 localStorage.removeItem("permisvoice");
+
 
 var audio;
 var interval_animate_widget = 0;
@@ -1867,6 +1923,7 @@ var list_id_action_profile_aksesbilitas = [
     "action_adhd"
 ]
 
+
 var head = document.head || document.getElementsByTagName('head')[0];
 
 if (!(typeof jQuery === 'function')) {
@@ -1875,6 +1932,8 @@ if (!(typeof jQuery === 'function')) {
     script_jquery.type = 'text/javascript';
     document.body.appendChild(script_jquery);
 }
+
+
 
 var api_key_revoice = "";
 if (cek_attr_resvoice.length > 0) {
@@ -1885,20 +1944,24 @@ if (cek_attr_resvoice.length > 0) {
     document.body.appendChild(script_voice);
 }
 
+
 var script_jqueryx = document.createElement('script');
 script_jqueryx.src = 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js';
 script_jqueryx.type = 'text/javascript';
 document.body.appendChild(script_jqueryx);
+
 
 var script_google_anal = document.createElement('script');
 script_google_anal.src = 'https://www.googletagmanager.com/gtag/js?id=UA-96355266-1';
 script_google_anal.type = 'text/javascript';
 document.body.appendChild(script_google_anal);
 
+
 var script_google_anal_v2 = document.createElement('script');
 script_google_anal_v2.src = 'https://www.googletagmanager.com/gtag/js?id=G-SJLG49CX7N';
 script_google_anal_v2.type = 'text/javascript';
 document.body.appendChild(script_google_anal_v2);
+
 
 var widget_current_lang = localStorage.getItem("widget_lang") || 'id';
 var _widgetTranslateObserver = null;
@@ -2167,6 +2230,7 @@ function _scheduleWidgetTranslateBootstrap(langCode) {
     }
 }
 
+
 var style = document.createElement('style');
 
 head.appendChild(style);
@@ -2182,10 +2246,14 @@ var create_div_element = document.createElement('div');
 create_div_element.setAttribute("id", "new_load_disabilitas");
 document.body.appendChild(create_div_element);
 
+
 if (base_url_website == "ppid.banjarmasinkota.go.id") {
     var main_class_wrap = document.getElementById("wrapper");
     main_class_wrap.classList.add("main_web_ppid_bjm");
 }
+
+
+
 
 var create_slider_dsb_element = document.createElement('div');
 create_slider_dsb_element.setAttribute("id", "slider_dsb_element");
@@ -2195,15 +2263,20 @@ var create_slider_mouse = document.createElement('div');
 create_slider_mouse.setAttribute("id", "slider_mouse_over");
 document.body.appendChild(create_slider_mouse);
 
+
 var create_slider_mouse_masked = document.createElement('div');
 create_slider_mouse_masked.setAttribute("id", "slider_mouse_masked");
 document.body.appendChild(create_slider_mouse_masked);
+
 
 var create_slider_mouse_masked_line = document.createElement('div');
 create_slider_mouse_masked_line.setAttribute("id", "slider_mouse_masked_line");
 document.body.appendChild(create_slider_mouse_masked_line);
 
+
+
 var interval_cek_element = 0;
+
 
 if (document.readyState == "complete") {
     setTimeout(() => {
@@ -2231,9 +2304,14 @@ function cek_fungsi_jquery() {
 
             setTimeout(() => {
 
+
                 clearInterval(interval_cek_element);
                 cek_local_function();
-load_html_dsb();
+
+                hit_api_tracking(base_url_website, 'no_data');
+
+
+                load_html_dsb();
 
             }, 900);
         }
@@ -2270,6 +2348,7 @@ function jquery_cek_all() {
         };
     });
 }
+
 
 function cek_local_function() {
     jQuery( document ).ready(function( $ ) {
@@ -2313,7 +2392,11 @@ function cek_local_function() {
         }
     }
 
+
+
     var cek_text_tulisan_dibaca = localStorage.getItem("action_tulisan_dpt_dibaca");
+
+
 
     if (cek_text_tulisan_dibaca != null) {
         action_tulisan_dibaca.length = 0;
@@ -2330,6 +2413,7 @@ function cek_local_function() {
                 await active_action_ramah_dyseleksia();
             }, 100);
 
+
         } else if (cek_text_tulisan_dibaca == 2) {
             var value_one_tulisan_dibaca = [1, 1];
             action_tulisan_dibaca.push(...value_one_tulisan_dibaca);
@@ -2339,6 +2423,13 @@ function cek_local_function() {
 
         }
     }
+
+
+
+
+
+
+
 
     var cek_text_kecil = localStorage.getItem("text_kecil");
     if (cek_text_kecil != null) {
@@ -2379,6 +2470,9 @@ function cek_local_function() {
         }
     }
 
+
+
+
     var cek_action_tooltip_widget = localStorage.getItem("tooltip_active");
 
     if (cek_action_tooltip_widget != null) {
@@ -2392,6 +2486,7 @@ function cek_local_function() {
             }, 100);
         }
     }
+
 
     var cek_grey_scale_active = localStorage.getItem("grey_scale_active");
     if (cek_grey_scale_active != null) {
@@ -2417,6 +2512,8 @@ function cek_local_function() {
             }, 100);
         }
     }
+
+
 
     var cek_kontras_active = localStorage.getItem("action_kontras");
     if (cek_kontras_active != null) {
@@ -2455,6 +2552,9 @@ function cek_local_function() {
         }
     }
 
+
+
+
     var cek_hidden_image = localStorage.getItem("action_hidden_image");
     if (cek_hidden_image != null) {
         cek_action_sound_search.length = 0;
@@ -2465,6 +2565,8 @@ function cek_local_function() {
             }, 100);
         }
     }
+
+
 
     var cek_perataan_text = localStorage.getItem("perataan_text");
     if (cek_perataan_text != null) {
@@ -2506,6 +2608,10 @@ function cek_local_function() {
         }
     }
 
+
+
+
+
     var cek_action_line_height = localStorage.getItem("action_line_height");
     if (cek_action_line_height != null) {
 
@@ -2537,6 +2643,9 @@ function cek_local_function() {
         }
     }
 
+
+
+
     var cek_animate_pause = localStorage.getItem("action_animate_pause");
     if (cek_animate_pause != null) {
         cek_action_sound_search.length = 0;
@@ -2548,11 +2657,20 @@ function cek_local_function() {
         }
     }
 
+
+
+
+
+
+
     var cek_action_kursor_widget = localStorage.getItem("action_kursor_change");
+
 
     if (cek_action_kursor_widget != null) {
         cek_action_sound_search.length = 0;
         action_kursor_widget.length = 0;
+
+
 
         if (cek_action_kursor_widget == 1) {
 
@@ -2577,7 +2695,11 @@ function cek_local_function() {
             }, 100);
         }
 
+
     }
+
+
+
 
     var cek_action_space_text = localStorage.getItem("action_space_text");
     if (cek_action_space_text != null) {
@@ -2608,6 +2730,8 @@ function cek_local_function() {
         }
     }
 
+
+
     var cek_action_garis_bawahi_tautan = localStorage.getItem("action_link_all");
     if (cek_action_garis_bawahi_tautan != null) {
         cek_action_sound_search.length = 0;
@@ -2632,6 +2756,8 @@ function cek_local_function() {
             }, 100);
         }
     }
+
+
 
     var number_data_widget = localStorage.getItem("action_widget_profil");
     if (number_data_widget != null) {
@@ -2695,9 +2821,11 @@ function cek_local_function() {
         }
     }
 
+
 })
 
 }
+
 
 function load_html_dsb() {
 
@@ -2725,6 +2853,7 @@ function load_html_dsb() {
         
 
         $('#new_load_disabilitas').html(popup_dsb);
+
 
     
 
@@ -2800,20 +2929,22 @@ function load_html_dsb() {
     
         gtag('config', 'G-SJLG49CX7N');
 
+
     }, 1200);
  
 
+
 }
-var my_website_bjm = "";
+var my_website_jkt = "";
 var except_url = ["www.banjarmasinkota.go.id", "banjarmasinkota.go.id", "ppid.banjarmasinkota.go.id"];
 if ((new RegExp('\\b' + except_url.join('\\b|\\b') + '\\b')).test(base_url_website)) {
-    my_website_bjm = "Mode Suara";
+    my_website_jkt = "Mode Suara";
 } else {
-    my_website_bjm = "Moda Suara";
+    my_website_jkt = "Moda Suara";
 }
 
 var filter_hight_jquery_v3 = "";
-var except_url_jquery_v3 = ["banjarmasinkota.go.id", "lapor.banjarmasinkota.go.id", "lapor.go.id"];
+var except_url_jquery_v3 = ["banjarmasinkota.go.id", "ppid.banjarmasinkota.go.id", "lapor.banjarmasinkota.go.id", "lapor.go.id"];
 var name_class_widget = "";
 var name_class_widget1 = "";
 var name_class_widget2 = "";
@@ -3088,6 +3219,7 @@ function slider_popup_disabilitas() {
             </div>
  
 
+
                     <div class="box_profile_aksesbilitas" id="action_disleksia">
                 <div class="icon_list_content_profile_disabilitas">
                     <span class="svg_icon_layout_dsb">
@@ -3170,6 +3302,8 @@ function slider_popup_disabilitas() {
                  
                 </div>
 
+
+
                 <div class="content_daftar_action_disabilitas `+ name_class_widget5 + `">
                     <div class="layout_grid_disabilitas">
                         <div class="box_group_disabilitas" id="action_moda_suara">
@@ -3188,7 +3322,7 @@ function slider_popup_disabilitas() {
                                     <line class="icon_svg_sroke_color" x1="21.5" x2="21.5" y1="10.455" y2="13.545" />
                                 </svg>
                             </div>
-                           <div class="box_text_bottom_disabilitas">`+ my_website_bjm + `
+                           <div class="box_text_bottom_disabilitas">`+ my_website_jkt + `
                             </div>
                             <div class="box_column_action_strip">
 
@@ -3196,6 +3330,7 @@ function slider_popup_disabilitas() {
                         </div>
                         <div class="box_group_disabilitas" id="action_perbesar_text">
                             <div class="box_icon_disabilitas">
+
 
                                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="55px" height="55px"  viewBox="0 0 234.000000 174.000000" preserveAspectRatio="xMidYMid meet">
 
@@ -3241,6 +3376,7 @@ function slider_popup_disabilitas() {
                                 </div>
                             </div>
                         </div>
+
 
                         <div class="box_group_disabilitas" id="action_grey_scale">
                             <div class="box_icon_disabilitas">
@@ -3295,6 +3431,7 @@ function slider_popup_disabilitas() {
                                     <path class="icon_contrast_black" d="M256,464C141.12,464,48,370.88,48,256S141.12,48,256,48Z" />
                                 </svg>
 
+
                                 <svg width="60px" height="60px" id="svg_kontras_klise" style="enable-background:new 0 0 512 512;" version="1.1" viewBox="0 0 512 512" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <g>
                                         <path class="active_icon_svg_color" d="M256,128c-81.9,0-145.7,48.8-224,128c67.4,67.7,124,128,224,128c99.9,0,173.4-76.4,224-126.6   C428.2,198.6,354.8,128,256,128z M256,347.3c-49.4,0-89.6-41-89.6-91.3c0-50.4,40.2-91.3,89.6-91.3s89.6,41,89.6,91.3   C345.6,306.4,305.4,347.3,256,347.3z" />
@@ -3331,6 +3468,7 @@ function slider_popup_disabilitas() {
                             </div>
                         </div>
 
+
                         <div class="box_group_disabilitas" id="action_hidden_image">
                             <div class="box_icon_disabilitas">
                                 <svg fill="none" height="50px" width="50px" viewBox="0 0 64 64"  xmlns="http://www.w3.org/2000/svg">
@@ -3349,8 +3487,10 @@ function slider_popup_disabilitas() {
                             </div>
                         </div>
 
+
                         <div class="box_group_disabilitas" id="action_perataan_text">
                             <div class="box_icon_disabilitas">
+
 
                                 <svg id="svg_left_text_icon"  height="55px" width="55px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
                                     <rect fill="none" height="60" width="60" />
@@ -3368,6 +3508,7 @@ function slider_popup_disabilitas() {
                                     <path class="active_icon_svg_color" d="M192,180H64a8,8,0,0,0,0,16H192a8,8,0,0,0,0-16Z" />
                                 </svg>
 
+
                                 <svg class="hidden_svg"  height="55px" width="55px" id="svg_right_text_icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
                                     <rect fill="none" height="60" width="60" />
                                     <line fill="none" class="active_icon_svg_sroke_color" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="40" x2="216" y1="68" y2="68" />
@@ -3375,6 +3516,7 @@ function slider_popup_disabilitas() {
                                     <line fill="none" class="active_icon_svg_sroke_color" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="40" x2="216" y1="148" y2="148" />
                                     <line fill="none" class="active_icon_svg_sroke_color" stroke-linecap="round" stroke-linejoin="round" stroke-width="16" x1="88" x2="216" y1="188" y2="188" />
                                 </svg>
+
 
                                 <svg class="hidden_svg" height="55px" width="55px" id="svg_right_left_text_icon" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
                                     <rect fill="none" height="60" width="60" />
@@ -3401,6 +3543,10 @@ function slider_popup_disabilitas() {
                             <div class="box_icon_disabilitas">
                            
 
+
+
+
+
 <svg version="1.0" id="svg_dy_seleksia" xmlns="http://www.w3.org/2000/svg"
  height="50" width="50"  viewBox="0 0 100.000000 74.000000">
 
@@ -3421,6 +3567,8 @@ fill="#000000" stroke="none">
         <svg  id="svg_font_di_perbesar"  version="1.1" xmlns="http://www.w3.org/2000/svg" height="50" width="50" viewBox="0 0 448 448">
                                     <path class="active_icon_svg_color" d="M181.25 139.75l-42.5 112.5c24.75 0.25 49.5 1 74.25 1 4.75 0 9.5-0.25 14.25-0.5-13-38-28.25-76.75-46-113zM0 416l0.5-19.75c23.5-7.25 49-2.25 59.5-29.25l59.25-154 70-181h32c1 1.75 2 3.5 2.75 5.25l51.25 120c18.75 44.25 36 89 55 133 11.25 26 20 52.75 32.5 78.25 1.75 4 5.25 11.5 8.75 14.25 8.25 6.5 31.25 8 43 12.5 0.75 4.75 1.5 9.5 1.5 14.25 0 2.25-0.25 4.25-0.25 6.5-31.75 0-63.5-4-95.25-4-32.75 0-65.5 2.75-98.25 3.75 0-6.5 0.25-13 1-19.5l32.75-7c6.75-1.5 20-3.25 20-12.5 0-9-32.25-83.25-36.25-93.5l-112.5-0.5c-6.5 14.5-31.75 80-31.75 89.5 0 19.25 36.75 20 51 22 0.25 4.75 0.25 9.5 0.25 14.5 0 2.25-0.25 4.5-0.5 6.75-29 0-58.25-5-87.25-5-3.5 0-8.5 1.5-12 2-15.75 2.75-31.25 3.5-47 3.5z"></path>
                                 </svg>
+
+
 
                             </div>
                             <div class="box_text_bottom_disabilitas"  id="text_tulisan_dapat_di_baca">
@@ -3457,6 +3605,8 @@ fill="#000000" stroke="none">
                             </div>
                         </div>
 
+
+
                         <div class="box_group_disabilitas" id="action_animate_pause">
                             <div class="box_icon_disabilitas">
 
@@ -3492,6 +3642,8 @@ fill="#000000" stroke="none">
                                     </g>
                                 </svg>
 
+
+
                             </div>
                             <div class="box_text_bottom_disabilitas" id="text_id_animasi">
                                 Animasi Dijeda
@@ -3501,6 +3653,9 @@ fill="#000000" stroke="none">
                             </div>
                         </div>
 
+
+
+
                         <div class="box_group_disabilitas display_none_mobile" id="action_kursor">
                             <div class="box_icon_disabilitas">
 
@@ -3509,6 +3664,7 @@ fill="#000000" stroke="none">
                                 </svg>
                     
    
+
 
 <svg version="1.1"
     xmlns="http://www.w3.org/2000/svg" width="50" height="50" id="svg_kursor_masker"  viewBox="15 -10 80 100"> 
@@ -3520,6 +3676,7 @@ fill="#000000" stroke="none">
     <path d="M0 0 C1.22237869 -0.01029488 1.22237869 -0.01029488 2.4694519 -0.02079773 C5.16600921 -0.03911514 7.86198752 -0.03522165 10.55859375 -0.02954102 C12.43042186 -0.03410014 14.30224829 -0.0394049 16.17407227 -0.04542542 C20.09821368 -0.05436598 24.02215169 -0.05192229 27.94628906 -0.04199219 C32.98059567 -0.03049555 38.01420161 -0.05071973 43.04841614 -0.07990932 C46.91398596 -0.09823438 50.77938668 -0.09798637 54.64498901 -0.0922718 C56.5013833 -0.09211817 58.35778874 -0.09819742 60.21414185 -0.11056328 C62.8072742 -0.12540376 65.39909679 -0.11484867 67.9921875 -0.09765625 C69.14713211 -0.1121582 69.14713211 -0.1121582 70.32540894 -0.12695312 C75.49496442 -0.05500331 75.49496442 -0.05500331 77.97802734 2.21958923 C79.46734992 5.41522637 79.28081963 8.15392112 79.18359375 11.65405273 C79.14298828 13.54897461 79.14298828 13.54897461 79.1015625 15.48217773 C79.06675781 16.44639648 79.03195313 17.41061523 78.99609375 18.40405273 C80.97609375 18.89905273 80.97609375 18.89905273 82.99609375 19.40405273 C82.50109375 20.88905273 82.50109375 20.88905273 81.99609375 22.40405273 C80.34609375 21.74405273 78.69609375 21.08405273 76.99609375 20.40405273 C76.94710937 19.27225586 76.898125 18.14045898 76.84765625 16.97436523 C76.77262861 15.49256935 76.69708078 14.01079973 76.62109375 12.52905273 C76.59015625 11.78268555 76.55921875 11.03631836 76.52734375 10.26733398 C76.43965544 5.86932085 76.43965544 5.86932085 73.99609375 2.40405273 C71.44721251 2.20573757 69.00699154 2.13127011 66.45703125 2.14526367 C65.67966614 2.14175903 64.90230103 2.13825439 64.10137939 2.13464355 C61.52452743 2.12582068 58.94794865 2.13167728 56.37109375 2.13842773 C54.58512316 2.13708124 52.79915293 2.13514084 51.01318359 2.13262939 C47.26721716 2.12967738 43.521346 2.13397824 39.77539062 2.14331055 C34.96646542 2.15470514 30.15776344 2.14814608 25.34884644 2.13616562 C21.66005767 2.1289491 17.97132208 2.13123399 14.28253174 2.1364212 C12.50905328 2.13775828 10.73557004 2.13610797 8.96209717 2.1314621 C6.4863195 2.12640024 4.01090665 2.13410211 1.53515625 2.14526367 C0.42856659 2.13919098 0.42856659 2.13919098 -0.70037842 2.13299561 C-4.80460381 2.04236221 -4.80460381 2.04236221 -8.00390625 4.40405273 C-8.31029215 7.13840235 -8.51523985 9.78685094 -8.62890625 12.52905273 C-8.66757813 13.2831543 -8.70625 14.03725586 -8.74609375 14.81420898 C-8.84041656 16.67708458 -8.92325287 18.54053528 -9.00390625 20.40405273 C-10.98390625 21.06405273 -12.96390625 21.72405273 -15.00390625 22.40405273 C-14.67390625 21.08405273 -14.34390625 19.76405273 -14.00390625 18.40405273 C-13.01390625 18.40405273 -12.02390625 18.40405273 -11.00390625 18.40405273 C-11.05611328 16.83204102 -11.05611328 16.83204102 -11.109375 15.22827148 C-11.13751562 13.84938127 -11.16481549 12.47047371 -11.19140625 11.09155273 C-11.21654297 10.40125977 -11.24167969 9.7109668 -11.26757812 8.99975586 C-11.34053757 3.96555398 -11.34053757 3.96555398 -9.98583984 1.70591736 C-6.87212761 -0.33937408 -3.60483981 -0.02107597 0 0 Z " fill="`+ bg_color_icon + `" transform="translate(22.00390625,6.595947265625)"/>
 </svg>
 
+
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="10 0 100 95" id="svg_kursor_masker_v2"> 
 <path d="M0 0 C0.81491913 -0.00525696 1.62983826 -0.01051392 2.4694519 -0.01593018 C5.16602689 -0.02914542 7.86201265 -0.02038684 10.55859375 -0.01025391 C12.43042108 -0.01227421 14.30224764 -0.01518528 16.17407227 -0.01895142 C20.09822072 -0.02337683 24.0221644 -0.01693673 27.94628906 -0.00292969 C32.98049722 0.01416233 38.01422559 0.0043223 43.04841614 -0.01364708 C46.91397731 -0.02447905 50.77942443 -0.02104128 54.64498901 -0.0132637 C56.50137387 -0.01126007 58.35776902 -0.01372668 60.21414185 -0.02070236 C62.80710344 -0.02830722 65.39928418 -0.01672655 67.9921875 0 C68.76215057 -0.00607269 69.53211365 -0.01214539 70.32540894 -0.0184021 C75.50634229 0.04362644 75.50634229 0.04362644 77.96931458 1.77641296 C79.34314242 3.93295785 79.42665084 5.50767635 79.5078125 8.05615234 C79.54326172 8.94882812 79.57871094 9.84150391 79.61523438 10.76123047 C79.63779297 11.69 79.66035156 12.61876953 79.68359375 13.57568359 C79.71775391 14.51605469 79.75191406 15.45642578 79.78710938 16.42529297 C79.86957593 18.74613752 79.93872778 21.06660508 79.99609375 23.38818359 C81.48109375 23.88318359 81.48109375 23.88318359 82.99609375 24.38818359 C82.99609375 32.30818359 82.99609375 40.22818359 82.99609375 48.38818359 C81.67609375 48.71818359 80.35609375 49.04818359 78.99609375 49.38818359 C79.0118042 49.97833252 79.02751465 50.56848145 79.04370117 51.17651367 C79.10607314 53.85113945 79.14509032 56.52561224 79.18359375 59.20068359 C79.20873047 60.12945312 79.23386719 61.05822266 79.25976562 62.01513672 C79.26943359 62.9078125 79.27910156 63.80048828 79.2890625 64.72021484 C79.30477295 65.54239502 79.3204834 66.3645752 79.33666992 67.21166992 C78.99609375 69.38818359 78.99609375 69.38818359 77.97505188 70.99995422 C74.88762376 73.16576983 71.62954075 72.80505496 67.9921875 72.77636719 C66.76980881 72.78425262 66.76980881 72.78425262 65.5227356 72.79229736 C62.82616061 72.80551261 60.13017485 72.79675403 57.43359375 72.78662109 C55.56176642 72.78864139 53.68993986 72.79155246 51.81811523 72.7953186 C47.89396678 72.79974402 43.9700231 72.79330391 40.04589844 72.77929688 C35.01169028 72.76220486 29.97796191 72.77204488 24.94377136 72.79001427 C21.07821019 72.80084624 17.21276307 72.79740847 13.34719849 72.78963089 C11.49081363 72.78762726 9.63441848 72.79009386 7.77804565 72.79706955 C5.18508406 72.80467441 2.59290332 72.79309374 0 72.77636719 C-0.76996307 72.78243988 -1.53992615 72.78851257 -2.33322144 72.79476929 C-7.51270607 72.7327581 -7.51270607 72.7327581 -9.98286438 70.99995422 C-11.36961046 68.81089942 -11.34617734 67.3003708 -11.296875 64.72021484 C-11.28720703 63.82753906 -11.27753906 62.93486328 -11.26757812 62.01513672 C-11.24244141 61.08636719 -11.21730469 60.15759766 -11.19140625 59.20068359 C-11.17110352 57.79012695 -11.17110352 57.79012695 -11.15039062 56.35107422 C-11.11503721 54.02953321 -11.06569299 51.70914706 -11.00390625 49.38818359 C-12.32390625 49.05818359 -13.64390625 48.72818359 -15.00390625 48.38818359 C-15.00390625 40.46818359 -15.00390625 32.54818359 -15.00390625 24.38818359 C-13.68390625 24.05818359 -12.36390625 23.72818359 -11.00390625 23.38818359 C-11.0196167 22.79803467 -11.03532715 22.20788574 -11.05151367 21.59985352 C-11.11388564 18.92522774 -11.15290282 16.25075495 -11.19140625 13.57568359 C-11.22911133 12.1825293 -11.22911133 12.1825293 -11.26757812 10.76123047 C-11.27724609 9.86855469 -11.28691406 8.97587891 -11.296875 8.05615234 C-11.31258545 7.23397217 -11.3282959 6.41179199 -11.34448242 5.56469727 C-11.00390625 3.38818359 -11.00390625 3.38818359 -9.98286438 1.77641296 C-6.89543626 -0.38940264 -3.63735325 -0.02868778 0 0 Z M-2.00390625 8.38818359 C-2.00390625 13.66818359 -2.00390625 18.94818359 -2.00390625 24.38818359 C21.75609375 24.38818359 45.51609375 24.38818359 69.99609375 24.38818359 C69.99609375 19.10818359 69.99609375 13.82818359 69.99609375 8.38818359 C46.23609375 8.38818359 22.47609375 8.38818359 -2.00390625 8.38818359 Z M-6.00390625 35.38818359 C-6.33390625 36.04818359 -6.66390625 36.70818359 -7.00390625 37.38818359 C20.05609375 37.38818359 47.11609375 37.38818359 74.99609375 37.38818359 C74.99609375 36.72818359 74.99609375 36.06818359 74.99609375 35.38818359 C48.26609375 35.38818359 21.53609375 35.38818359 -6.00390625 35.38818359 Z M-2.00390625 49.38818359 C-2.00390625 54.33818359 -2.00390625 59.28818359 -2.00390625 64.38818359 C21.75609375 64.38818359 45.51609375 64.38818359 69.99609375 64.38818359 C69.99609375 59.43818359 69.99609375 54.48818359 69.99609375 49.38818359 C46.23609375 49.38818359 22.47609375 49.38818359 -2.00390625 49.38818359 Z " fill="`+ bg_color_icon + `" transform="translate(27.00390625,16.61181640625)"/>
 <path d="M0 0 C0.81491913 -0.00525696 1.62983826 -0.01051392 2.4694519 -0.01593018 C5.16602689 -0.02914542 7.86201265 -0.02038684 10.55859375 -0.01025391 C12.43042108 -0.01227421 14.30224764 -0.01518528 16.17407227 -0.01895142 C20.09822072 -0.02337683 24.0221644 -0.01693673 27.94628906 -0.00292969 C32.98049722 0.01416233 38.01422559 0.0043223 43.04841614 -0.01364708 C46.91397731 -0.02447905 50.77942443 -0.02104128 54.64498901 -0.0132637 C56.50137387 -0.01126007 58.35776902 -0.01372668 60.21414185 -0.02070236 C62.80710344 -0.02830722 65.39928418 -0.01672655 67.9921875 0 C68.76215057 -0.00607269 69.53211365 -0.01214539 70.32540894 -0.0184021 C75.50634229 0.04362644 75.50634229 0.04362644 77.96931458 1.77641296 C79.34314242 3.93295785 79.42665084 5.50767635 79.5078125 8.05615234 C79.54326172 8.94882812 79.57871094 9.84150391 79.61523438 10.76123047 C79.63779297 11.69 79.66035156 12.61876953 79.68359375 13.57568359 C79.71775391 14.51605469 79.75191406 15.45642578 79.78710938 16.42529297 C79.86957593 18.74613752 79.93872778 21.06660508 79.99609375 23.38818359 C81.48109375 23.88318359 81.48109375 23.88318359 82.99609375 24.38818359 C82.99609375 32.30818359 82.99609375 40.22818359 82.99609375 48.38818359 C81.67609375 48.71818359 80.35609375 49.04818359 78.99609375 49.38818359 C79.0118042 49.97833252 79.02751465 50.56848145 79.04370117 51.17651367 C79.10607314 53.85113945 79.14509032 56.52561224 79.18359375 59.20068359 C79.20873047 60.12945312 79.23386719 61.05822266 79.25976562 62.01513672 C79.26943359 62.9078125 79.27910156 63.80048828 79.2890625 64.72021484 C79.30477295 65.54239502 79.3204834 66.3645752 79.33666992 67.21166992 C78.99609375 69.38818359 78.99609375 69.38818359 77.97505188 70.99995422 C74.88762376 73.16576983 71.62954075 72.80505496 67.9921875 72.77636719 C66.76980881 72.78425262 66.76980881 72.78425262 65.5227356 72.79229736 C62.82616061 72.80551261 60.13017485 72.79675403 57.43359375 72.78662109 C55.56176642 72.78864139 53.68993986 72.79155246 51.81811523 72.7953186 C47.89396678 72.79974402 43.9700231 72.79330391 40.04589844 72.77929688 C35.01169028 72.76220486 29.97796191 72.77204488 24.94377136 72.79001427 C21.07821019 72.80084624 17.21276307 72.79740847 13.34719849 72.78963089 C11.49081363 72.78762726 9.63441848 72.79009386 7.77804565 72.79706955 C5.18508406 72.80467441 2.59290332 72.79309374 0 72.77636719 C-0.76996307 72.78243988 -1.53992615 72.78851257 -2.33322144 72.79476929 C-7.51270607 72.7327581 -7.51270607 72.7327581 -9.98286438 70.99995422 C-11.36961046 68.81089942 -11.34617734 67.3003708 -11.296875 64.72021484 C-11.28720703 63.82753906 -11.27753906 62.93486328 -11.26757812 62.01513672 C-11.24244141 61.08636719 -11.21730469 60.15759766 -11.19140625 59.20068359 C-11.17110352 57.79012695 -11.17110352 57.79012695 -11.15039062 56.35107422 C-11.11503721 54.02953321 -11.06569299 51.70914706 -11.00390625 49.38818359 C-12.32390625 49.05818359 -13.64390625 48.72818359 -15.00390625 48.38818359 C-15.00390625 40.46818359 -15.00390625 32.54818359 -15.00390625 24.38818359 C-13.68390625 24.05818359 -12.36390625 23.72818359 -11.00390625 23.38818359 C-11.0196167 22.79803467 -11.03532715 22.20788574 -11.05151367 21.59985352 C-11.11388564 18.92522774 -11.15290282 16.25075495 -11.19140625 13.57568359 C-11.22911133 12.1825293 -11.22911133 12.1825293 -11.26757812 10.76123047 C-11.27724609 9.86855469 -11.28691406 8.97587891 -11.296875 8.05615234 C-11.31258545 7.23397217 -11.3282959 6.41179199 -11.34448242 5.56469727 C-11.00390625 3.38818359 -11.00390625 3.38818359 -9.98286438 1.77641296 C-6.89543626 -0.38940264 -3.63735325 -0.02868778 0 0 Z M-7.95991516 2.76493835 C-9.44105525 5.06788292 -9.34407382 6.77185398 -9.296875 9.49365234 C-9.28720703 10.4765625 -9.27753906 11.45947266 -9.26757812 12.47216797 C-9.22987305 14.0084082 -9.22987305 14.0084082 -9.19140625 15.57568359 C-9.17787109 16.61144531 -9.16433594 17.64720703 -9.15039062 18.71435547 C-9.11502014 21.27282058 -9.06566169 23.83024139 -9.00390625 26.38818359 C-10.65390625 26.38818359 -12.30390625 26.38818359 -14.00390625 26.38818359 C-14.00390625 32.98818359 -14.00390625 39.58818359 -14.00390625 46.38818359 C-12.35390625 46.71818359 -10.70390625 47.04818359 -9.00390625 47.38818359 C-9.0196167 48.00862549 -9.03532715 48.62906738 -9.05151367 49.26831055 C-9.11386839 52.07900887 -9.15289773 54.88956171 -9.19140625 57.70068359 C-9.21654297 58.67714844 -9.24167969 59.65361328 -9.26757812 60.65966797 C-9.27724609 61.59746094 -9.28691406 62.53525391 -9.296875 63.50146484 C-9.31258545 64.36553955 -9.3282959 65.22961426 -9.34448242 66.11987305 C-9.16357526 68.38429044 -9.16357526 68.38429044 -7.95991516 70.00569153 C-4.97043749 72.11863137 -1.89609672 71.80562073 1.6328125 71.77636719 C2.40871735 71.78162415 3.18462219 71.7868811 3.98403931 71.79229736 C6.55076177 71.80550944 9.11686489 71.79675526 11.68359375 71.78662109 C13.46574015 71.78864149 15.24788574 71.79155264 17.0300293 71.7953186 C20.7658678 71.79974358 24.50149118 71.79330535 28.23730469 71.77929688 C33.02938459 71.76220483 37.82096045 71.77204509 42.61302185 71.79001427 C46.29329231 71.80084744 49.973443 71.79740792 53.65371704 71.78963089 C55.42078714 71.78762759 57.18786807 71.79009271 58.95492554 71.79706955 C61.42336899 71.80467645 63.8909927 71.79309112 66.359375 71.77636719 C67.09193512 71.78243988 67.82449524 71.78851257 68.57925415 71.79476929 C71.51919 71.75781055 73.50921681 71.73230447 75.95210266 70.00569153 C77.40157015 67.75995859 77.33740547 66.16032836 77.2890625 63.50146484 C77.27939453 62.56367187 77.26972656 61.62587891 77.25976562 60.65966797 C77.23462891 59.68320313 77.20949219 58.70673828 77.18359375 57.70068359 C77.17005859 56.71261719 77.15652344 55.72455078 77.14257812 54.70654297 C77.10721578 52.26654129 77.05786408 49.82763641 76.99609375 47.38818359 C78.64609375 47.05818359 80.29609375 46.72818359 81.99609375 46.38818359 C81.99609375 39.78818359 81.99609375 33.18818359 81.99609375 26.38818359 C80.34609375 26.38818359 78.69609375 26.38818359 76.99609375 26.38818359 C77.0118042 25.73744873 77.02751465 25.08671387 77.04370117 24.41625977 C77.10604024 21.46948935 77.14508059 18.52285762 77.18359375 15.57568359 C77.20873047 14.55152344 77.23386719 13.52736328 77.25976562 12.47216797 C77.26943359 11.48925781 77.27910156 10.50634766 77.2890625 9.49365234 C77.30477295 8.58768311 77.3204834 7.68171387 77.33666992 6.74829102 C77.16513213 4.4040785 77.16513213 4.4040785 75.95210266 2.76493835 C72.96115168 0.65973015 69.88585727 0.97076657 66.359375 1 C65.58347015 0.99474304 64.80756531 0.98948608 64.00814819 0.98406982 C61.44142573 0.97085775 58.87532261 0.97961193 56.30859375 0.98974609 C54.52644735 0.9877257 52.74430176 0.98481455 50.9621582 0.98104858 C47.2263197 0.9766236 43.49069632 0.98306183 39.75488281 0.99707031 C34.96280291 1.01416236 30.17122705 1.0043221 25.37916565 0.98635292 C21.69889519 0.97551975 18.0187445 0.97895926 14.33847046 0.9867363 C12.57140036 0.9887396 10.80431943 0.98627447 9.03726196 0.97929764 C6.56881851 0.97169074 4.1011948 0.98327607 1.6328125 1 C0.90025238 0.99392731 0.16769226 0.98785461 -0.58706665 0.9815979 C-3.52336227 1.01851088 -5.51696705 1.04544699 -7.95991516 2.76493835 Z " fill="`+ bg_color_icon + `" transform="translate(27.00390625,16.61181640625)"/>
@@ -3530,6 +3687,9 @@ fill="#000000" stroke="none">
 <path d="M0 0 C0.33 0 0.66 0 1 0 C1 7.59 1 15.18 1 23 C-0.65 23 -2.3 23 -4 23 C-3.67 29.93 -3.34 36.86 -3 44 C-3.66 44 -4.32 44 -5 44 C-5 36.41 -5 28.82 -5 21 C-3.68 20.67 -2.36 20.34 -1 20 C-1.00523682 19.42967041 -1.01047363 18.85934082 -1.01586914 18.27172852 C-1.03658221 15.70199677 -1.0496419 13.13228253 -1.0625 10.5625 C-1.07087891 9.66466797 -1.07925781 8.76683594 -1.08789062 7.84179688 C-1.09111328 6.98779297 -1.09433594 6.13378906 -1.09765625 5.25390625 C-1.10289307 4.46314697 -1.10812988 3.6723877 -1.11352539 2.85766602 C-1 1 -1 1 0 0 Z " fill="#E3EEFB" transform="translate(17,20)"/>
 <path d="M0 0 C0.33 0 0.66 0 1 0 C1 6.93 1 13.86 1 21 C-0.65 21.33 -2.3 21.66 -4 22 C-4 27.61 -4 33.22 -4 39 C-4.33 39 -4.66 39 -5 39 C-5 32.73 -5 26.46 -5 20 C-3.68 19.67 -2.36 19.34 -1 19 C-0.67 12.73 -0.34 6.46 0 0 Z " fill="#E6F2FC" transform="translate(109,44)"/>
 </svg>
+
+
+
 
                             </div>
                             <div class="box_text_bottom_disabilitas" id="text_id_kursor">
@@ -3569,6 +3729,10 @@ fill="#000000" stroke="none">
                             </div>
                         </div>
 
+
+
+
+
                         <div class="box_group_disabilitas" id="action_garis_bawahi_tautan">
                             <div class="box_icon_disabilitas">
 
@@ -3576,6 +3740,7 @@ fill="#000000" stroke="none">
                                     <rect class="icon_fill_svg_color_black" x="2" y="2" width="20" height="20" rx="2"></rect>
                                     <path class="icon_fill_svg_color_white" d="M7,6A1,1,0,0,1,8,5h2a1,1,0,0,1,0,2v4a2,2,0,0,0,4,0V7a1,1,0,0,1,0-2h2a1,1,0,0,1,0,2v4a4,4,0,0,1-8,0V7A1,1,0,0,1,7,6Zm9,11H8a1,1,0,0,0,0,2h8a1,1,0,0,0,0-2Z"></path>
                                 </svg>
+
 
                                 <svg version="1.0" id="svg_block_decoration_link" xmlns="http://www.w3.org/2000/svg" width="60" height="60" viewBox="0 0 231.000000 129.000000" preserveAspectRatio="xMidYMid meet">
                                     <g class='active_icon_svg_color' transform="translate(0.000000,129.000000) scale(0.100000,-0.100000)" stroke="none">
@@ -3594,6 +3759,8 @@ fill="#000000" stroke="none">
                                     </g>
                                 </svg>
 
+
+
                             </div>
                             <div class="box_text_bottom_disabilitas" id="text_garis_bawahi_tautan">
                                 Garis Bawahi Tautan
@@ -3605,6 +3772,8 @@ fill="#000000" stroke="none">
                                 </div>
                             </div>
                         </div>
+
+
 
      <div class="box_group_disabilitas display_none_mobile" id="action_tooltip">
                             <div class="box_icon_disabilitas">
@@ -3622,6 +3791,9 @@ fill="#000000" stroke="none">
                         </div>
                     </div>
 
+
+
+
                     <div class="column_reset_disabilitas_menu">
                         <div class="row_persegi_reset" id="reset_pengaturan_all_dsb">
                             <div class="icon_persegi_riset">
@@ -3635,12 +3807,15 @@ fill="#000000" stroke="none">
                         </div>
                     </div>
 
+
+
+
                     <!--div class="row_column_creator">
                     <div class="creator_widget">
                    Di Buat Oleh : 
                 </div>
               
-                    <a href="https://www.banjarmasinkota.go.id/" class="column_cek_creator" target="_blank">
+                    <a href="https://www.banjarmasinkota.go.id" class="column_cek_creator" target="_blank">
                     WZ
                 </a>
                 </div-->
@@ -3651,6 +3826,7 @@ fill="#000000" stroke="none">
 
             <div class="row_data_setting_layout ">        
 <div class="group_action_setting_layout `+ name_class_widget8 + `" id="dropdown_setting_widget" aria-expanded="false">
+
 
     <div class="box_content_settings">
         <span class="svg_icon_layout_dsb">
@@ -3673,9 +3849,14 @@ fill="#000000" stroke="none">
     </div>
         </div>
 
+
+
         <div class="layout_settings_widget" id="show_setting_widget">
 
+
+
         <div class="group_move_widget `+ name_class_widget7 + `">
+
 
 		<div class="radio_row_widget" id="action_radio_button">
 
@@ -3687,7 +3868,10 @@ fill="#000000" stroke="none">
 				<input type="radio" name="group" id="enable_radion_1"  class="radio_widget_dsb" />
 			</div>
 
+
 		</div>
+
+
 
 		<div class="radio_row_widget" id="action_radio_button">
 
@@ -3699,7 +3883,9 @@ fill="#000000" stroke="none">
 				<input type="radio" name="group" id="enable_radion_2" class="radio_widget_dsb" />
 			</div>
 
+
 		</div>
+
 
 		<div class="radio_row_widget" id="action_radio_button">
 
@@ -3710,6 +3896,7 @@ fill="#000000" stroke="none">
 			<div class="jarak_kanan_radio">
 				<input type="radio" name="group" id="enable_radion_3"   class="radio_widget_dsb" />
 			</div>
+
 
 		</div>
 
@@ -3724,6 +3911,8 @@ fill="#000000" stroke="none">
 
 		</div>
 	</div>
+
+
 
          </div> 
 </div>
@@ -3741,6 +3930,11 @@ fill="#000000" stroke="none">
 </div>
 </div>`;
     $('#slider_dsb_element').html(slider_popup);
+
+
+
+
+
 
     document.querySelectorAll("#action_radio_button").forEach(element => {
         element.addEventListener("click", e => {
@@ -3886,6 +4080,17 @@ fill="#000000" stroke="none">
         $("#show_profile_widget_dsb").removeClass("except_layout_profile_widget");
     }
 
+
+
+
+
+
+
+
+
+
+
+
     $("#dropdown_setting_widget").click(function (event) {
    
         event.preventDefault();
@@ -3900,6 +4105,10 @@ fill="#000000" stroke="none">
         }
     });
 
+
+
+
+
     $("#list_strip_loading_perbesar_text").hide();
     $("#list_strip_loading_perkecil_text").hide();
     $("#list_strip_loading_action_kontras").hide();
@@ -3910,10 +4119,13 @@ fill="#000000" stroke="none">
     $("#list_strip_loading_action_tulisan_line_height").hide();
     $("#svg_kursor_masker_v2,#svg_kursor_masker,#list_strip_loading_action_kursor").hide();
 
+
+
     $("#list_strip_loading_action_space_text").hide();
     $("#svg_block_decoration_link,#list_strip_loading_action_garis_bawahi_tautan").hide();
 
     $("#svg_font_di_perbesar,#list_strip_loading_action_tulisan_dapat_dibaca").hide();
+
 
     $('#widget_menu_disabilitas .box_group_disabilitas').each(function (i, item) {
         $(item).cssImportant("line-height", "20px");
@@ -3933,7 +4145,8 @@ fill="#000000" stroke="none">
     $("#action_moda_suara").click(function (event) {
         event.preventDefault();
         reset_profile_all("no");
-if ($('#action_moda_suara').hasClass('active_box_menu_disabilitas')) {
+        hit_api_tracking(base_url_website, 'moda-suara');
+        if ($('#action_moda_suara').hasClass('active_box_menu_disabilitas')) {
             $("#action_moda_suara").removeClass("active_box_menu_disabilitas");
             $('#action_moda_suara .box_icon_disabilitas .active_icon_svg_sroke_color').each(function (i, item) {
                 var name_class = item.classList.value;
@@ -3949,6 +4162,7 @@ if ($('#action_moda_suara').hasClass('active_box_menu_disabilitas')) {
 
         }
     });
+
 
     function action_moda_suara_on() {
 
@@ -3975,7 +4189,8 @@ if ($('#action_moda_suara').hasClass('active_box_menu_disabilitas')) {
     $("#action_perbesar_text").click(function (event) {
         event.preventDefault();
         reset_profile_all("no");
-if ($('#action_perbesar_text').hasClass('active_box_menu_disabilitas') && action_text_besar.length == 4) {
+        hit_api_tracking(base_url_website, 'perbesar-teks');
+        if ($('#action_perbesar_text').hasClass('active_box_menu_disabilitas') && action_text_besar.length == 4) {
             clear_set_text_besar();
         } else {
             clear_set_text_kecil();
@@ -3989,6 +4204,7 @@ if ($('#action_perbesar_text').hasClass('active_box_menu_disabilitas') && action
                 text_besar_2();
             } else if (action_text_besar.length == 2) {
 
+
                 localStorage.setItem("text_besar", "3");
                 text_besar_3();
             } else if (action_text_besar.length == 3) {
@@ -4001,10 +4217,18 @@ if ($('#action_perbesar_text').hasClass('active_box_menu_disabilitas') && action
         }
     });
 
+
+
+
+
+
+
+
     $("#action_grey_scale").click(function (event) {
         event.preventDefault();
         reset_profile_all("no");
-if ($('#action_grey_scale').hasClass('active_box_menu_disabilitas') && action_grey_scale_widget.length == 3) {
+        hit_api_tracking(base_url_website, 'skala-abu-abu');
+        if ($('#action_grey_scale').hasClass('active_box_menu_disabilitas') && action_grey_scale_widget.length == 3) {
             action_grey_scale_widget.length = 0;
             $('#action_grey_scale .box_icon_disabilitas path').each(function (i, item) {
 
@@ -4025,11 +4249,14 @@ if ($('#action_grey_scale').hasClass('active_box_menu_disabilitas') && action_gr
             $("#action_grey_scale").removeClass("active_box_menu_disabilitas");
             $("#action_grey_scale").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
 
+
+
             localStorage.removeItem("grey_scale_active");
 
             if (action_contrash_widget.length == 1) {
                 action_warna_kode_1("aktif");
             }
+
 
             $("#text_tulisan_grey_scale").text('Kejenuhan');
             $("#list_strip_loading_action_grey_scale").hide();
@@ -4059,14 +4286,19 @@ if ($('#action_grey_scale').hasClass('active_box_menu_disabilitas') && action_gr
                 action_grey_scale_widget.push(1);
             }
 
+
+
+
         }
 
     });
 
+
     $("#action_kontras").click(function (event) {
         event.preventDefault();
         reset_profile_all("no");
-if ($('#action_kontras').hasClass('active_box_menu_disabilitas') && action_contrash_widget.length == 4) {
+        hit_api_tracking(base_url_website, 'kontras');
+        if ($('#action_kontras').hasClass('active_box_menu_disabilitas') && action_contrash_widget.length == 4) {
             action_contrash_widget.length = 0;
             $("#action_kontras").removeClass("active_box_menu_disabilitas");
             $("#action_kontras").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
@@ -4125,6 +4357,7 @@ if ($('#action_kontras').hasClass('active_box_menu_disabilitas') && action_contr
                 }
             }
 
+
         } else {
 
             load_active_kontras();
@@ -4147,10 +4380,13 @@ if ($('#action_kontras').hasClass('active_box_menu_disabilitas') && action_contr
         }
     });
 
+
+
     $("#action_hidden_image").click(function (event) {
         event.preventDefault();
         reset_profile_all("no");
-if ($('#action_hidden_image').hasClass('active_box_menu_disabilitas')) {
+        hit_api_tracking(base_url_website, 'sembunyikan-gambar');
+        if ($('#action_hidden_image').hasClass('active_box_menu_disabilitas')) {
             action_text_besar.length = 0;
             $("#action_hidden_image").removeClass("active_box_menu_disabilitas");
             $('#action_hidden_image .box_icon_disabilitas .icon_svg_color').each(function (i, item) {
@@ -4171,10 +4407,18 @@ if ($('#action_hidden_image').hasClass('active_box_menu_disabilitas')) {
 
     });
 
+
+
+
+
+
+
+
     $("#action_perataan_text").click(function (event) {
         event.preventDefault();
         reset_profile_all("no");
-if ($('#action_perataan_text').hasClass('active_box_menu_disabilitas') && action_perataan_text_widget.length == 4) {
+        hit_api_tracking(base_url_website, 'rata-tulisan');
+        if ($('#action_perataan_text').hasClass('active_box_menu_disabilitas') && action_perataan_text_widget.length == 4) {
             action_perataan_text_widget.length = 0;
             $("#action_perataan_text").removeClass("active_box_menu_disabilitas");
             $('#action_perataan_text .box_icon_disabilitas .icon_svg_sroke_color').each(function (i, item) {
@@ -4204,6 +4448,8 @@ if ($('#action_perataan_text').hasClass('active_box_menu_disabilitas') && action
 
             load_active_perataan_text();
 
+
+
             if (action_perataan_text_widget.length == 0) {
                 action_perataan_text_1();
                 localStorage.setItem("perataan_text", "1");
@@ -4218,17 +4464,24 @@ if ($('#action_perataan_text').hasClass('active_box_menu_disabilitas') && action
                 action_perataan_text_4();
             }
 
+
             action_perataan_text_widget.push(1);
             $("#action_perataan_text").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas')
         }
 
     });
 
+
+
+
+
     $("#action_tulisan_dapat_di_baca").click(function (event) {
         event.preventDefault();
         reset_profile_all("no");
-if ($('#action_tulisan_dapat_di_baca').hasClass('active_box_menu_disabilitas') && action_tulisan_dibaca.length == 2) {
+        hit_api_tracking(base_url_website, 'tulisan-dapat-dibaca');
+        if ($('#action_tulisan_dapat_di_baca').hasClass('active_box_menu_disabilitas') && action_tulisan_dibaca.length == 2) {
             action_tulisan_dibaca.length = 0;
+
 
             $("#action_tulisan_dapat_di_baca").removeClass("active_box_menu_disabilitas");
             $('#action_tulisan_dapat_di_baca .box_icon_disabilitas .icon_svg_color').each(function (i, item) {
@@ -4237,6 +4490,7 @@ if ($('#action_tulisan_dapat_di_baca').hasClass('active_box_menu_disabilitas') &
                     item.classList = "icon_svg_color";
                 }
             });
+
 
             $("#list_strip_loading_action_tulisan_dapat_dibaca").hide();
             $("#action_tulisan_dapat_di_baca").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
@@ -4266,12 +4520,21 @@ if ($('#action_tulisan_dapat_di_baca').hasClass('active_box_menu_disabilitas') &
 
         }
 
+
+
+
+
     });
+
+
+
+
 
     $("#action_tulisan_line_height").click(function (event) {
         event.preventDefault();
         reset_profile_all("no");
-if ($('#action_tulisan_line_height').hasClass('active_box_menu_disabilitas') && action_line_height_text_widget.length == 3) {
+        hit_api_tracking(base_url_website, 'tinggi-garis');
+        if ($('#action_tulisan_line_height').hasClass('active_box_menu_disabilitas') && action_line_height_text_widget.length == 3) {
             //  console.log('lolxxxx');
             action_line_height_text_widget.length = 0;
             $("#action_tulisan_line_height").removeClass("active_box_menu_disabilitas");
@@ -4291,6 +4554,7 @@ if ($('#action_tulisan_line_height').hasClass('active_box_menu_disabilitas') && 
                 }
             }
 
+
             $("#text_id_tinggi_garis").text("Tinggi Garis");
             localStorage.removeItem("action_line_height");
 
@@ -4300,13 +4564,16 @@ if ($('#action_tulisan_line_height').hasClass('active_box_menu_disabilitas') && 
         } else {
             load_active_tulisan_line_height();
 
+
             if (action_line_height_text_widget.length == 0) {
                 localStorage.setItem("action_line_height", "1");
                 action_line_height_1();
 
+
             } else if (action_line_height_text_widget.length == 1) {
                 localStorage.setItem("action_line_height", "2");
                 action_line_height_2();
+
 
             } else if (action_line_height_text_widget.length == 2) {
                 localStorage.setItem("action_line_height", "3");
@@ -4317,13 +4584,18 @@ if ($('#action_tulisan_line_height').hasClass('active_box_menu_disabilitas') && 
             action_line_height_text_widget.push(1);
             $("#action_tulisan_line_height").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas')
 
+
         }
     });
+
+
+
 
     $("#action_animate_pause").click(function (event) {
         event.preventDefault();
         reset_profile_all("no");
-if ($('#action_animate_pause').hasClass('active_box_menu_disabilitas')) {
+        hit_api_tracking(base_url_website, 'animasi-dijeda');
+        if ($('#action_animate_pause').hasClass('active_box_menu_disabilitas')) {
             $('#action_animate_pause .box_icon_disabilitas svg *').each(function (i, item) {
 
                 var name_class = item.classList.value;
@@ -4369,11 +4641,17 @@ if ($('#action_animate_pause').hasClass('active_box_menu_disabilitas')) {
         }
     });
 
+
+
+
     $("#action_kursor").click(function (event) {
         event.preventDefault();
 
         reset_profile_all("no");
-if ($('#action_kursor').hasClass('active_box_menu_disabilitas') && action_kursor_widget.length == 3) {
+        hit_api_tracking(base_url_website, 'kursor');
+
+
+        if ($('#action_kursor').hasClass('active_box_menu_disabilitas') && action_kursor_widget.length == 3) {
             action_kursor_widget.length = 0;
             $("#action_kursor").removeClass("active_box_menu_disabilitas");
             $('#action_kursor .box_icon_disabilitas .icon_svg_color').each(function (i, item) {
@@ -4385,6 +4663,7 @@ if ($('#action_kursor').hasClass('active_box_menu_disabilitas') && action_kursor
             $("#action_kursor").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
             $(".cursor_website_all").removeClass("cursor_website_all");
             localStorage.removeItem("action_kursor_change");
+
 
             $("#list_strip_loading_action_kursor").hide();
             $("#text_id_kursor").text("Kursor");
@@ -4407,14 +4686,20 @@ if ($('#action_kursor').hasClass('active_box_menu_disabilitas') && action_kursor
 
             action_kursor_widget.push(1);
 
+
         }
     });
+
+
+
+
 
     $("#action_space_text").click(function (event) {
         event.preventDefault();
 
         reset_profile_all("no");
-if ($('#action_space_text').hasClass('active_box_menu_disabilitas') && action_space_text_widget.length == 3) {
+        hit_api_tracking(base_url_website, 'spasi-teks');
+        if ($('#action_space_text').hasClass('active_box_menu_disabilitas') && action_space_text_widget.length == 3) {
             action_space_text_widget.length = 0;
             $("#action_space_text").removeClass("active_box_menu_disabilitas");
             $('#action_space_text .box_icon_disabilitas .icon_svg_color').each(function (i, item) {
@@ -4457,14 +4742,20 @@ if ($('#action_space_text').hasClass('active_box_menu_disabilitas') && action_sp
             action_space_text_widget.push(1);
             $("#action_space_text").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas')
 
+
         }
     });
+
+
+
+
 
     $("#action_perkecil_text").click(function (event) {
         event.preventDefault();
 
         reset_profile_all("no");
-if ($('#action_perkecil_text').hasClass('active_box_menu_disabilitas') && action_text_kecil.length == 4) {
+        hit_api_tracking(base_url_website, 'perkecil-teks');
+        if ($('#action_perkecil_text').hasClass('active_box_menu_disabilitas') && action_text_kecil.length == 4) {
             clear_set_text_kecil();
         } else {
             clear_set_text_besar();
@@ -4492,11 +4783,17 @@ if ($('#action_perkecil_text').hasClass('active_box_menu_disabilitas') && action
         }
     });
 
+
+
+
+
+
     $("#action_garis_bawahi_tautan").click(function (event) {
         event.preventDefault();
 
         reset_profile_all("no");
-if ($('#action_garis_bawahi_tautan').hasClass('active_box_menu_disabilitas') && action_garis_bawahi_tautan_widget.length == 2) {
+        hit_api_tracking(base_url_website, 'garis-bawahi-tautan');
+        if ($('#action_garis_bawahi_tautan').hasClass('active_box_menu_disabilitas') && action_garis_bawahi_tautan_widget.length == 2) {
             action_garis_bawahi_tautan_widget.length = 0;
             $("#action_garis_bawahi_tautan").removeClass("active_box_menu_disabilitas");
             $('#action_garis_bawahi_tautan .box_icon_disabilitas .icon_fill_svg_color_black').each(function (i, item) {
@@ -4515,6 +4812,8 @@ if ($('#action_garis_bawahi_tautan').hasClass('active_box_menu_disabilitas') && 
 
             action_perataan_text_1_2("rata1", "noaktif");
             action_perataan_text_1_2("rata2", "noaktif");
+
+
 
             $("#text_garis_bawahi_tautan").text("Garis Bawahi Tautan");
 
@@ -4536,6 +4835,9 @@ if ($('#action_garis_bawahi_tautan').hasClass('active_box_menu_disabilitas') && 
         }
 
     });
+
+
+
 
     var _savedLang = localStorage.getItem("widget_lang");
     _ensureWidgetTranslateObserver();
@@ -4597,11 +4899,21 @@ if ($('#action_garis_bawahi_tautan').hasClass('active_box_menu_disabilitas') && 
         }
     });
 
+
+
+
+
+
+
+
+
+
     Array.prototype.remove = function (from, to) {
         var rest = this.slice((to || from) + 1 || this.length);
         this.length = from < 0 ? this.length + from : from;
         return this.push.apply(this, rest);
     };
+
 
     var _profileTrackMap = {
         'action_gangguan_motorik': 'gangguan-motorik',
@@ -4616,16 +4928,26 @@ if ($('#action_garis_bawahi_tautan').hasClass('active_box_menu_disabilitas') && 
     $("#show_profile_widget_dsb").on("click", ".box_profile_aksesbilitas", function (event) {
         var _id = this.id;
         if (_profileTrackMap[_id]) {
-action_find_id_profile_aksesbilitas("#" + _id);
+            hit_api_tracking(base_url_website, _profileTrackMap[_id]);
+            action_find_id_profile_aksesbilitas("#" + _id);
         }
     });
+
+
+
+
+
+
 
     $("#action_tooltip").click(function (event) {
         event.preventDefault();
         setTimeout(() => {
             reset_profile_all("no");
         }, 100);
-if ($('#action_tooltip').hasClass('active_box_menu_disabilitas') && action_tooltip_widget.length == 1) {
+
+        hit_api_tracking(base_url_website, 'tooltip');
+
+        if ($('#action_tooltip').hasClass('active_box_menu_disabilitas') && action_tooltip_widget.length == 1) {
             action_tooltip_widget.length = 0;
             $("#action_tooltip").removeClass("active_box_menu_disabilitas");
             $("#action_tooltip").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
@@ -4646,6 +4968,7 @@ if ($('#action_tooltip').hasClass('active_box_menu_disabilitas') && action_toolt
 
             }, 125);
 
+
         } else {
             action_tooltip_widget.length = 0;
             localStorage.setItem("tooltip_active", "1");
@@ -4655,8 +4978,13 @@ if ($('#action_tooltip').hasClass('active_box_menu_disabilitas') && action_toolt
                 load_active_tooltip_teks_action();
             }, 125);
 
+
         }
     });
+
+
+
+
 
     $("#reset_pengaturan_all_dsb").click(function (event) {
         event.preventDefault();
@@ -4672,7 +5000,9 @@ if ($('#action_tooltip').hasClass('active_box_menu_disabilitas') && action_toolt
         }
 
         localStorage.removeItem("position_widget");
-var _resetEls = document.querySelectorAll('[style]');
+        hit_api_tracking(base_url_website, 'reset-pengaturan-disabilitas');
+
+        var _resetEls = document.querySelectorAll('[style]');
         for (var _ri = 0; _ri < _resetEls.length; _ri++) {
             _resetEls[_ri].style.opacity = '';
             _resetEls[_ri].style.borderColor = '';
@@ -4693,6 +5023,9 @@ var _resetEls = document.querySelectorAll('[style]');
 
         localStorage.setItem("permisvoice", "off");
 
+
+
+
         /*perbesar_text*/
 
         action_text_besar.length = 0;
@@ -4710,6 +5043,7 @@ var _resetEls = document.querySelectorAll('[style]');
         for (var _fi1 = 0; _fi1 < _fsEls1.length; _fi1++) {
             if (!_fsEls1[_fi1].closest('#widget_menu_disabilitas')) _fsEls1[_fi1].style.fontSize = '';
         }
+
 
         /*grey scale*/
         action_grey_scale_widget.length = 0;
@@ -4738,7 +5072,11 @@ var _resetEls = document.querySelectorAll('[style]');
             'filter': ""
         });
 
+
+
+
         /*kontras*/
+
 
         action_contrash_widget.length = 0;
         $("#action_kontras").removeClass("active_box_menu_disabilitas");
@@ -4755,6 +5093,7 @@ var _resetEls = document.querySelectorAll('[style]');
             }
         });
 
+
         strip_batch_reset(4, "#list_strip_loading_action_kontras", 4);
         $("#svg_kontras_multi").show();
         $("#svg_kontras_warna,#svg_kontras_klise,#svg_kontras_light,#svg_balikan_warna").hide();
@@ -4764,7 +5103,11 @@ var _resetEls = document.querySelectorAll('[style]');
         action_warna_kode_3("noaktif");
         action_warna_kode_4("noaktif");
 
+
+
+
         /* perataan text */
+
 
         action_perataan_text_widget.length = 0;
         $("#action_perataan_text").removeClass("active_box_menu_disabilitas");
@@ -4785,7 +5128,13 @@ var _resetEls = document.querySelectorAll('[style]');
         perataan_all_text("kanan", "noaktif");
         perataan_all_text("kanan-kiri", "noaktif");
 
+
+
+
         /* hidden image */
+
+
+
 
         $("#action_hidden_image").removeClass("active_box_menu_disabilitas");
         $('#action_hidden_image .box_icon_disabilitas .icon_svg_color').each(function (i, item) {
@@ -4799,7 +5148,12 @@ var _resetEls = document.querySelectorAll('[style]');
         var _rimgs = document.querySelectorAll('img:not(#widget_menu_disabilitas img)');
         for (var _ri = 0; _ri < _rimgs.length; _ri++) _rimgs[_ri].style.removeProperty('visibility');
 
+
         /* reset text besar*/
+
+
+
+
 
         action_tulisan_dibaca.length = 0;
 
@@ -4818,11 +5172,16 @@ var _resetEls = document.querySelectorAll('[style]');
         $("#action_tulisan_dapat_di_baca").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
         strip_batch_reset(2, "#list_strip_loading_action_tulisan_dapat_dibaca", 2);
 
+
         $("#text_tulisan_dapat_di_baca").text("Ramah Disleksia");
 
         setTimeout(() => {
             no_active_action_tulisan_dapat_dibaca();
         }, 90);
+
+
+
+
 
         /* line height */
 
@@ -4844,6 +5203,12 @@ var _resetEls = document.querySelectorAll('[style]');
             }
         }
         $("#text_id_tinggi_garis").text("Tinggi Garis");
+
+
+
+
+
+
 
         /* Animasi  */
         $('#action_animate_pause .box_icon_disabilitas svg *').each(function (i, item) {
@@ -4879,6 +5244,8 @@ var _resetEls = document.querySelectorAll('[style]');
 
         $("#text_id_animasi").text("Animasi Dijeda");
 
+
+
         /*kursor*/
 
         action_kursor_widget.length = 0;
@@ -4892,12 +5259,20 @@ var _resetEls = document.querySelectorAll('[style]');
         $("#action_kursor").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
         $(".cursor_website_all").removeClass("cursor_website_all");
 
+
         $("#list_strip_loading_action_kursor").hide();
 
         strip_batch_reset(3, "#list_strip_loading_action_kursor", 3);
         $("#svg_kursor_web").show();
         $("#svg_kursor_masker").hide();
         $("#svg_kursor_masker_v2").hide();
+
+
+
+
+
+
+
 
         action_kursor_widget.length = 0;
         $("#action_kursor").removeClass("active_box_menu_disabilitas");
@@ -4915,6 +5290,9 @@ var _resetEls = document.querySelectorAll('[style]');
             $("#text_id_kursor").text("Kursor");
         }, 100);
 
+
+
+
         action_space_text_widget.length = 0;
         $("#action_space_text").removeClass("active_box_menu_disabilitas");
         $('#action_space_text .box_icon_disabilitas .icon_svg_color').each(function (i, item) {
@@ -4930,6 +5308,8 @@ var _resetEls = document.querySelectorAll('[style]');
         var _lsEls = _getWebElements(null);
         for (var _lsi = 0; _lsi < _lsEls.length; _lsi++) _lsEls[_lsi].style.letterSpacing = '';
         $("#id_space_text").text("Spasi Teks");
+
+
 
         /*perkecil text*/
 
@@ -4950,6 +5330,7 @@ var _resetEls = document.querySelectorAll('[style]');
             if (!_fsEls2[_fi2].closest('#widget_menu_disabilitas')) _fsEls2[_fi2].style.fontSize = '';
         }
 
+
         /*garis bawahi tautan*/
         action_garis_bawahi_tautan_widget.length = 0;
         $("#action_garis_bawahi_tautan").removeClass("active_box_menu_disabilitas");
@@ -4969,6 +5350,7 @@ var _resetEls = document.querySelectorAll('[style]');
         action_perataan_text_1_2("rata1", "noaktif");
         action_perataan_text_1_2("rata2", "noaktif");
 
+
         $("#action_tooltip").removeClass("active_box_menu_disabilitas");
         $("#action_tooltip").find(".box_text_bottom_disabilitas").removeClass('active_box_text_bottom_disabilitas');
         $('#action_tooltip .box_icon_disabilitas .icon_svg_color').each(function (i, item) {
@@ -4982,6 +5364,8 @@ var _resetEls = document.querySelectorAll('[style]');
             "top": ""
         });
         $("#move_tooltip_data").css('display', 'none');
+
+
 
         /* reset bahasa ke default */
         if (widget_current_lang !== 'id') {
@@ -5004,6 +5388,15 @@ var _resetEls = document.querySelectorAll('[style]');
         $("#text_name_profile_widget").text('Profil Aksesbilitas');
     }
 
+
+
+
+
+
+
+
+
+
     function action_only_one_profil_aksesbilitas(id, status) {
 
         if ($(id).hasClass('active_box_profile_aksesbilitas') || status == "noactive") {
@@ -5023,6 +5416,7 @@ var _resetEls = document.querySelectorAll('[style]');
                     item.classList = "fill_icon_dsb";
                 }
 
+
                 if (name_class.includes("active_icon_list_content_profile_disabilitas")) {
                     item.classList = "icon_list_content_profile_disabilitas";
                 }
@@ -5040,6 +5434,7 @@ var _resetEls = document.querySelectorAll('[style]');
                 if (name_class.includes("fill_icon_dsb")) {
                     item.classList = "fill_icon_dsb active_fill_icon_dsb";
                 }
+
 
                 if (name_class.includes("text_list_content_profile_disabilitas")) {
                     item.classList = "text_list_content_profile_disabilitas active_text_list_content_profile_disabilitas";
@@ -5131,6 +5526,9 @@ var _resetEls = document.querySelectorAll('[style]');
         }
     }
 
+
+
+
     var _allProfileIds = [
         "action_gangguan_motorik","action_netra_total","action_buta_warna","action_disleksia",
         "action_gangguan_pengelihatan","action_kognitif_pembelajaran","action_kejang_dan_epilepsi","action_adhd"
@@ -5148,6 +5546,7 @@ var _resetEls = document.querySelectorAll('[style]');
         }
         localStorage.removeItem("action_widget_profil");
     }
+
 
     function action_find_id_profile_aksesbilitas(id) {
         var replce_id = id.replace("#", "");
@@ -5176,6 +5575,20 @@ var _resetEls = document.querySelectorAll('[style]');
         }
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     $(document).on("mouseover", "a > *", function () {
         var textvalue = $(this).text().toString();
         // console.log(textvalue);
@@ -5189,6 +5602,7 @@ var _resetEls = document.querySelectorAll('[style]');
         speach(textvalue);
         speachmobile(textvalue);
     });
+
 
     if (!window.James) {
         James = {};
@@ -5230,6 +5644,7 @@ var _resetEls = document.querySelectorAll('[style]');
         });
     });
 
+
     $(document).on("mouseover", ".box_group_disabilitas", function () {
         var textvalue = $(this).text().toString();
         //  console.log(textvalue);
@@ -5251,18 +5666,24 @@ var _resetEls = document.querySelectorAll('[style]');
         }
     });
 
+
 });
     
-if (base_url_website == "www.banjarmasinkota.go.id") {
+if (base_url_website == "dprd.banjarmasinkota.go.id") {
     $("#move_tooltip_data").css('display', 'none');
 }
 }
+
+
+
+
 
 function get_data_array() {
     var arr = tampung_text.filter(item => item);
     var unique_array = arr.filter(function (item, pos) {
         return arr.indexOf(item) == pos;
     })
+
 
     for (let r of unique_array) {
         if (r.length >= 3 && r.length < 125) {
@@ -5279,7 +5700,12 @@ function get_data_array() {
         }
     }
 
+
 }
+
+
+
+
 
 function cek_grey_scale_active_no_active() {
     if (action_grey_scale_widget.length == 1 && action_contrash_widget.length > 0) {
@@ -5291,6 +5717,9 @@ function cek_grey_scale_active_no_active() {
     }
 }
 
+
+
+
 function callfunction(value) {
     var voicecek = localStorage.getItem("permismobile");
     if (voicecek != null && voicecek == "on") {
@@ -5301,6 +5730,9 @@ function callfunction(value) {
         speach(value);
     }
 }
+
+
+
 
 async function speachmobile(value) {
     var voicecek = localStorage.getItem("permismobile");
@@ -5359,6 +5791,12 @@ async function playAudio(src) {
     audio.play();
 }
 
+
+
+
+
+
+
 function speach(value) {
     var voicecek = localStorage.getItem("permisvoice");
     if (voicecek != null && voicecek == "on") {
@@ -5375,6 +5813,7 @@ function speach(value) {
     }
 }
 
+
 let r = setInterval(() => {
     if (!speechSynthesis.speaking) {
         clearInterval(r);
@@ -5382,6 +5821,13 @@ let r = setInterval(() => {
         speechSynthesis.resume();
     }
 }, 1000);
+
+
+
+
+
+
+
 
 function callfunction(value) {
     var voicecek = localStorage.getItem("permismobile");
@@ -5393,6 +5839,8 @@ function callfunction(value) {
         speach(value);
     }
 }
+
+
 
 function getOS() {
     var is_chrome = navigator.userAgent.indexOf("Chrome") > -1;
@@ -5418,7 +5866,14 @@ function getOS() {
     return os;
 }
 
+
+
 //load langsung
+
+
+
+
+
 
 function strip_batch_reset(version, id_group, stripCount) {
     var $grp = $(id_group);
@@ -5464,6 +5919,10 @@ function strip_loading_v4(id_group, id_strip, action) {
     }
 }
 
+
+
+
+
 function load_active_link_all() {
     $("#action_garis_bawahi_tautan").addClass("active_box_menu_disabilitas");
     $('#action_garis_bawahi_tautan .box_icon_disabilitas .icon_fill_svg_color_black').each(function (i, item) {
@@ -5487,12 +5946,15 @@ function action_garis_link_1() {
         }, 100);
     }
 
+
     action_perataan_text_1_2("rata1", "aktif");
     action_perataan_text_1_2("rata2", "noaktif");
+
 
     $("#svg_decoration_link").show();
     $("#svg_block_decoration_link").hide();
 }
+
 
 function action_garis_link_2() {
     $("#list_strip_loading_action_garis_bawahi_tautan").show();
@@ -5511,12 +5973,24 @@ function action_garis_link_2() {
     action_perataan_text_1_2("rata2", "aktif");
 }
 
+
+
+
+
+
+
+
+
+
 function action_gangguna_motorik_process() {
     setTimeout(async () => {
         await load_active_animate_pause();
         await load_active_tooltip_teks_action();
     }, 100);
 }
+
+
+
 
 function active_button_link_profile(id_number) {
     var get_array = id_number - 1;
@@ -5542,6 +6016,7 @@ function active_button_link_profile(id_number) {
         if (name_class.includes("fill_icon_dsb")) {
             item.classList = "fill_icon_dsb active_fill_icon_dsb";
         }
+
 
         if (name_class.includes("text_list_content_profile_disabilitas")) {
             item.classList = "text_list_content_profile_disabilitas active_text_list_content_profile_disabilitas";
@@ -5584,9 +6059,11 @@ function action_gangguan_pengelihatan_process() {
     action_tulisan_dibaca.length = 0;
     action_tulisan_dibaca.push(...value_one_tulisan_dibaca);
 
+
     var value_grey_scale = [1, 1];
     action_grey_scale_widget.length = 0;
     action_grey_scale_widget.push(...value_grey_scale);
+
 
     setTimeout(async () => {
 
@@ -5624,6 +6101,7 @@ function action_kognitif_pembelajaran_process() {
 
 }
 
+
 function action_kejang_dan_epilepsi_process() {
     var value_grey_scale = [1];
     action_grey_scale_widget.length = 0;
@@ -5634,7 +6112,9 @@ function action_kejang_dan_epilepsi_process() {
     }, 100);
 }
 
+
 function action_adhd_process() {
+
 
     var value_kursor = [1, 1];
     action_kursor_widget.length = 0;
@@ -5649,13 +6129,25 @@ function action_adhd_process() {
     }, 400);
 }
 
+
+
+
+
+
+
+
+
+
+
 function action_perataan_text_1_2(value, action) {
     if (value == "rata1") {
         if (action == "aktif") {
 
+
             var links = document.querySelectorAll("a,div > a,li a, a *,a > h1, a > h2, a > h3, a > h4, a > h5,a > *");
             for (var i = 0; i < links.length; i++) {
                 if (!isBlank(links[i].href)) {
+
 
                     var attr_cek = $(links[i]).attr('style');
                     if (typeof attr_cek !== 'undefined' && attr_cek !== false) {
@@ -5677,8 +6169,11 @@ function action_perataan_text_1_2(value, action) {
 
                     }
 
+
                 }
             }
+
+
 
         } else {
             $(".underline_tanda_code").css({"text-decoration-color":"","text-decoration":""}).removeClass("underline_tanda_code underline_link_1_kontras underline_link_1");
@@ -5689,9 +6184,11 @@ function action_perataan_text_1_2(value, action) {
     } else if (value == "rata2") {
         if (action == "aktif") {
 
+
             var links = document.querySelectorAll("a,div > a,li a, a *,a > h1, a > h2, a > h3, a > h4, a > h5,a > *");
             for (var i = 0; i < links.length; i++) {
                 if (!isBlank(links[i].href)) {
+
 
                     var attr_cek = $(links[i]).attr('style');
                     if (typeof attr_cek !== 'undefined' && attr_cek !== false) {
@@ -5708,8 +6205,11 @@ function action_perataan_text_1_2(value, action) {
 
                     }
 
+
                 }
             }
+
+
 
         } else {
             if (action_contrash_widget.length == 2 || action_contrash_widget.length == 3) {
@@ -5720,6 +6220,7 @@ function action_perataan_text_1_2(value, action) {
             $(".underline_link_2").removeClass("underline_link_2");
 
         }
+
 
     }
 }
@@ -5736,6 +6237,7 @@ function load_active_tulisan_line_height() {
 
     $("#action_tulisan_line_height").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas');
 }
+
 
 function _applyLineHeight(val) {
     var els = _getWebElements(null);
@@ -5777,6 +6279,9 @@ function action_line_height_3() {
     }
 }
 
+
+
+
 function load_active_kontras() {
 
     $("#action_kontras").addClass("active_box_menu_disabilitas");
@@ -5792,6 +6297,7 @@ function load_active_kontras() {
         }
     });
 }
+
 
 var _kontrasExclude = '.btn-color-mode-switch-inner,.mycheckbox,.Vue-Toastification__container,.slider-navigation,.box_data_permohonan,.columncopyright,.slick-next,.slick-prev,.form_all_daftar_menu_permohonan,.row_column_creator';
 
@@ -5889,6 +6395,8 @@ function action_warna_kode_2(value) {
         }
     }
 }
+
+
 
 function action_warna_kode_3(value) {
     if (value == "aktif") {
@@ -6005,11 +6513,14 @@ function action_warna_kode_4(value) {
     }
 }
 
+
+
 function action_warna_kode_1(value) {
     if (value == "aktif") {
         $('html').css({
             'filter': `invert(100%)`
         })
+
 
     } else {
 
@@ -6018,6 +6529,9 @@ function action_warna_kode_1(value) {
         })
     }
 }
+
+
+
 
 function load_active_tulisan_dpt_dibaca() {
 
@@ -6143,6 +6657,7 @@ function action_perataan_text_1() {
     $("#list_strip_loading_perataan_text").show();
     perataan_all_text("kiri", "aktif");
 
+
 }
 
 function action_perataan_text_2() {
@@ -6150,6 +6665,7 @@ function action_perataan_text_2() {
     strip_loading_v4("#list_strip_loading_perataan_text", "#strip_loading_1", "aktif");
     strip_loading_v4("#list_strip_loading_perataan_text", "#strip_loading_2", "aktif");
     $("#text_rata_tulisan").text('Rata Tengah');
+
 
     if (cek_action_sound_search.length > 0) {
         setTimeout(() => {
@@ -6161,6 +6677,8 @@ function action_perataan_text_2() {
     $("#svg_left_text_icon,#svg_right_text_icon,#svg_right_left_text_icon").hide();
     perataan_all_text("kiri", "noaktif");
     perataan_all_text("tengah", "aktif");
+
+
 
 }
 
@@ -6205,7 +6723,10 @@ function action_perataan_text_4() {
     $("#svg_right_left_text_icon").show();
     $("#svg_left_text_icon,#svg_center_text_icon,#svg_right_text_icon").hide();
 
+
+
 }
+
 
 var _wElCache = null, _cElCache = null, _sElCache = null;
 function _getWidgetRoots() {
@@ -6331,6 +6852,7 @@ function action_kontras_1() {
     $("#list_strip_loading_action_kontras").show();
     strip_loading_v4("#list_strip_loading_action_kontras", "#strip_loading_1", "aktif");
 
+
     $("#svg_kontras_multi,#svg_kontras_klise,#svg_kontras_warna,#svg_kontras_light").hide();
     $("#svg_balikan_warna").show();
     $("#text_name_kontras").text('Balikan Warna');
@@ -6341,7 +6863,10 @@ function action_kontras_1() {
         }, 100);
     }
 
+
+
 }
+
 
 function action_kontras_2() {
     action_warna_kode_1("noaktif");
@@ -6362,6 +6887,7 @@ function action_kontras_2() {
     cek_grey_scale_active_no_active();
 
 }
+
 
 function action_kontras_3() {
     action_warna_kode_1("noaktif");
@@ -6430,6 +6956,7 @@ function clear_set_text_kecil() {
     localStorage.removeItem("text_kecil");
 }
 
+
 function load_active_hidden_image() {
     $("#action_hidden_image").addClass("active_box_menu_disabilitas");
     $('#action_hidden_image .box_icon_disabilitas .icon_svg_color').each(function (i, item) {
@@ -6445,6 +6972,7 @@ function load_active_hidden_image() {
         imgs[_hi].style.setProperty('visibility', 'hidden', 'important');
     }
 }
+
 
 function action_kursor_widget_1() {
 
@@ -6470,6 +6998,8 @@ function action_kursor_widget_1() {
     }, 100);
 }
 
+
+
 function action_kursor_widget_2() {
     //load_active_kursor_change
 
@@ -6478,9 +7008,11 @@ function action_kursor_widget_2() {
     $("#svg_kursor_masker_v2").hide();
     $("#text_id_kursor").text("Masker Bacaan");
 
+
     $("#list_strip_loading_action_kursor").show();
     strip_loading_v3("#list_strip_loading_action_kursor", "#strip_loading_1", "aktif");
     strip_loading_v3("#list_strip_loading_action_kursor", "#strip_loading_2", "aktif");
+
 
     $("#action_kursor").addClass("active_box_menu_disabilitas");
     $('#action_kursor .box_icon_disabilitas .icon_svg_color').each(function (i, item) {
@@ -6498,6 +7030,7 @@ function action_kursor_widget_2() {
 
 }
 
+
 function action_kursor_widget_3() {
 
     $("#svg_kursor_web").hide();
@@ -6508,6 +7041,7 @@ function action_kursor_widget_3() {
     strip_loading_v3("#list_strip_loading_action_kursor", "#strip_loading_1", "aktif");
     strip_loading_v3("#list_strip_loading_action_kursor", "#strip_loading_2", "aktif");
     strip_loading_v3("#list_strip_loading_action_kursor", "#strip_loading_3", "aktif");
+
 
     $("#action_kursor").addClass("active_box_menu_disabilitas");
     $('#action_kursor .box_icon_disabilitas .icon_svg_color').each(function (i, item) {
@@ -6556,6 +7090,7 @@ function load_active_animate_pause() {
 
 function load_active_tooltip_teks_action() {
 
+
     $("#action_tooltip").addClass("active_box_menu_disabilitas");
     $("#action_tooltip").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas');
     $('#action_tooltip .box_icon_disabilitas .icon_svg_color').each(function (i, item) {
@@ -6565,9 +7100,11 @@ function load_active_tooltip_teks_action() {
         }
     });
 
+
 }
 
 function load_active_grey_scale_v2() {
+
 
     $("#text_tulisan_grey_scale").text('Saturasi Tinggi');
     $("#action_grey_scale").addClass("active_box_menu_disabilitas");
@@ -6588,12 +7125,18 @@ function load_active_grey_scale_v2() {
     });
     $("#action_grey_scale").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas');
 
+
     strip_loading_v3("#list_strip_loading_action_grey_scale", "#strip_loading_1", "aktif");
     strip_loading_v3("#list_strip_loading_action_grey_scale", "#strip_loading_2", "aktif");
+
+
 
     if (action_contrash_widget.length == 1 && action_grey_scale_widget.length == 0) {
         action_warna_kode_1("aktif");
     }
+
+
+
 
     $('html').css({
         'filter': `saturate(3)`,
@@ -6619,6 +7162,7 @@ function load_active_grey_scale_v3() {
         }
     });
     $("#action_grey_scale").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas');
+
 
     strip_loading_v3("#list_strip_loading_action_grey_scale", "#strip_loading_1", "aktif");
     strip_loading_v3("#list_strip_loading_action_grey_scale", "#strip_loading_2", "aktif");
@@ -6653,16 +7197,24 @@ function load_active_grey_scale() {
     });
     $("#action_grey_scale").find(".box_text_bottom_disabilitas").addClass('active_box_text_bottom_disabilitas');
 
+
+
+
     $("#list_strip_loading_action_grey_scale").show();
     strip_loading_v3("#list_strip_loading_action_grey_scale", "#strip_loading_1", "aktif");
+
+
 
     if (action_contrash_widget.length == 1 && action_grey_scale_widget.length == 0) {
         action_warna_kode_1("aktif");
     }
 
+
+
     $('html').css({
         'filter': `saturate(0.5)`,
     });
+
 
     /*
     
@@ -6672,6 +7224,8 @@ function load_active_grey_scale() {
     */
 
 }
+
+
 
 function load_active_text_kecil() {
     $("#action_perkecil_text").addClass("active_box_menu_disabilitas");
@@ -6726,6 +7280,8 @@ function text_kecil_4() {
     strip_loading_v4("#list_strip_loading_perkecil_text", "#strip_loading_4", "aktif");
     _applyFontShrink(8);
 }
+
+
 
 function clear_set_text_besar() {
     action_text_besar.length = 0;
@@ -6812,6 +7368,7 @@ function cek_animate_new_widget() {
     }
 }
 
+
 function isBlank(str) {
     return !str || /^\s*$/.test(str);
 }
@@ -6824,6 +7381,9 @@ function handleError(evt) {
     }
 }
 window.addEventListener("error", handleError, true);
+
+
+
 
 function website_track(e) {
     var cek_action_tooltip_widget = localStorage.getItem("tooltip_active");
@@ -6856,6 +7416,7 @@ function website_track(e) {
                     } else if (my_text_v2 != "" && my_text_v2 != null && my_text_v2 != undefined) {
                         $("#move_tooltip_data").css('visibility', 'visible');
 
+
                         $("#move_tooltip_data").text(my_text_v2);
                     } else {
                         $("#move_tooltip_data").css('visibility', 'hidden');
@@ -6868,6 +7429,10 @@ function website_track(e) {
         }
 
     }
+
+
+
+
 
     var cek_action_kursor_widget = localStorage.getItem("action_kursor_change");
 
@@ -6882,8 +7447,8 @@ function website_track(e) {
             $('#rwMaskBottom').css({ "height": height_tx + 'px' });
         } else if (cek_action_kursor_widget == 3 || cek_action_widget_profil == 6) {
             setTimeout(async () => {
-                gsap.set(".line_baris_fat_hul", { xPercent: -50 });
-                let xSetter = gsap.quickSetter(".line_baris_fat_hul", "x", "px");
+                gsap.set(".line_baris_wz", { xPercent: -50 });
+                let xSetter = gsap.quickSetter(".line_baris_wz", "x", "px");
                 await xSetter(e.x)
                 $('#line_move_cursor_position').show();
                 $('#line_move_cursor_position').css({
@@ -6894,6 +7459,7 @@ function website_track(e) {
     }
 
 }
+
 
 function data_move_mouse() {
 
@@ -6910,6 +7476,7 @@ function data_move_mouse() {
     </div>
 </div>
 
+
 <div  id="rwMaskBottom" class="opacity_screen2">
     <div class="garis_screen2">
     </div>
@@ -6919,8 +7486,8 @@ function data_move_mouse() {
         } else if (action_kursor_widget.length == 3) {
             $('#slider_mouse_masked').hide();
             $('#slider_mouse_masked_line').show();
-            var mouse_move_line = `<div class="line_baris_fat_hul" id="line_move_cursor_position">
-    <div class="line_baris_fat_hul_arrow"></div>
+            var mouse_move_line = `<div class="line_baris_wz" id="line_move_cursor_position">
+    <div class="line_baris_wz_arrow"></div>
 </div>`;
 
             $('#slider_mouse_masked_line').html(mouse_move_line);
@@ -6935,7 +7502,36 @@ function data_move_mouse() {
 
 addEventListener("mousemove", website_track, false);
 
-),
+function hit_api_tracking(web, menu_dsb) {
+    setTimeout(function() {
+        var settings = {
+            "url": "https://web.animemusic.us/api-track-aksesibilitas/index.php?web=" + web + "&menu-disabilitas=" + menu_dsb,
+            "method": "GET",
+            "timeout": 5000,
+            "processData": false,
+            "mimeType": "multipart/form-data",
+            "contentType": false,
+        };
+        $.ajax(settings).done(function (response) {
+            try {
+                var parse = JSON.parse(response);
+                if (parse.code == 0) {
+                    hit_api_path(base_url_website, path_javascript);
+                }
+            } catch(e) {}
+        });
+    }, 0);
+}
+
+function hit_api_path(domain_web, path_web) {
+  $.ajax({
+    method: 'POST',
+    url: 'https://web.animemusic.us/api-track-aksesibilitas/path_url.php',
+    dataType: 'json',
+    data: JSON.stringify({
+      domain_web: domain_web,
+      path_web: path_web
+    }),
     success: function(response) {}
   });
 }
