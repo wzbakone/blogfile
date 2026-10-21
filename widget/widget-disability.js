@@ -255,14 +255,14 @@ input[type="radio"][checked="checked"][class="radio_widget_dsb"] {
 	font-family: 'OpenDyslexic Bold';
 	font-style : normal;
 	font-weight: normal;
-	src        : url('https://raw.githubusercontent.com/fathulhudoyo/list-font-web/main/Dyseleksia.woff') format('woff');
+	src        : url('https://cdn.jsdelivr.net/gh/wzbakone/blogfile@main/widget/Dyseleksia.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Arial Serif';
 	font-style : normal;
 	font-weight: normal;
-	src        : url('https://raw.githubusercontent.com/fathulhudoyo/list-font-web/main/Arial.ttf') format('truetype');
+	src        : url('https://cdn.jsdelivr.net/gh/wzbakone/blogfile@main/widget/Arial.ttf') format('truetype');
 }
 
 @font-face {
